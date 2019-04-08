@@ -1,0 +1,24 @@
+# Site settings
+title: Raul San Martin Aniceto
+SEOTitle: Raul San Martin · Student/Developer
+description: I am a Telecommunication Technologies Engineering student living in Madrid.
+url: "https://raulsanmartin.me"
+baseurl: ""
+language: en
+favicon: "/assets/images/favicon.png"
+author: "Raúl San Martín Aniceto"
+permalink: /:categories/:title/
+
+# Markdown
+markdown: kramdown
+mathjax: true
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
