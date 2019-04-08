@@ -293,32 +293,6 @@ code,pre,tt {
     padding-right: 6px
 }
 
-.footer>i>.heart {
-    background-image: url(../images/icons/heart.svg);
-    color: #C04848;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: 26px 26px;
-    padding-left: 36px
-}
-
-.footer>i>.code {
-    background-image: url(../images/icons/code.svg);
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: 26px 26px;
-    padding-left: 36px
-}
-
-.footer>i>.github-alt {
-    background-image: url(../images/icons/github-alt.svg);
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: 26px 26px;
-    padding-left: 36px
-}
-
-
 @media screen and (min-width: 820.01px) {
     .container {
         margin:0 auto;
