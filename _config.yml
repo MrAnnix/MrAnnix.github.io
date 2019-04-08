@@ -36,16 +36,13 @@ google-site-verification: "4KpPIPbUzRNI1DJR-OrOS5tNYrNvTIMj2Xh9bIybdPE"
 
 # Social settings (you can use Font Awesome icons [fa fa-icon] or Iconmonstr ones [im im-icon])
 social:
-  - title: Github
-    icon: "im im-github"
+  - title: e-mail
+    description: "hello@[this domain] for e-mail"
+    link: "/contact"
+  - title: github
+    description: "MrAnnix on GitHub"
     link: "https://github.com/MrAnnix"
-  - title: Twitter
-    icon: "im im-twitter"
-    link: "https://twitter.com/MrAnnix"
-  - title: Linkedin
-    icon: "im im-linkedin"
+  - title: linkedin
+    description: "Raul San Martin on Linkedin"
     link: "https://www.linkedin.com/in/raul-san-martin-aniceto"
-  - title: Email
-    icon: "im im-mail"
-    smoothscroll: yes
-    link: "/#contact"
+  - title: twitter
