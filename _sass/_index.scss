@@ -1,1 +1,159 @@
-.hi h1{margin:12px 0}.hi p{margin-top:0}@charset "UTF-8";.project{text-decoration:none!important;color:#333!important}.project .screenshot{margin-bottom:6px;border-radius:2px;width:100%}.project .project-borders{position:relative;transition:box-shadow .3s;box-shadow:none;padding:8px;vertical-align:middle}.project .project-borders::before,.project .project-borders::after{position:absolute;top:0;left:0;border:1px solid #0000;border-radius:2px;width:0;height:0;content:''}.project .project-borders:hover{box-shadow:0 3px 4px #ccc}.project .project-borders:hover::before,.project .project-borders:hover::after{width:calc(100% - 1px);height:calc(100% - 1px)}.project .project-borders:hover::before{transition:width .15s ease-in 0s,height .15s ease-out .15s;border-top-color:#c8463e;border-right-color:#c8463e}.project .project-borders:hover::after{transition:height .15s ease-in 0s,width .15s ease-out .15s;border-left-color:#c8463e;border-bottom-color:#c8463e}.projects-column h2{margin-bottom:0}.projects-column>a{display:block;margin-top:.5rem}.projects-column ._wtf img{border:.5px solid #eee;padding:6px 0}.recent-blog-posts{line-height:1.4}.recent-blog-posts h4{display:inline;transition:color .3s;margin-bottom:2px;color:#c8463e}.recent-blog-posts h4:hover{color:#8a6666}.recent-blog-posts a{text-decoration:none}.recent-blog-posts p{margin-top:0;color:#606060}.recent-blog-posts .all{display:block;transition:color .3s;color:#333!important;font-weight:700}.recent-blog-posts .all:hover{color:#606060!important}.sites-list a{text-decoration:none;color:#333!important}.sites-list a:hover{text-decoration:underline}.sites-list>ul{list-style-type:none}.sites-list>ul>li{padding:4px 0}.sites-list>ul tt{line-height:1;font-size:11pt;font-weight:400}.sites-list>ul>.e-mail{background-image:url(../static/e-mail.svg);background-repeat:no-repeat;background-position:0 0;background-size:26px 26px;padding-left:36px}.sites-list>ul>.github{background-image:url(../static/github.svg);background-repeat:no-repeat;background-position:0 0;background-size:26px 26px;padding-left:36px}.sites-list>ul>.stacko{background-image:url(../static/stacko.svg);background-repeat:no-repeat;background-position:0 0;background-size:26px 26px;padding-left:36px}
+/* ===================================================================
+ * # index styles - (_index.scss)
+ *
+ * ------------------------------------------------------------------- */
+
+.hi h1 {
+    margin: 12px 0
+}
+
+.hi p {
+    margin-top: 0
+}
+
+@charset "UTF-8";.project {
+    text-decoration: none!important;
+    color: #333!important
+}
+
+.project .screenshot {
+    margin-bottom: 6px;
+    border-radius: 2px;
+    width: 100%
+}
+
+.project .project-borders {
+    position: relative;
+    transition: box-shadow .3s;
+    box-shadow: none;
+    padding: 8px;
+    vertical-align: middle
+}
+
+.project .project-borders::before,.project .project-borders::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #0000;
+    border-radius: 2px;
+    width: 0;
+    height: 0;
+    content: ''
+}
+
+.project .project-borders:hover {
+    box-shadow: 0 3px 4px #ccc
+}
+
+.project .project-borders:hover::before,.project .project-borders:hover::after {
+    width: calc(100% - 1px);
+    height: calc(100% - 1px)
+}
+
+.project .project-borders:hover::before {
+    transition: width .15s ease-in 0s,height .15s ease-out .15s;
+    border-top-color: #c8463e;
+    border-right-color: #c8463e
+}
+
+.project .project-borders:hover::after {
+    transition: height .15s ease-in 0s,width .15s ease-out .15s;
+    border-left-color: #c8463e;
+    border-bottom-color: #c8463e
+}
+
+.projects-column h2 {
+    margin-bottom: 0
+}
+
+.projects-column>a {
+    display: block;
+    margin-top: .5rem
+}
+
+.projects-column ._wtf img {
+    border: .5px solid #eee;
+    padding: 6px 0
+}
+
+.recent-blog-posts {
+    line-height: 1.4
+}
+
+.recent-blog-posts h4 {
+    display: inline;
+    transition: color .3s;
+    margin-bottom: 2px;
+    color: #c8463e
+}
+
+.recent-blog-posts h4:hover {
+    color: #8a6666
+}
+
+.recent-blog-posts a {
+    text-decoration: none
+}
+
+.recent-blog-posts p {
+    margin-top: 0;
+    color: #606060
+}
+
+.recent-blog-posts .all {
+    display: block;
+    transition: color .3s;
+    color: #333!important;
+    font-weight: 700
+}
+
+.recent-blog-posts .all:hover {
+    color: #606060!important
+}
+
+.sites-list a {
+    text-decoration: none;
+    color: #333!important
+}
+
+.sites-list a:hover {
+    text-decoration: underline
+}
+
+.sites-list>ul {
+    list-style-type: none
+}
+
+.sites-list>ul>li {
+    padding: 4px 0
+}
+
+.sites-list>ul tt {
+    line-height: 1;
+    font-size: 11pt;
+    font-weight: 400
+}
+
+.sites-list>ul>.e-mail {
+    background-image: url(../static/e-mail.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 26px 26px;
+    padding-left: 36px
+}
+
+.sites-list>ul>.github {
+    background-image: url(../static/github.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 26px 26px;
+    padding-left: 36px
+}
+
+.sites-list>ul>.stacko {
+    background-image: url(../static/stacko.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 26px 26px;
+    padding-left: 36px
+}
