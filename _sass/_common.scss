@@ -235,32 +235,32 @@ code,pre,tt {
 @font-face {
     font-family: moniker;
     font-weight: 400;
-    src: url(/static/fonts/moniker/light.woff2) format("woff2"),url(/static/fonts/moniker/light.woff) format("woff"),url(/static/fonts/moniker/light.eot) format("eot")
+    src: url(/assets/fonts/moniker/light.woff2) format("woff2"),url(/assets/fonts/moniker/light.woff) format("woff"),url(/assets/fonts/moniker/light.eot) format("eot")
 }
 
 @font-face {
     font-family: moniker;
     font-weight: 700;
-    src: url(/static/fonts/moniker/medium.woff2) format("woff2"),url(/static/fonts/moniker/medium.woff) format("woff"),url(/static/fonts/moniker/medium.eot) format("eot")
+    src: url(/assets/fonts/moniker/medium.woff2) format("woff2"),url(/assets/fonts/moniker/medium.woff) format("woff"),url(/assets/fonts/moniker/medium.eot) format("eot")
 }
 
 @font-face {
     font-family: moniker;
     font-weight: 400;
     font-style: italic;
-    src: url(/static/fonts/moniker/litalic.woff2) format("woff2"),url(/static/fonts/moniker/litalic.woff) format("woff"),url(/static/fonts/moniker/litalic.eot) format("eot")
+    src: url(/assets/fonts/moniker/litalic.woff2) format("woff2"),url(/assets/fonts/moniker/litalic.woff) format("woff"),url(/assets/fonts/moniker/litalic.eot) format("eot")
 }
 
 @font-face {
     font-family: bryant;
     font-weight: 700;
-    src: url(/static/fonts/bryantcond/medium.woff2) format("woff2"),url(/static/fonts/bryantcond/medium.woff) format("woff"),url(/static/fonts/bryantcond/medium.eot) format("eot")
+    src: url(/assets/fonts/bryantcond/medium.woff2) format("woff2"),url(/assets/fonts/bryantcond/medium.woff) format("woff"),url(/assets/fonts/bryantcond/medium.eot) format("eot")
 }
 
 @font-face {
     font-family: iosevka term;
     font-weight: 400;
-    src: url(/static/fonts/iosevka-term/regular.woff2) format("woff2"),url(/static/fonts/iosevka-term/regular.woff) format("woff"),url(/static/fonts/iosevka-term/regular.eot) format("eot")
+    src: url(/assets/fonts/iosevka-term/regular.woff2) format("woff2"),url(/assets/fonts/iosevka-term/regular.woff) format("woff"),url(/assets/fonts/iosevka-term/regular.eot) format("eot")
 }
 
 .code {
