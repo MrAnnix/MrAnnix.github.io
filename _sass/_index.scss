@@ -134,8 +134,10 @@
     font-weight: 400
 }
 
+/*Icons by Iconmonstr*/
+
 .sites-list>ul>.e-mail {
-    background-image: url(../static/e-mail.svg);
+    background-image: url(../images/icons/e-mail.svg);
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: 26px 26px;
@@ -143,7 +145,7 @@
 }
 
 .sites-list>ul>.github {
-    background-image: url(../static/github.svg);
+    background-image: url(../images/icons/github.svg);
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: 26px 26px;
@@ -151,7 +153,23 @@
 }
 
 .sites-list>ul>.stacko {
-    background-image: url(../static/stacko.svg);
+    background-image: url(../images/icons/stacko.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 26px 26px;
+    padding-left: 36px
+}
+
+.sites-list>ul>.linkedin {
+    background-image: url(../images/icons/linkedin.svg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 26px 26px;
+    padding-left: 36px
+}
+
+.sites-list>ul>.twitter {
+    background-image: url(../images/icons/twitter.svg);
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: 26px 26px;
