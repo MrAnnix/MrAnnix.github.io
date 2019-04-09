@@ -287,10 +287,14 @@ code,pre,tt {
     line-height: 1.3
 }
 
-.container{
+.container {
     margin-bottom: 4rem!important;
     padding-left: 6px;
     padding-right: 6px
+}
+
+.text-centered{
+        text-align: center;
 }
 
 @media screen and (min-width: 820.01px) {
@@ -349,18 +353,6 @@ code,pre,tt {
 
     .container .two-columns .right-column {
         padding-left: 12px;
-        width: 50%
-    }
-
-    .container .two-columns .left-column-centered {
-        padding-right: 12px;
-        text-align: center;
-        width: 50%
-    }
-
-    .container .two-columns .right-column-centered {
-        padding-left: 12px;
-        text-align: center;
         width: 50%
     }
 
