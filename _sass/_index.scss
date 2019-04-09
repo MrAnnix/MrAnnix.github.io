@@ -134,6 +134,23 @@
     font-weight: 400
 }
 
+.about-me-list a {
+    text-decoration: none;
+    color: #333!important
+}
+
+.about-me-list a:hover {
+    text-decoration: underline
+}
+
+.about-me-list>ul {
+    list-style-type: none
+}
+
+.about-me-list>ul>li {
+    padding: 4px 0
+}
+
 /*Icons by Iconmonstr*/
 
 .sites-list>ul>.e-mail {
