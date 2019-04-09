@@ -2,6 +2,7 @@
 layout: post
 title:  "Welcome to Jekyll!"
 image: /images/blog/blog-bg-02.jpg
+description: "Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor."
 categories: Branding
 tags: [hot, summer]
 ---

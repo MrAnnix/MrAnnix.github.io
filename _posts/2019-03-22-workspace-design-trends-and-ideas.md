@@ -2,6 +2,7 @@
 layout: post
 title:  "Workspace Design Trends and Ideas."
 image: /images/blog/blog-bg-04.jpg
+description: "Cum sociis natoque penatibus et magnis dis parturient."
 categories: Trends
 tags: [design, ideas, branding, nulla]
 ---
