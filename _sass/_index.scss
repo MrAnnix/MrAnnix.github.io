@@ -122,10 +122,11 @@
 
 .sites-list>ul {
     list-style-type: none
+    padding-inline-start: 20px;
 }
 
 .sites-list>ul>li {
-    padding: 4px 0
+    padding: 1px 0
 }
 
 .sites-list>ul tt {
