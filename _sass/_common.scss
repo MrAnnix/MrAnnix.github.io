@@ -14,10 +14,6 @@
     font-weight: 700
 }
 
-* {
-  margin: 0;
-}
-
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -26,10 +22,6 @@ html {
 
 body {
     margin: 0
-}
-
-html, body {
-  height: 100%;
 }
 
 article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary {
@@ -303,7 +295,8 @@ code,pre,tt {
 .container {
     margin-bottom: 4rem!important;
     padding-left: 6px;
-    padding-right: 6px
+    padding-right: 6px;
+    min-height: calc(100vh - 70px)
 }
 
 @media screen and (min-width: 820.01px) {
@@ -678,7 +671,8 @@ code,pre,tt {
 
 .footer {
     padding-left: 6px;
-    padding-right: 6px
+    padding-right: 6px;
+    height: 50px
 }
 
 .footer .fa-heart {
