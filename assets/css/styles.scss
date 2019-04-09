@@ -2,10 +2,10 @@
 # this ensures Jekyll reads the file to be transformed into CSS later
 ---
 
+@import url(https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css);
+
 @import "common";
 @import "index";
 @import "contact";
 @import "blog-index";
 @import "font-awesome";
-
-@import url(https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css);

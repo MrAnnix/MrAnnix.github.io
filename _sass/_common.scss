@@ -664,6 +664,36 @@ code,pre,tt {
     font-family: moniker
 }
 
+.footer {
+    width: 100%;
+    margin-left: 0%
+}
+
+.footer .fa-heart {
+    color: #c04848
+}
+
+@media(min-width: 768px) {
+    .footer {
+        width:90%;
+        margin-left: 5%
+    }
+}
+
+@media(min-width: 992px) {
+    .footer {
+        width:80%;
+        margin-left: 10%
+    }
+}
+
+@media(min-width: 1200px) {
+    .footer {
+        width:70%;
+        margin-left: 15%
+    }
+}
+
 .footer div {
     text-align: center;
     margin-top: 20px;
