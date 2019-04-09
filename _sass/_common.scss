@@ -234,21 +234,21 @@ code,pre,tt {
 
 @font-face {
     font-family: moniker;
-    font-display: swap;
+    font-display: auto;
     font-weight: 400;
     src: url(../fonts/moniker/light.woff2) format("woff2"),url(../fonts/moniker/light.woff) format("woff"),url(../fonts/moniker/light.eot) format("eot")
 }
 
 @font-face {
     font-family: moniker;
-    font-display: swap;
+    font-display: auto;
     font-weight: 700;
     src: url(../fonts/moniker/medium.woff2) format("woff2"),url(../fonts/moniker/medium.woff) format("woff"),url(../fonts/moniker/medium.eot) format("eot")
 }
 
 @font-face {
     font-family: moniker;
-    font-display: swap;
+    font-display: auto;
     font-weight: 400;
     font-style: italic;
     src: url(../fonts/moniker/litalic.woff2) format("woff2"),url(../fonts/moniker/litalic.woff) format("woff"),url(../fonts/moniker/litalic.eot) format("eot")
@@ -256,14 +256,14 @@ code,pre,tt {
 
 @font-face {
     font-family: bryant;
-    font-display: swap;
+    font-display: auto;
     font-weight: 700;
     src: url(../fonts/bryantcond/medium.woff2) format("woff2"),url(../fonts/bryantcond/medium.woff) format("woff"),url(../fonts/bryantcond/medium.eot) format("eot")
 }
 
 @font-face {
     font-family: iosevka term;
-    font-display: swap;
+    font-display: auto;
     font-weight: 400;
     src: url(../fonts/iosevka-term/regular.woff2) format("woff2"),url(../fonts/iosevka-term/regular.woff) format("woff"),url(../fonts/iosevka-term/regular.eot) format("eot")
 }
