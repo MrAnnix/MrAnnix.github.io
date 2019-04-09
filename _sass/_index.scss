@@ -134,20 +134,26 @@
     font-weight: 400
 }
 
-.about-me-list a {
+/*About me*/
+
+.about-me p {
+    margin-top: 0
+}
+
+.about-me a {
     text-decoration: none;
     color: #333!important
 }
 
-.about-me-list a:hover {
+.about-me a:hover {
     text-decoration: underline
 }
 
-.about-me-list>ul {
+.about-me>ul {
     list-style-type: none
 }
 
-.about-me-list>ul>li {
+.about-me>ul>li {
     padding: 4px 0
 }
 
