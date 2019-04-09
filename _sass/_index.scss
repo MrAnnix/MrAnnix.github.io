@@ -121,12 +121,11 @@
 }
 
 .sites-list>ul {
-    list-style-type: none;
-    padding-inline-start: 20px
+    list-style-type: none
 }
 
 .sites-list>ul>li {
-    padding: 1px 0
+    padding: 4px 0
 }
 
 .sites-list>ul tt {
@@ -151,11 +150,12 @@
 }
 
 .about-me>ul {
-    list-style-type: none
+    list-style-type: none;
+    padding-inline-start: 20px
 }
 
 .about-me>ul>li {
-    padding: 4px 0
+    padding: 1px 0
 }
 
 /*Icons by Iconmonstr*/
