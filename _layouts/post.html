@@ -18,7 +18,7 @@
                 {% when '3' or '23' %}{{ d }}rd
                 {% else %}{{ d }}th
                 {% endcase %}
-                {{ page.date | date: '%B , %Y' }}
+                {{ page.date | date: '%B, %Y' }}
                 </span>
                 <a href="{{ page.url | prepend: site.baseurl }}"><h1 class="title">{{ page.title }}</h1></a>
             </div>
