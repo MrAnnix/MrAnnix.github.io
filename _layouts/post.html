@@ -17,6 +17,10 @@ layout: default
         </span>
         <a href="{{ page.url | prepend: site.baseurl }}"><h1 class="title">{{ page.title }}</h1></a>
     </div>
-    {{ content }}
+    <div class="row -cols">
+        <div class="main text">
+            {{ content }}
+        </div>
+    </div>
     <a href="{{ site.baseurl }}/blog" class="back">← All blog posts</a>
 </article>
