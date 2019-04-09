@@ -24,6 +24,15 @@ layout: default
                     </li>
                 </ul>
             </div>
+            <div class=recent-blog-posts>
+                <h2>Recent blog posts</h2>
+                {% for post in site.posts limit:4 %}
+                <a href="{{ post.url }}"><h4 class=title>{{ post.title }}</h4></a>
+                <p>
+                {{ post.description }}
+                </p>
+                {% endfor %}
+            </div>
             <div class=about-me>
                 <h2 class=hi-2>Cosas que me gustan</h2>
                 <ul style="list-style-type:none">

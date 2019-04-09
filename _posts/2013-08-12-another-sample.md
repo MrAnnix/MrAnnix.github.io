@@ -2,6 +2,7 @@
 layout: post
 title: Another sample
 image: /images/blog/blog-bg-05.jpg
+description: One sample post
 categories: [ejemplo, cat ejemplo]
 tags: [test, writing]
 ---
