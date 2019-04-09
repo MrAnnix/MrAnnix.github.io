@@ -296,7 +296,7 @@ code,pre,tt {
     margin-bottom: 4rem!important;
     padding-left: 6px;
     padding-right: 6px;
-    min-height: calc(100vh - 70px)
+    min-height: calc(100vh - 200px)
 }
 
 @media screen and (min-width: 820.01px) {
@@ -671,8 +671,7 @@ code,pre,tt {
 
 .footer {
     padding-left: 6px;
-    padding-right: 6px;
-    height: 50px
+    padding-right: 6px
 }
 
 .footer .fa-heart {
