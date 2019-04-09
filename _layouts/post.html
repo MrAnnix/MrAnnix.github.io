@@ -6,9 +6,25 @@
 <body>
 
     {% include header.html %}
-
-    {{ content }}
-
+    <div class="container">
+        <article class="body post">
+            <div class="post-heading">
+                <span class="blog-date">
+                {% assign d = page.date | date: "%-d"  %}
+                {{ post.date | date: '%A,' }}
+                {% case d %}
+                {% when '1' or '21' or '31' %}{{ d }}st
+                {% when '2' or '22' %}{{ d }}nd
+                {% when '3' or '23' %}{{ d }}rd
+                {% else %}{{ d }}th
+                {% endcase %},
+                {{ post.date | date: '%B , %Y' }}
+                </span>
+                <a href="{{ post.url | prepend: site.baseurl }}"><h1 class="title">{{ post.title }}</h1></a>
+            </div>
+            {{ content }}
+        </article>
+    </div>
     {% include footer.html %}
 
 </body>
