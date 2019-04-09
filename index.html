@@ -14,7 +14,7 @@ layout: default
             <div class=sites-list>
                 <ul>
                     <li class=e-mail>
-                        <a href=contact.html><b><tt>hello@[this domain]</tt></b> para e-mail</a>
+                        <a href="{{ site.baseurl }}/contact"><b><tt>hello@[this domain]</tt></b> para e-mail</a>
                     </li>
                     <li class=github>
                         <a href=https://github.com/MrAnnix title="MrAnnix on GitHub"><strong>MrAnnix</strong> en GitHub</a>
@@ -27,11 +27,12 @@ layout: default
             <div class=recent-blog-posts>
                 <h2>Recent blog posts</h2>
                 {% for post in site.posts limit:4 %}
-                <a href="{{ post.url }}"><h4 class=title>{{ post.title }}</h4></a>
+                <a href="{{ post.url | prepend: site.baseurl }}"><h4 class=title>{{ post.title }}</h4></a>
                 <p>
                 {{ post.description }}
                 </p>
                 {% endfor %}
+                <a href="{{ site.baseurl }}/blog" class=all>See all blog posts</a>
             </div>
             <div class=about-me>
                 <h2 class=hi-2>Cosas que me gustan</h2>
