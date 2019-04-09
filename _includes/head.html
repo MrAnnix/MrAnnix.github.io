@@ -12,7 +12,7 @@
     <meta property='og:type' {% if page %} content='article' {% else %} content="website" {% endif %}/>
 
     <!-- Feeds -->
-    <link rel="alternate" title="{{ site.title }} (XML feed)" type="application/rss+xml" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" title="{{ site.title }} (ATOM feed)" type="application/atom+xml" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" title="{{ site.title }} (JSON feed)" type="application/json" href="{{ "/feed.json" | prepend: site.baseurl | prepend: site.url }}">
 
     <!-- Google Site Verification -->
@@ -23,6 +23,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="{{ "/assets/css/styles.css" | prepend: site.baseurl }}">
     <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta name=theme-color content=#c8463e>
 
     <!-- Fonts -->
     <link rel=preload href=/static/fonts/moniker/light.woff2 as=font type=font/woff2>
