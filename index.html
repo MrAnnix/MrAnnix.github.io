@@ -3,74 +3,72 @@ title: Home
 layout: default
 ---
 
-<div class=container>
-    <div class=two-columns>
-        <div class=left-column>
-            <div class=hi>
-                <h1>Hi, I'm Raul</h1>
-                <p>Soy casi ingeniero en tecnologías de telecomunicación. Vivo en España.
-                <br>Siempre estoy aprendiendo algo.</p>
-            </div>
-            <div class=sites-list>
-                <ul>
-                    <li class=e-mail>
-                        <a href="{{ site.baseurl }}/contact"><b><tt>hello@[this domain]</tt></b> para e-mail</a>
-                    </li>
-                    <li class=github>
-                        <a href=https://github.com/MrAnnix title="MrAnnix on GitHub"><strong>MrAnnix</strong> en GitHub</a>
-                    </li>
-                    <li class=linkedin>
-                        <a href=https://www.linkedin.com/in/raul-san-martin-aniceto/ title="Raul San Martin on Linkedin"><strong>Raul San Martin</strong> en Linkedin</a>
-                    </li>
-                </ul>
-            </div>
-            <div class=recent-blog-posts>
-                <h2>Recent blog posts</h2>
-                {% for post in site.posts limit:4 %}
-                <a href="{{ post.url | prepend: site.baseurl }}"><h4 class=title>{{ post.title }}</h4></a>
-                <p>
-                {{ post.description }}
-                </p>
-                {% endfor %}
-                <a href="{{ site.baseurl }}/blog" class=all>See all blog posts</a>
-            </div>
-            <div class=about-me>
-                <h2>Things I like</h2>
-                <ul>
-                    <li>
-                        👨‍💻 Estar al tanto de las ultimas tecnologías
-                    </li>
-                    <li>
-                        ⚛️ Ciencia y mates
-                    </li>
-                    <li>
-                        🎧 Musica
-                    </li>
-                    <li>
-                        🎸 Guitarra eléctrica <em>(estoy empezando)</em>
-                    </li>
-                    <li>
-                        📷 Fotografía
-                    </li>
-                    <li>
-                        🔭 Astronomía
-                    </li>
-                    <li>
-                        ⛏️ Y por supuesto, estar siempre creando cosas...
-                    </li>
-                </ul>
-            </div>
+<div class=two-columns>
+    <div class=left-column>
+        <div class=hi>
+            <h1>Hi, I'm Raul</h1>
+            <p>Soy casi ingeniero en tecnologías de telecomunicación. Vivo en España.
+            <br>Siempre estoy aprendiendo algo.</p>
         </div>
-        <div class=right-column>
-            <div class="projects-column">
-                <h2>Stuff I've done</h2>
-                <a href=https://www.geekmag.es/ class=project>
-                    <div class=project-borders>
-                        <img src=/assets/images/GeekMag.png alt="Screenshot of GeekMag" class=screenshot>
-                        <b>GeekMag</b> es una publicación online centrada en la tecnología, ciencia, películas y videojuegos.
-                    </div>
-                </a>
-            </div>
+        <div class=sites-list>
+            <ul>
+                <li class=e-mail>
+                    <a href="{{ site.baseurl }}/contact"><b><tt>hello@[this domain]</tt></b> para e-mail</a>
+                </li>
+                <li class=github>
+                    <a href=https://github.com/MrAnnix title="MrAnnix on GitHub"><strong>MrAnnix</strong> en GitHub</a>
+                </li>
+                <li class=linkedin>
+                    <a href=https://www.linkedin.com/in/raul-san-martin-aniceto/ title="Raul San Martin on Linkedin"><strong>Raul San Martin</strong> en Linkedin</a>
+                </li>
+            </ul>
+        </div>
+        <div class=recent-blog-posts>
+            <h2>Recent blog posts</h2>
+            {% for post in site.posts limit:4 %}
+            <a href="{{ post.url | prepend: site.baseurl }}"><h4 class=title>{{ post.title }}</h4></a>
+            <p>
+            {{ post.description }}
+            </p>
+            {% endfor %}
+            <a href="{{ site.baseurl }}/blog" class=all>See all blog posts</a>
+        </div>
+        <div class=about-me>
+            <h2>Things I like</h2>
+            <ul>
+                <li>
+                    👨‍💻 Estar al tanto de las ultimas tecnologías
+                </li>
+                <li>
+                    ⚛️ Ciencia y mates
+                </li>
+                <li>
+                    🎧 Musica
+                </li>
+                <li>
+                    🎸 Guitarra eléctrica <em>(estoy empezando)</em>
+                </li>
+                <li>
+                    📷 Fotografía
+                </li>
+                <li>
+                    🔭 Astronomía
+                </li>
+                <li>
+                    ⛏️ Y por supuesto, estar siempre creando cosas...
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class=right-column>
+        <div class="projects-column">
+            <h2>Stuff I've done</h2>
+            <a href=https://www.geekmag.es/ class=project>
+                <div class=project-borders>
+                    <img src=/assets/images/GeekMag.png alt="Screenshot of GeekMag" class=screenshot>
+                    <b>GeekMag</b> es una publicación online centrada en la tecnología, ciencia, películas y videojuegos.
+                </div>
+            </a>
         </div>
     </div>
 </div>
