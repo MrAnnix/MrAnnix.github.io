@@ -476,11 +476,14 @@ code,pre,tt {
     }
 }
 
-.post .text blockquote>p {
+.post .text blockquote {
     margin: 0 0 0 3px;
     border-left: 3px solid #bf8e82;
     padding-left: 1rem;
-    padding-right: 3rem;
+    padding-right: 3rem
+}
+
+.post .text blockquote p{
     line-height: 1.5;
     color: #999;
     font-size: 13pt
