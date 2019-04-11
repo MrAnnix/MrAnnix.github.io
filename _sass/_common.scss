@@ -532,20 +532,21 @@ code,pre,tt {
 }
 
 .post .blog-navigation {
-    padding-top: 1em
+    margin: 1rem 0 0!important
+    padding: 0!important;
 }
 
 .post .blog-navigation .previous-post {
-    margin-right: 2em
+    margin-right: 2rem
 }
 
 .post .blog-navigation .next-post{
-    margin-left: 2em;
-    margin-right: 2em
+    margin-left: 2rem;
+    margin-right: 2rem
 }
 
 .post .blog-navigation .back-to-blog {
-    margin-left: 2em
+    margin-left: 2rem
 }
 
 .post .blog-navigation .back-to-blog, .post .blog-navigation .previous-post, .post .blog-navigation .next-post {
