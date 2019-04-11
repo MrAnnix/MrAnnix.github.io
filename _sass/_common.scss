@@ -436,7 +436,7 @@ code,pre,tt {
 }
 
 .post .text h2 {
-    margin-top: 3rem;
+    margin-top: 4rem;
     text-transform: uppercase;
     font-family: moniker;
     font-size: 14pt;
@@ -445,7 +445,7 @@ code,pre,tt {
 }
 
 .post .text h3 {
-    margin-top: 1rem;
+    margin-top: 3rem;
     text-transform: uppercase;
     font-family: moniker;
     font-size: 11pt;
@@ -535,16 +535,16 @@ code,pre,tt {
     padding-top: 1em
 }
 
-.post .blog-navigation .back-to-blog {
+.post .blog-navigation .previous-post {
     margin-right: 2em
 }
 
-.post .blog-navigation .previous-post{
+.post .blog-navigation .next-post{
     margin-left: 2em;
     margin-right: 2em
 }
 
-.post .blog-navigation .next-post {
+.post .blog-navigation .back-to-blog {
     margin-left: 2em
 }
 
