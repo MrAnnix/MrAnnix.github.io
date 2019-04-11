@@ -544,8 +544,9 @@ code,pre,tt {
     float: right;
 }
 
-.post .back-to-blog {
-    margin-top: 1rem
+.post .blog-return {
+    margin: 1rem 0 0!important;
+    padding: 0!important
 }
 
 .post .back-to-blog, .post .blog-navigation .previous-post, .post .blog-navigation .next-post {
