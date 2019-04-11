@@ -474,6 +474,10 @@ code,pre,tt {
     font-size: 14pt
 }
 
+.post .text p {
+    text-align: justify
+}
+
 .post .text p>code,.post .text p>bloc,.post .text li>code,.post .text li>bloc,.post .text blockquote>code,.post .text blockquote>bloc {
     font-size: 13pt
 }
@@ -490,6 +494,11 @@ code,pre,tt {
     .post .text blockquote {
         font-size: 12pt
     }
+}
+
+.post .text img {
+    display: block;
+    margin: 0 auto
 }
 
 .post .text blockquote {
