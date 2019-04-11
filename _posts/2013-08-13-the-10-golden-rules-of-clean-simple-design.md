@@ -10,9 +10,10 @@ tags: [clean, writing, style, seo]
 Ambitioni dedisse scripsisse iudicaretur. Quam diu etiam furor iste tuus nos eludet? Praeterea iter est quasdam res quas ex communi. Prima luce, cum quibus mons aliud consensu ab eo. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
 
 Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Quisque placerat facilisis egestas cillum dolore. Quam temere in vitiis, legem sancimus haerentia. Inmensae subtilitatis, obscuris et malesuada fames.
-Paullum deliquit, ponderibus modulisque suis ratio utitur. Quam diu etiam furor iste tuus nos eludet? Unam incolunt Belgae, aliam Aquitani, tertiam. Ullamco laboris nisi ut aliquid ex ea commodi consequat. Fabio vel iudice vincam, sunt in culpa qui officia.
 
 ![](/assets/images/GeekMag.png)
+
+Paullum deliquit, ponderibus modulisque suis ratio utitur. Quam diu etiam furor iste tuus nos eludet? Unam incolunt Belgae, aliam Aquitani, tertiam. Ullamco laboris nisi ut aliquid ex ea commodi consequat. Fabio vel iudice vincam, sunt in culpa qui officia.
 
 ## What You See Is What You Get?
 Quae vero auctorem tractata ab fiducia dicuntur. Magna pars studiorum, prodita quaerimus. Fictum, deserunt mollit anim laborum astutumque! Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Me non paenitet nullum festiviorem excogitasse ad hoc. Nec dubitamus multa iter quae et nos invenerat.
