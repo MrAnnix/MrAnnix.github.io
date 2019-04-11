@@ -537,11 +537,12 @@ code,pre,tt {
 }
 
 .post .blog-navigation .previous-post {
+    float: left;
     margin-right: 2rem
 }
 
 .post .blog-navigation .next-post{
-    margin-left: 2rem;
+    float: right;
     margin-right: 2rem
 }
 
