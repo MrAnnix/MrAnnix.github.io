@@ -11,7 +11,8 @@ author: "Raúl San Martín Aniceto"
 permalink: /:categories/:title/
 
 # Top bar
-topbar: "<b>Raul San Martin Aniceto</b> / MrAnnix"
+topbar: "<b>Raul San Martin</b>"
+topbar_home: "<b>Raul San Martin Aniceto</b>"
 
 # Markdown
 markdown: kramdown

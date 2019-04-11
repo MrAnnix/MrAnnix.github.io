@@ -1,3 +1,4 @@
 <div class=top-bar>
-    <a href="/">{{ site.topbar }}</a>
+    {% if page.name == 'Home' %}<a href="/">{{ site.topbar_home }}</a>{% else %}<a href="/">{{ site.topbar }}</a>{% endif %}
+
 </div>
