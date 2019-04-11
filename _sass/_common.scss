@@ -523,17 +523,30 @@ code,pre,tt {
 }
 
 .post .blog-navigation {
-    padding-top: 1rem
+    padding-top: 1em
 }
 
-.post .back {
+.post .blog-navigation .back-to-blog {
+    margin-right: 2em
+}
+
+.post .blog-navigation .previous-post{
+    margin-left: 2em;
+    margin-right: 2em
+}
+
+.post .blog-navigation .next-post {
+    margin-left: 2em
+}
+
+.post .blog-navigation .back-to-blog, .post .blog-navigation .previous-post, .post .blog-navigation .next-post {
     transition: color .3s;
     text-decoration: none;
     color: #606060!important;
     font-weight: 700
 }
 
-.post .back:hover {
+.post .blog-navigation .back-to-blog:hover, .post .blog-navigation .previous-post:hover, .post .blog-navigation .next-post:hover {
     color: #333!important
 }
 
