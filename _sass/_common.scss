@@ -549,14 +549,14 @@ code,pre,tt {
     padding: 0!important
 }
 
-.post .back-to-blog, .post .blog-navigation .previous-post, .post .blog-navigation .next-post {
+.post .back-to-blog, .post .previous-post, .post .next-post {
     transition: color .3s;
     text-decoration: none;
     color: #606060!important;
     font-weight: 700
 }
 
-.post .back-to-blog:hover, .post .blog-navigation .previous-post:hover, .post .blog-navigation .next-post:hover {
+.post .back-to-blog:hover, .post .previous-post:hover, .post .next-post:hover {
     color: #333!important
 }
 
