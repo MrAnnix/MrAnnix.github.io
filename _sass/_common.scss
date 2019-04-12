@@ -215,7 +215,11 @@ code,pre,tt {
     font-family: iosevka term
 }
 
-
+pre.highlight {
+    background-color: #272822!important;
+    font: 14px/1.8em Menlo,Consolas,"Courier New",Courier,"Liberation Mono",monospace;
+    padding: .6rem .8rem;
+}
 
 .text a {
     box-shadow: inset 0 -.15em #fff,inset 0 -.2em #bf8e82;
