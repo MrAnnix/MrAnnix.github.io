@@ -2,8 +2,11 @@
 # this ensures Jekyll reads the file to be transformed into CSS later
 ---
 
-@import "common";
-@import "index";
-@import "contact";
-@import "blog-index";
-@import "font-awesome";
+@import
+        "common",
+        "index",
+        "contact",
+        "blog-index",
+        "font-awesome",
+        "syntax-highlighting"
+;
