@@ -23,8 +23,12 @@ layout: default
         </div>
     </div>
     <div class="row-cols blog-navigation">
-        <a href="{{ site.baseurl }}/blog" class="previous-post">← Previous post</a>
-        <a href="{{ site.baseurl }}/blog" class="next-post">Next post →</a>
+        {% if page.previous.url %}
+        <a href="{{page.previous.url | prepend: site.baseurl }}" class="previous-post">← Previous post</a>
+        {% endif %}
+        {% if page.next.url %}
+        <a href="{{page.next.url | prepend: site.baseurl }}" class="next-post">Next post →</a>
+        {% endif %}
     </div>
     <div class="row-cols blog-return">
         <a href="{{ site.baseurl }}/blog" class="back-to-blog">↺ All blog posts</a>
