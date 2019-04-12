@@ -40,6 +40,8 @@ category_page: '/categories/'
 google-site-verification: "4KpPIPbUzRNI1DJR-OrOS5tNYrNvTIMj2Xh9bIybdPE"
 
 # Social settings (you can use Font Awesome icons [fa fa-icon] or Iconmonstr ones [im im-icon])
+email: hello@[this domain]
+
 social:
   - title: e-mail
     description: "hello@[this domain] for e-mail"

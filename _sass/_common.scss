@@ -215,9 +215,8 @@ code,pre,tt {
     font-family: iosevka term
 }
 
-pre.highlight, .highlight>pre {
-    background-color: #272822!important;
-    padding: .6rem .8rem;
+.highlight>pre {padding: .6rem .8rem;
+    line-height: 1.3rem
 }
 
 .text a {
