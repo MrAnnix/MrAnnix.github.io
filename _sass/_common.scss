@@ -465,10 +465,17 @@ code,pre,tt {
     text-decoration: none
 }
 
-.blog-tags .tags-list h4{
+.blog-tags .tags-list h3{
     transition: color .3s;
     margin-bottom: 2px;
     color: #c8463e
+}
+
+.blog-tags .tags-list small {
+    text-transform: uppercase;
+    font-family: bryant;
+    margin: 0.5em;
+    color: #606060
 }
 
 .blog-tags .tags-list .post-title{
