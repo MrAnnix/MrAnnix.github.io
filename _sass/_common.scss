@@ -461,11 +461,18 @@ code,pre,tt {
     line-height: 1.4
 }
 
+.blog-tags .tags-list a {
+    text-decoration: none
+}
+
 .blog-tags .tags-list h4{
-    display: inline;
     transition: color .3s;
     margin-bottom: 2px;
     color: #c8463e
+}
+
+.blog-tags .tags-list .post-title{
+    display: block;
 }
 
 @charset "UTF-8";.post {
