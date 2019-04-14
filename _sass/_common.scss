@@ -443,18 +443,29 @@ code,pre,tt {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     display: inline-block;
-    background-color: #dd8b86;
+    background-color: #cf5d56;
     border-radius: 32px;
     line-height: 28px;
     padding: 0 10px 0 10px;
     text-decoration: none;
     margin-bottom: 8px;
-    color: #fff!important;
+    color: #fff!important
 }
 
 .blog-tags .tags-cloud a:hover {
-    background-color: #c8463e;
-    color: #fff!important;
+    background-color: #af3d36;
+    color: #fff!important
+}
+
+.blog-tags .tags-list {
+    line-height: 1.4
+}
+
+.blog-tags .tags-list h4{
+    display: inline;
+    transition: color .3s;
+    margin-bottom: 2px;
+    color: #c8463e
 }
 
 @charset "UTF-8";.post {
