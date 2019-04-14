@@ -425,6 +425,21 @@ code,pre,tt {
     }
 }
 
+@media screen and (max-width: 540px) {
+    .blog-tags {
+        padding-top:2rem
+    }
+}
+
+.post .tags-cloud {
+
+}
+
+.post .tags-cloud a {
+    color: #c8463e;
+    
+}
+
 @charset "UTF-8";.post {
     padding-top: 3rem;
     padding-bottom: 8rem;
