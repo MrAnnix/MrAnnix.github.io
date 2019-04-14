@@ -431,13 +431,17 @@ code,pre,tt {
     }
 }
 
-.post .tags-cloud {
+.blog-tags {
+    text-decoration: none
+}
+
+.blog-tags .tags-cloud {
 
 }
 
-.post .tags-cloud a {
+.blog-tags .tags-cloud a {
     color: #c8463e;
-    
+
 }
 
 @charset "UTF-8";.post {
