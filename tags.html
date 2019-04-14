@@ -1,5 +1,5 @@
 ---
-title: Archive
+title: Tags
 layout: default
 ---
 
@@ -27,7 +27,7 @@ The following part removes dulpicated tags and invalid tags like blank tag.
 	{% endif %}
 {% endfor %}
 
-<h1>Archive</h1>
+<h1>Tags</h1>
 
 <div class="blog-tags">
     <div class="tags-cloud">
@@ -38,13 +38,13 @@ The following part removes dulpicated tags and invalid tags like blank tag.
     <div class="tags-list">
         {% for tag in site.tags %}
         <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
-        <ul class="tags-list-posts">
+        <div class="tags-list-posts">
             {% for post in tag[1] %}
             <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-                <li>{{ post.title }}<small class="post-date">{{ post.date | date_to_string }}</small></li>
+                <h4>{{ post.title }}<h4><small class="post-date">{{ post.date | date_to_string }}</small>
             </a>
             {% endfor %}
-        </ul>
+        </div>
         {% endfor %}
     </div>
 </div>
