@@ -443,16 +443,17 @@ code,pre,tt {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     display: inline-block;
-    background-color: #c8463e;
+    background-color: #e4a39f;
     border-radius: 32px;
     line-height: 28px;
     padding: 0 10px 0 10px;
     text-decoration: none;
     margin-bottom: 8px;
+    color: #fff!important;
 }
 
 .blog-tags .tags-cloud a:hover {
-    background-color: #4CAF50;
+    background-color: #c8463e;
     color: #fff!important;
 }
 
