@@ -429,11 +429,23 @@ code,pre,tt {
     display: inline
 }
 
-.post-tags p {
+.post-tags .tags-title span {
+
+}
+
+.post-tags .tags-title span::after {
 
 }
 
 .post-tags .tags-list {
+
+}
+
+.post-tags .tags-list span {
+
+}
+
+.post-tags .tags-list a {
 
 }
 
