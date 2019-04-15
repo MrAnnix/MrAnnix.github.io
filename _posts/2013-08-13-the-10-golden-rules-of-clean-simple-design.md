@@ -11,7 +11,7 @@ Ambitioni dedisse scripsisse iudicaretur. Quam diu etiam furor iste tuus nos elu
 
 Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Quisque placerat facilisis egestas cillum dolore. Quam temere in vitiis, legem sancimus haerentia. Inmensae subtilitatis, obscuris et malesuada fames.
 
-![](/assets/images/GeekMag.png)
+![GeekMag](/assets/images/GeekMag.png)
 
 Paullum deliquit, ponderibus modulisque suis ratio utitur. Quam diu etiam furor iste tuus nos eludet? Unam incolunt Belgae, aliam Aquitani, tertiam. Ullamco laboris nisi ut aliquid ex ea commodi consequat. Fabio vel iudice vincam, sunt in culpa qui officia.
 
