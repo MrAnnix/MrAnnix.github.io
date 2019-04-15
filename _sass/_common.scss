@@ -431,7 +431,8 @@ code,pre,tt {
 
 .post-tags .tags-title {
     text-transform: uppercase;
-    font-weight: 700;
+    font-family: bryant;
+
 }
 
 .post-tags .tags-title::after {
@@ -769,7 +770,7 @@ code,pre,tt {
 
 @media screen and (min-width: 540.01px) and (max-width:820px) {
     .top-bar {
-        padding-left:4px;
+        padding-left: 4px;
         padding-bottom: 1px;
         width: 100%;
         font-size: 16pt
@@ -778,7 +779,7 @@ code,pre,tt {
 
 @media screen and (min-width: 820.01px) {
     .top-bar {
-        margin-left:auto;
+        margin-left: auto;
         margin-right: auto;
         width: 820px;
         font-size: 18pt
