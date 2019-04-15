@@ -21,6 +21,14 @@ layout: default
         <div class="main text">
             {{ content }}
         </div>
+        <div class="post-tags">
+            <p>Tags</p>
+            <div class="tags-list">
+                {% for tag in page.tags %}
+                <a href="{{ site.tag_page | prepend: site.baseurl }}#{{ tag | slugify }}">{{ tag }}</a>
+                {% endfor %}
+            </div>
+        </div>
     </div>
     <div class="row-cols blog-navigation">
         {% if page.previous.url %}
