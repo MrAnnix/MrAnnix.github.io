@@ -465,6 +465,11 @@ code,pre,tt {
     color: #fff!important
 }
 
+.post-tags .tags-list a:hover {
+    background-color: #af3d36;
+    color: #fff!important
+}
+
 @media screen and (max-width: 540px) {
     .blog-tags {
         padding-top:2rem
