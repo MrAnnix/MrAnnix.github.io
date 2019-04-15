@@ -430,11 +430,13 @@ code,pre,tt {
 }
 
 .post-tags .tags-title span {
-
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 .post-tags .tags-title span::after {
-
+    height: 1px;
+    width: 40px;
 }
 
 .post-tags .tags-list {
