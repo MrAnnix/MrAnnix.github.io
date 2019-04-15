@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Sample post."
+title: "Sample post"
 image: /images/blog/blog-bg-01.jpg
 description: "Another sample post"
 categories: [example, cat example]
