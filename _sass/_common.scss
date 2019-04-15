@@ -453,7 +453,16 @@ code,pre,tt {
 }
 
 .post-tags .tags-list a {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
     display: inline-block;
+    background-color: #cf5d56;
+    border-radius: 5px;
+    line-height: 28px;
+    padding: 0 10px 0 10px;
+    text-decoration: none;
+    margin-bottom: 8px;
+    color: #fff!important
 }
 
 @media screen and (max-width: 540px) {
