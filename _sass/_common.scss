@@ -455,15 +455,14 @@ code,pre,tt {
 .post-tags .tags-list a {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-    display: inline-block;
-    background-color: #cf5d56;
-    border: 1px solid #606060;
+    display: inline;
+    border: 1px solid #cf5d56;
     border-radius: 32px;
     line-height: 28px;
     padding: 0 10px 0 10px;
     text-decoration: none;
     margin-bottom: 8px;
-    color: #fff!important
+    color: #cf5d56
 }
 
 .post-tags .tags-list a:hover {
