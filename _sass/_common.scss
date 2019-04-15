@@ -430,14 +430,21 @@ code,pre,tt {
 }
 
 .post-tags .tags-title {
+    position: relative;
     text-transform: uppercase;
     font-family: bryant;
-
+    margin-right: .7rem;
+    padding-right: 40px
 }
 
 .post-tags .tags-title::after {
+    position: absolute;
+    content: "";
     height: 1px;
-    width: 40px;
+    width: 30px;
+    background-color: #606060;
+    top: 50%;
+    right: 0;
 }
 
 .post-tags .tags-list {
