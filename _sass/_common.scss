@@ -429,12 +429,12 @@ code,pre,tt {
     display: inline
 }
 
-.post-tags .tags-title span {
+.post-tags .tags-title {
     text-transform: uppercase;
     font-weight: 700;
 }
 
-.post-tags .tags-title span::after {
+.post-tags .tags-title::after {
     height: 1px;
     width: 40px;
 }
@@ -443,7 +443,7 @@ code,pre,tt {
 
 }
 
-.post-tags .tags-list span {
+.post-tags .tags-list {
 
 }
 
