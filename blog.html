@@ -9,7 +9,7 @@ layout: default
         {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
 
         {% if forloop.first %}
-    <h2 class="blog-year">{{ this_year }}</h2>
+    <!-- <h2 class="blog-year">{{ this_year }}</h2> -->
         {% endif %}
 
     <a href="{{ post.url | prepend: site.baseurl }}" class="post-row">
@@ -34,6 +34,6 @@ layout: default
     <h2 class="blog-year">{{ next_year }}</h2>
             {% endif %}
         {% endunless %}
-        
+
     {% endfor %}
 </section>
