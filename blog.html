@@ -9,7 +9,6 @@ layout: default
         {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
 
         {% if forloop.first %}
-    <div class="post-year">
     <h2 class="blog-year">{{ this_year }}</h2>
         {% endif %}
 
@@ -30,13 +29,11 @@ layout: default
         </div>
     </a>
 
-        {% if forloop.last %}
-    </div>
-        {% else %}
+        {% unless forloop.last %}
             {% if this_year != next_year %}
     <h2 class="blog-year">{{ next_year }}</h2>
             {% endif %}
-        {% endif %}
-
+        {% endunless %}
+        
     {% endfor %}
 </section>
