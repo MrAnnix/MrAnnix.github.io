@@ -11,7 +11,7 @@ layout: null
     <link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self"/>
     <link href="{{ site.baseurl | prepend: site.url }}"/>
     <id>{{ site.baseurl | prepend: site.url }}</id>
-    <updated>{{ site.time | date_to_rfc3339 }}</updated>
+    <updated>{{ site.time | date_to_xmlschema }}</updated>
     <generator>Jekyll v{{ jekyll.version }}</generator>
     <icon>{{ site.favicon | prepend: site.baseurl | prepend: site.url }}</icon>
     {% for post in site.posts limit:10 %}
@@ -20,7 +20,7 @@ layout: null
         <title>{{ post.title | xml_escape }}</title>
         <link href="{{ post.url | prepend: site.baseurl | prepend: site.url }}"/>
         <id>{{ post.url | prepend: site.baseurl | prepend: site.url }}</id>
-        <updated>{{ post.date | date_to_rfc3339 }}</updated>
+        <updated>{{ post.date | | date_to_xmlschema }}</updated>
         <summary>{{ post.excerpt | strip_html | xml_escape }}</summary>
         {% for category in post.categories %}{% if category != 'blog' %}
         <category term="{{ category | xml_escape }}"/>
