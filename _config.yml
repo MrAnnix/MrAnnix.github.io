@@ -16,7 +16,7 @@ topbar: "<b>Raul San Martin Aniceto</b> / MrAnnix"
 # Markdown
 markdown: kramdown
 mathjax: true
-#highlighter: rouge
+highlighter: rouge
 
 # Plugins
 plugins:
