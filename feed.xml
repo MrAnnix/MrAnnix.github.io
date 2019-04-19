@@ -8,17 +8,17 @@ layout: null
     <author>
         <name>{{ site.author }}</name>
     </author>
-    <link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self"/>
-    <link href="{{ site.baseurl | prepend: site.url }}"/>
+    <link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/atom+xml"/>
+    <link href="{{ site.baseurl | prepend: site.url }}" rel="alternate" type="text/html" hreflang="{{ site.lang }}"/>
     <id>{{ site.baseurl | prepend: site.url }}</id>
     <updated>{{ site.time | date_to_xmlschema }}</updated>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
+    <generator uri="https://jekyllrb.com/" version="{{ jekyll.version }}">Jekyll</generator>
     <icon>{{ site.favicon | prepend: site.baseurl | prepend: site.url }}</icon>
     {% for post in site.posts limit:10 %}
     {% unless post.draft %}
     <entry>
         <title>{{ post.title | xml_escape }}</title>
-        <link href="{{ post.url | prepend: site.baseurl | prepend: site.url }}"/>
+        <link href="{{ post.url | absolute_url }}" rel="alternate" type="text/html" title="{{ post.title | xml_escape }}" />
         <id>{{ post.url | prepend: site.baseurl | prepend: site.url }}</id>
         <updated>{{ post.date | | date_to_xmlschema }}</updated>
         <summary>{{ post.excerpt | strip_html | xml_escape }}</summary>
