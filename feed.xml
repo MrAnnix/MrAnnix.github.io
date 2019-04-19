@@ -2,7 +2,7 @@
 layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:lang="{{ site.lang }}">
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ site.lang }}">
     <title>{{ site.title | xml_escape }} - Articles</title>
     <subtitle>Latest entries in Blog {{ site.author }}’s Blog</subtitle>
     <author>
