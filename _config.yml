@@ -4,7 +4,7 @@ SEOtitle: "Raul San Martin · Student/Developer"
 description: "I am a Telecommunication Technologies Engineering student living in Madrid."
 url: "https://raulsanmartin.me"
 baseurl: ""
-language: en
+lang: en
 favicon: "/assets/images/favicon.png"
 logo: "/assets/images/logo.png"
 author: "Raúl San Martín Aniceto"
