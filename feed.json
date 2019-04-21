@@ -15,7 +15,7 @@ layout: null
     },
     "items": [{% for post in site.posts limit:10 %}{% unless post.draft %}
         {
-            "id": "{{ post.url | absolute_url | sha1 }}",
+            "id": "{{ post.url | absolute_url | sha256 }}",
             "title": {{ post.title | jsonify }},
             "summary": {{ post.seo_description | jsonify }},
             "url": "{{ post.url | absolute_url }}",
@@ -26,3 +26,6 @@ layout: null
         }{% if forloop.last == false %},{% endif %}{% endunless %}{% endfor %}
     ]
 }
+
+{% assign my_secret_string = "ShopifyIsAwesome!" | sha256 %}
+My encoded string is: {{ my_secret_string }}
