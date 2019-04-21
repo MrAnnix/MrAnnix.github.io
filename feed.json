@@ -1,9 +1,6 @@
 ---
 layout: null
 ---
----
-layout: null
----
 {
     "version": "https://jsonfeed.org/version/1",
     "title": "{{ site.title | xml_escape }} - Articles",
