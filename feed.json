@@ -19,7 +19,7 @@ layout: null
             "title": {{ post.title | jsonify }},
             "summary": {{ post.description | jsonify }},
             "url": "{{ post.url | absolute_url }}",
-            "image": {{ post.image | absolute_url }},
+            "image": "{{ post.image | absolute_url }}",
             "tags": {{ post.categories | jsonify }},
             "date_published": "{{ post.date | date_to_xmlschema }}",
             "date_modified": "{{ post.last_modified_at | default: post.date | date_to_xmlschema }}",
