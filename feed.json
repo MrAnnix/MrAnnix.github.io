@@ -21,8 +21,8 @@ layout: null
             "url": "{{ post.url | absolute_url }}",
             "tags": {{ post.categories | jsonify }},
             "date_published": "{{ post.date | date_to_xmlschema }}",
-            "date_modified": "{{ post.last_modified_at | default: post.date | date_to_xmlschema }}"
-            "content_html": {{ post.content | strip_newlines | jsonify }},
+            "date_modified": "{{ post.last_modified_at | default: post.date | date_to_xmlschema }}",
+            "content_html": {{ post.content | strip_newlines | jsonify }}
         }{% if forloop.last == false %},{% endif %}{% endunless %}{% endfor %}
     ]
 }
