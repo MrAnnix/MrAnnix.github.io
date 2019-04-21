@@ -30,6 +30,7 @@ layout: null
         {% endfor %}
         {% if post.excerpt and post.excerpt != empty %}
         <summary type="html">{{ post.description | xml_escape }}</summary>
+        <content type="html">{{ post.content | strip_newlines | xml_escape }}</content>
         {% endif %}
     </entry>
     {% endunless %}
