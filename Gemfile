@@ -7,6 +7,7 @@ group :jekyll_plugins do
   gem 'jekyll-sitemap'
   gem 'jekyll-paginate'
   gem 'sassc'
+  gem 'jekyll-octopod'
 end
 
 group :jekyll_test do
