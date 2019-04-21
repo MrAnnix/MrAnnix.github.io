@@ -26,4 +26,3 @@ layout: null
         }{% if forloop.last == false %},{% endif %}{% endunless %}{% endfor %}
     ]
 }
-{{ "Octopod" | sha1 }}    => "8b20a59c"
