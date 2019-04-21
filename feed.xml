@@ -8,7 +8,7 @@ layout: null
     <author>
         <name>{{ site.author }}</name>
     </author>
-    <link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/atom+xml"/>
+    <link href="{{ "/feed.xml" | absolute_url }}" rel="self" type="application/atom+xml"/>
     <link href="{{ site.baseurl | prepend: site.url }}" rel="alternate" type="text/html" hreflang="{{ site.lang }}"/>
     <id>{{ page.url | absolute_url | xml_escape }}</id>
     <updated>{{ site.time | date_to_xmlschema }}</updated>
@@ -29,7 +29,7 @@ layout: null
         <category term="{{ tag | xml_escape }}" />
         {% endfor %}
         {% if post.excerpt and post.excerpt != empty %}
-        <summary type="html">{{ post.excerpt | strip_html | normalize_whitespace | xml_escape }}</summary>
+        <summary type="html">{{ post.description | xml_escape }}</summary>
         {% endif %}
     </entry>
     {% endunless %}

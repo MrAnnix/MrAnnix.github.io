@@ -5,6 +5,7 @@ description: "I am a Telecommunication Technologies Engineering student living i
 url: "https://raulsanmartin.me"
 baseurl: ""
 lang: en
+logo: "/assets/images/logo.png"
 favicon: "/assets/images/favicon.png"
 logo: "/assets/images/logo.png"
 author: "Raúl San Martín Aniceto"
