@@ -19,6 +19,11 @@ Paullum deliquit, ponderibus modulisque suis ratio utitur. Quam diu etiam furor 
 Quae vero auctorem tractata ab fiducia dicuntur. Magna pars studiorum, prodita quaerimus. Fictum, deserunt mollit anim laborum astutumque! Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Me non paenitet nullum festiviorem excogitasse ad hoc. Nec dubitamus multa iter quae et nos invenerat.
 Gallia est omnis divisa in partes tres, quarum. At nos hinc posthac, sitientis piros Afros. Tu quoque, Brute, fili mi, nihil timor populi, nihil! Non equidem invideo, miror magis posuere velit aliquet. Cum ceteris in veneratione tui montes, nascetur mus. Quo usque tandem abutere, Catilina, patientia nostra?
 
+#### MathJax equations
+
+\\( \tan(\theta_{\parallel}) = \frac{\lambda}{w} \\)
+\\( \tan(\theta_{\bot}) = \frac{\lambda}{l} \\)
+
 Gallia est omnis divisa in partes tres, quarum. Nihil hic munitissimus habendi senatus locus, nihil horum? Plura mihi bona sunt, inclinet, amari petere vellent. Cum sociis natoque penatibus et magnis dis parturient.
 Phasellus laoreet lorem vel dolor tempus vehicula. Curabitur blandit tempus ardua ridiculus sed magna. Morbi fringilla convallis sapien, id pulvinar odio volutpat.
 Contra legem facit qui id facit quod lex prohibet. Prima luce, cum quibus mons aliud consensu ab eo. Ullamco laboris nisi ut aliquid ex ea commodi consequat. Ambitioni dedisse scripsisse iudicaretur.
