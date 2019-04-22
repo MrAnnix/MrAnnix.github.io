@@ -3,6 +3,11 @@
     padding: 0 !important
 }
 
-.comment-box>a, .comment-box>button {
+button.btn.primary-button {
+    color: #ddd;
+    background-color: #c8463e;
+}
+
+.selected>button {
     color: #c8463e
 }
