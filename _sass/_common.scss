@@ -14,15 +14,9 @@
     font-weight: 700
 }
 
-.middotDivider {
-    display: block;
-    padding-right: .3em;
-    padding-left: .3em;
-    color: #bf8e82 !important;
-    font-size: 16px
-}
-
 .read-time {
+    margin-right: 2px;
+    float: right;
     text-transform: uppercase;
     font-family: moniker;
     font-size: 10pt;
