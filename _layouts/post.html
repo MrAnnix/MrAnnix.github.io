@@ -6,7 +6,7 @@ layout: default
 
 <article class="body post">
     <div class="post-heading">
-        <span class="blog-date">
+        <span class="blog-date read-time">
         {{ page.date | date: '%A,' }}
         {% assign d = page.date | date: "%-d"  %}
         {% case d %}
@@ -16,10 +16,8 @@ layout: default
         {% else %}{{ d }}th
         {% endcase %}
         {{ page.date | date: '%B, %Y' }}
-        </span>
-        <span class="middotDivider"></span>
-        <span class="read-time">
-            {% if words < 360 %}1 min{% else %}{{ words | divided_by:180 }} mins{% endif %} read
+        ·
+        {% if words < 360 %}1 min{% else %}{{ words | divided_by:180 }} mins{% endif %} read
         </span>
         <a href="{{ page.url | prepend: site.baseurl }}"><h1 class="title">{{ page.title }}</h1></a>
     </div>
