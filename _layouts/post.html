@@ -17,6 +17,7 @@ layout: default
         {% endcase %}
         {{ page.date | date: '%B, %Y' }}
         </span>
+        <span class="middotDivider"></span>
         <span class="read-time">
             {% if words < 360 %}1 min{% else %}{{ words | divided_by:180 }} mins{% endif %} read
         </span>
