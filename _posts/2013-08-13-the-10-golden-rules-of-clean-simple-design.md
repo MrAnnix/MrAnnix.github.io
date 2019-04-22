@@ -21,6 +21,8 @@ Gallia est omnis divisa in partes tres, quarum. At nos hinc posthac, sitientis p
 
 #### MathJax equations
 
+\\[ \frac{1}{n^{2}} \\]
+
 \\( \tan(\theta_{\parallel}) = \frac{\lambda}{w} \\)
 \\( \tan(\theta_{\bot}) = \frac{\lambda}{l} \\)
 
