@@ -14,6 +14,10 @@ permalink: /:categories/:title/
 # Top bar
 topbar: "<b>Raul San Martin Aniceto</b> / MrAnnix"
 
+# Liquid
+liquid:
+  error_mode: strict
+
 # Markdown
 markdown: kramdown
 mathjax: true
