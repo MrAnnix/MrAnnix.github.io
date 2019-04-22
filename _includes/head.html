@@ -12,8 +12,8 @@
     <meta property='og:type' {% if page %} content='article' {% else %} content="website" {% endif %}/>
 
     <!-- Feeds -->
-    <link rel="alternate" title="{{ site.title }} (ATOM feed)" type="application/atom+xml" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="alternate" title="{{ site.title }} (JSON feed)" type="application/json" href="{{ "/feed.json" | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" title="{{ site.title }} (ATOM feed)" type="application/atom+xml" href="{{ "/feed.xml" | absolute_url }}">
+    <link rel="alternate" title="{{ site.title }} (JSON feed)" type="application/json" href="{{ "/feed.json" | absolute_url }}">
 
     <!-- Google Site Verification -->
     {% if page.title == 'Home' and site.google-site-verification %}
