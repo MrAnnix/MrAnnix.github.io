@@ -5,6 +5,7 @@ image: /images/blog/blog-bg-03.jpg
 description: "Ambitioni dedisse scripsisse iudicaretur."
 categories: [Design]
 tags: [clean, writing, style, seo]
+mathjax: true
 ---
 
 Ambitioni dedisse scripsisse iudicaretur. Quam diu etiam furor iste tuus nos eludet? Praeterea iter est quasdam res quas ex communi. Prima luce, cum quibus mons aliud consensu ab eo. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
