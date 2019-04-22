@@ -20,7 +20,6 @@ liquid:
 
 # Markdown
 markdown: kramdown
-mathjax: true
 highlighter: rouge
 
 # Plugins
