@@ -21,10 +21,10 @@ Gallia est omnis divisa in partes tres, quarum. At nos hinc posthac, sitientis p
 
 #### MathJax equations
 
-\\[ \frac{1}{n^{2}} \\]
+Inline equation \\( \frac{1}{n^{2}} \\) example.
 
-\\( \tan(\theta_{\parallel}) = \frac{\lambda}{w} \\)
-\\( \tan(\theta_{\bot}) = \frac{\lambda}{l} \\)
+\\[ \tan(\theta_{\parallel}) = \frac{\lambda}{w} \\]
+\\[ \tan(\theta_{\bot}) = \frac{\lambda}{l} \\]
 
 Gallia est omnis divisa in partes tres, quarum. Nihil hic munitissimus habendi senatus locus, nihil horum? Plura mihi bona sunt, inclinet, amari petere vellent. Cum sociis natoque penatibus et magnis dis parturient.
 Phasellus laoreet lorem vel dolor tempus vehicula. Curabitur blandit tempus ardua ridiculus sed magna. Morbi fringilla convallis sapien, id pulvinar odio volutpat.
