@@ -25,15 +25,15 @@ Odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque co
 Dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue laboris in sit minim cupidatat ut dolor voluptate enim veniam consequat occaecat fugiat in adipisicing in amet Ut nulla nisi non ut enim aliqua laborum mollit quis nostrud sed sed.
 
 {% highlight css %}
-    code {
-        font-size: 1.4rem;
-        margin: 0 .2rem;
-        padding: .2rem .6rem;
-        white-space: nowrap;
-        background: #F1F1F1;
-        border: 1px solid #E1E1E1;
-        border-radius: 3px;
-    }
+code {
+    font-size: 1.4rem;
+    margin: 0 .2rem;
+    padding: .2rem .6rem;
+    white-space: nowrap;
+    background: #F1F1F1;
+    border: 1px solid #E1E1E1;
+    border-radius: 3px;
+}
 {% endhighlight %}
 
 Odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa.
