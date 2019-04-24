@@ -2,4 +2,4 @@
 # MrAnnix.github.io
 Personal web on Jekyll
 
-![Under construction](https://mrannix.github.io/assets/images/under-construction.png "Under construction")
+![Theme Snapshot](https://repository-images.githubusercontent.com/179872314/8f6d7480-6676-11e9-9abc-974e4357637b "Snapshot")
