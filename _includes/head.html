@@ -1,8 +1,12 @@
 <head>
+    <!-- Basic page needs -->
     <meta charset="utf-8">
     <title>{% if page.title == 'Home' %}{{ site.SEOtitle }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 110 }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta name="author" content="{{ site.author }}">
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src https:">
 
     <!-- Open Graph -->
     <meta property="og:title" content="{% if page.title == 'Home' %}{{ site.SEOtitle }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}">
@@ -15,8 +19,8 @@
     <link rel="alternate" title="{{ site.title }} (ATOM feed)" type="application/atom+xml" href="{{ "/feed.xml" | absolute_url }}">
     <link rel="alternate" title="{{ site.title }} (JSON feed)" type="application/json" href="{{ "/feed.json" | absolute_url }}">
 
-    <!-- Google Site Verification -->
     {% if page.title == 'Home' and site.google-site-verification %}
+    <!-- Google Site Verification -->
     <meta name="google-site-verification" content="{{ site.google-site-verification }}">
     {% endif %}
 
