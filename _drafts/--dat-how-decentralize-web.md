@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "dat:// — How to decentralize your website?"
-description: "dat, a peer-to-peer protocol that will make the web more secure and efficient."
+description: "Decentralize your web with dat, a peer-to-peer protocol that will make the web more efficient and secure."
 date: 2019-04-02T18:20:00Z
 image: /assets/images/blog/2019-04-2-Hola-mundo-como-montar-blog-Jekyll.jpg
 categories: Jekyll
