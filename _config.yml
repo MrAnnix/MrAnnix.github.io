@@ -1,5 +1,4 @@
 # Site settings
-theme: ''
 title: "Raul San Martin"
 SEOtitle: "Raul San Martin · Student/Developer"
 description: "I am a Telecommunication Technologies Engineering student living in Madrid."
@@ -11,6 +10,7 @@ favicon: "/assets/images/favicon.png"
 logo: "/assets/images/logo.png"
 author: "Raúl San Martín Aniceto"
 permalink: /:categories/:title/
+theme: ''
 
 # Top bar
 topbar: "<b>Raul San Martin Aniceto</b> / MrAnnix"
