@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "¡Hola Mundo! (o cómo monté este blog en Jekyll)"
+title:  "Hello World! (or how I build this site with Jekyll)"
 description: "Sobre cómo monté todo este sitio en GitHub Pages usando Jekyll."
 date: 2019-04-02T18:20:00Z
 image: /assets/images/blog/2019-04-2-Hola-mundo-como-montar-blog-Jekyll.jpg
 categories: Jekyll
-tags: [Jekyll, SSG, Github Pages, blog, Sass, CoffeeScript, Liquid]
+tags: [Jekyll, SSG, Github Pages, blog, Sass, Liquid]
 ---
 
 Primero de todo aclarar que esto no es un presentacion, para eso ya está la sección Sobre Mí en la página principal, así como tampoco pretende ser un tutorial acerca de como montar un sitio con [Jekyll](https://jekyllrb.com/ "Página de inicio de Jekyll"). Más bien se trata de un post narrando un poco el proceso y que puede servir para inspirar a personas que quieran animarse a hacer algo parecido o incluso utilizar mi código como base.
