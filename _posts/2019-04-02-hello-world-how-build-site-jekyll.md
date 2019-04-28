@@ -42,7 +42,7 @@ But the best is that it’s totally integrated with [GitHub Pages](https://pages
 
 ## How to start?
 
-First of all you have to create an `index.html` in the root of your site folder. Now is when the thing starts to get more interesting. Jekyll uses [Liquid](https://shopify.github.io/liquid/ "Liquid"), a templating language writen also in Ruby.
+First of all you have to create an `index.html` and a `_config.yml` files in the root of your site folder. Now is when the thing starts to get more interesting. Jekyll uses [Liquid](https://shopify.github.io/liquid/ "Liquid"), a templating language writen also in Ruby.
 
 ### Liquid
 
@@ -63,59 +63,28 @@ Liquid has three main parts: objects, tags and filters. **Objects**, can have di
 
 The previous code is an example on how Liquid can generate the post preview for the homepage.
 
+### Plugins
+
+Probably, you want your blog to do more things, for example: generate pages of labels and categories, a site map, a feed ...
+
+For this Jekyll has a myriad of plugins. However, if you want to use Github Pages, I don’t recommend trying to use more than just and necessary, since only a few are compatible. In the case of this template are used only `jekyll-sitemap` and `jekyll-paginate` generate the site map and distribute the blog entries on several pages respectively.
+
+For the rest of the functionalities I have used Liquid exclusively, specifically for the pages of categories and labels I followed [this tutorial](http://codinfox.github.io/dev/2015/03/06/use-tags-and-categories-in-your-jekyll-based-github-pages/ "Use Tags and Categories in your Jekyll based Github Pages without plugins - Codinfox").
+
 ### Design
 
-Ya tenía un diseño simple pero funcional en la web (gracias a [Benjamin Sago](https://bsago.me/ "Web de Benjamin Sago")) desde el que trabajar. Sin embargo quería algo más vistoso sobre lo que trabajar. Fue así como encontré el diseño actual.
+This design was originally conceived by [Benjamin Sago](https://bsago.me/ "Web de Benjamin Sago") but has been ported to Jekyll by me. I have added more functionalities and changed some styles how I liked it.
 
-Dicho diseño ha sido concebido originalmente por [Styleshout](https://www.styleshout.com/free-templates/hola/ "Página de la plantilla de la web") pero ha sido portado a Jekyll por mí.
+Anyone is free to use my code for their website, for a friend, for a client or whatever they want. But you must know that I don’t allow to redistribute my code, and the credits at the bottom of the page must remain. In addition it would not hurt to send a cake to Benjamin.
 
-Cualquiera es libre de utilizar mi código para su web, la de un amigo, para un cliente o lo que quiera. Pero debéis saber que no permito redistribuir mi código y que los créditos a pie de página deben permanecer. Además se deben tener en cuenta las políticas de [Styleshout](https://www.styleshout.com/about-us/#remove-link "Licencia diseño") para sus diseños.
+Said that, to start using it is as simple as accessing [this repository](https://github.com/MrAnnix/MrAnnix.github.io "Webs repo") and downloading it.
 
-Dicho esto empezar a usarlo es tan simple como acceder a [éste repositorio](https://github.com/MrAnnix/MrAnnix.github.io "Repo de la web") y descargarlo.
+### Comments
 
-### Cómo empezar
+Most likely, blog’s owners want to add comments features in their blog entries. This requires code execution from server side. But Jekyll only generates static sites... What do we do? Be quiet, there are almost infinite solutions for this: Facebook Comments, Disqus or even self-managed options.
 
-Una vez que ya tenía una plantilla con un diseño de mi agrado, lo primero fue crear un fichero `_config.yml` en la raíz de la web, que almacenase la opciones de configuración del sitio y cómo Jekyll debía generarlo.
-
-Ese es el fichero que debéis editar si queréis utilizar esta o cualquier otra plantilla (incluso la plantilla por defecto de Jekyll).
-
-#### Liquid
-
-Una vez que ya estaba configurado lo básico, lo siguiente era hacer que se hiciera la magia. Para ello Jekyll utiliza [Liquid](https://shopify.github.io/liquid/ "Liquid"), un lenguaje para procesar plantillas escrito en Ruby, al igual que Jekyll, y con un gran potencial.
-
-    {% for post in site.posts limit:4 %}
-    <article class="col-block">
-        <div class="blog-date">
-            <a>{{ post.date | date: '%B %d, %Y' }}</a>
-        </div>    
-        <h2 class="h01"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        <p>{{ post.excerpt | strip_html | truncate: 360 }}</p>   
-        <div class="blog-cat">
-            {% for category in post.categories %}
-            <a href="{{ site.baseurl }}{{ site.category_page }}#{{ category | slugify }}">
-			    {{ category }}
-		    </a>
-            {% endfor %}
-        </div>    
-    </article>
-    {% endfor %}
-
-El fragmento de arriba pertenece a la porción de código que genera la previsualización de los posts para la página principal de la web. Como podréis apreciar, la parte de Liquid es muy intuitiva y fácil de programar.
-
-#### Plugins
-Seguramente, querréis que vuestro blog haga más cosas, por ejemplo: generar páginas de etiquetas y categorías, un mapa del sitio, un feed...
-
-Para ello Jekyll dispone de una miríada de plugins. Sin embargo, si queréis utilizar Github Pages, no os recomiendo intentar utilizar más de los justos y necesarios, ya que sólo unos pocos son compatibles. En el caso de esta plantilla solo se utilizan `jekyll-sitemap` y `jekyll-paginate` para generar el mapa del sitio y distribuir las entradas del blog en varias páginas respectivamente.
-
-Para el resto de las funcionalidades he utilizado Liquid exclusivamente, en concreto para las páginas de categorías y etiquetas he seguido [este tutorial](http://codinfox.github.io/dev/2015/03/06/use-tags-and-categories-in-your-jekyll-based-github-pages/ "Use Tags and Categories in your Jekyll based Github Pages without plugins - Codinfox").
-
-#### Comentarios
-
-Lo más probable es que los propietarios de un blog deseen añadir la función de comentarios en las entradas del mismo. Para ello es necesaria la ejecución de código por parte del servidor. Pero Jekyll solo genera sitios estáticos... ¿Qué hacemos? Tranquilos, existen infinidad de soluciones para ello. Desde Facebook Comments, Disqus o incluso opciones autogestionadas.
-
-Yo personalmente me decanté por [Commentbox](https://commentbox.io "No ads.  No Tracking.  Just Comments."), pero existen opciones geniales a tener en cuenta. Por ejemplo: [Commento](https://gitlab.com/commento/commento "A fast, bloat-free, privacy-focused commenting platform") (mi segundo candidato en la lista), [Remark42](https://remark42.com/ "self-hosted, lightweight, and simple commenting system"), [Just Comments](https://just-comments.com/ "Easy to set up, ad-free and fairly priced comment system") (no es gratis pero es bastante barato)...
+I personally choosed [Commentbox](https://commentbox.io "No ads.  No Tracking.  Just Comments."), but there are great options to consider. e.g: [Commento](https://gitlab.com/commento/commento "A fast, bloat-free, privacy-focused commenting platform") (my second candidate in the list), [Remark42](https://remark42.com/ "self-hosted, lightweight, and simple commenting system"), [Just Comments](https://just-comments.com/ "Easy to set up, ad-free and fairly priced comment system") (it’s not free but it’s quite cheap)...
 
 ___________________________________________________
 
-
-Espero haber animado a más de uno a crear su propio blog con Jekyll o a migrar el que ya tiene. Si de verdad queréis empezar, podéis hacerlo [aquí](https://jekyllrb.com/docs/step-by-step/01-setup/ "Guía paso a paso de Jekyll"). Jekyll tiene documentación a raudales y cuando esta no es suficiente, en Internet hay muchísimos tutoriales que explican como realizar la mayoría de las cosas que queráis hacer.
+And that’s all! I hope I have encouraged you to create your own blog with Jekyll or migrate the one you already have. If you really want to start, you can do it [here](https://jekyllrb.com/docs/step-by-step/01-setup/ "Guía paso a paso de Jekyll"). Jekyll has a lot of documentation and if it isn’t enough, on Internet there are hundreds of tutorials that explain how to do most of the things you want.
