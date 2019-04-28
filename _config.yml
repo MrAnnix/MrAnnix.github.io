@@ -22,7 +22,6 @@ liquid:
 
 # Markdown
 markdown: kramdown
-highlighter: rouge
 
 # Plugins
 plugins:
