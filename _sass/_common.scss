@@ -549,7 +549,7 @@ code,pre,tt {
 }
 
 .post .text h2 {
-    margin-top: 4rem;
+    margin-top: 2rem;
     text-transform: uppercase;
     font-family: moniker;
     font-size: 14pt;
@@ -558,12 +558,21 @@ code,pre,tt {
 }
 
 .post .text h3 {
-    margin-top: 3rem;
+    margin-top: 2rem;
     text-transform: uppercase;
     font-family: moniker;
     font-size: 11pt;
     font-family: bryant;
     font-size: 13pt
+}
+
+.post .text h4 {
+    margin-top: 2rem;
+    text-transform: uppercase;
+    font-family: moniker;
+    font-size: 9pt;
+    font-family: bryant;
+    font-size: 10pt
 }
 
 .post .text>code,.post .text>.scrolley-div>code {
