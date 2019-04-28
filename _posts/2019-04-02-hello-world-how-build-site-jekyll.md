@@ -75,16 +75,16 @@ For the rest of the functionalities I have used Liquid exclusively, specifically
 
 This design was originally conceived by [Benjamin Sago](https://bsago.me/ "Web de Benjamin Sago") but has been ported to Jekyll by me. I have added more functionalities and changed some styles how I liked it.
 
-Anyone is free to use my code for their website, for a friend, for a client or whatever they want. But you must know that I don’t allow to redistribute my code, and the credits at the bottom of the page must remain. In addition it would not hurt to send a cake to Benjamin.
+Anyone is free to use my code for their website, for a friend, for a client or whatever they want. But you must know that I don’t allow to redistribute my code, and the credits at the bottom of the page must remain. In addition, it would not hurt to send a cake to Benjamin.
 
-Said that, to start using it is as simple as accessing [this repository](https://github.com/MrAnnix/MrAnnix.github.io "Webs repo") and downloading it.
+Having said that, start using it, is as simple as accessing [this repository](https://github.com/MrAnnix/MrAnnix.github.io "Webs repo") and downloading it.
 
 ### Comments
 
-Most likely, blog’s owners want to add comments features in their blog entries. This requires code execution from server side. But Jekyll only generates static sites... What do we do? Be quiet, there are almost infinite solutions for this: Facebook Comments, Disqus or even self-managed options.
+Most likely, blog’s owners want to add comments features in their blog entries. This requires code execution from the server side. But Jekyll only generates static sites... What do we do? Be quiet, there are almost infinite solutions for this: Facebook Comments, Disqus or even self-managed options.
 
-I personally choosed [Commentbox](https://commentbox.io "No ads.  No Tracking.  Just Comments."), but there are great options to consider. e.g: [Commento](https://gitlab.com/commento/commento "A fast, bloat-free, privacy-focused commenting platform") (my second candidate in the list), [Remark42](https://remark42.com/ "self-hosted, lightweight, and simple commenting system"), [Just Comments](https://just-comments.com/ "Easy to set up, ad-free and fairly priced comment system") (it’s not free but it’s quite cheap)...
+I personally have chosen [Commentbox](https://commentbox.io "No ads.  No Tracking.  Just Comments."), but there are great options to consider. e.g: [Commento](https://gitlab.com/commento/commento "A fast, bloat-free, privacy-focused commenting platform") (my second candidate in the list), [Remark42](https://remark42.com/ "self-hosted, lightweight, and simple commenting system"), [Just Comments](https://just-comments.com/ "Easy to set up, ad-free and fairly priced comment system") (it’s not free but it’s quite cheap)...
 
 ___________________________________________________
 
-And that’s all! I hope I have encouraged you to create your own blog with Jekyll or migrate the one you already have. If you really want to start, you can do it [here](https://jekyllrb.com/docs/step-by-step/01-setup/ "Guía paso a paso de Jekyll"). Jekyll has a lot of documentation and if it isn’t enough, on Internet there are hundreds of tutorials that explain how to do most of the things you want.
+And that’s all! I hope I have encouraged you to create your own blog with Jekyll or migrate the one you already have. If you really want to start, you can do it [here](https://jekyllrb.com/docs/step-by-step/01-setup/ "Guía paso a paso de Jekyll"). Jekyll has a lot of documentation and if it isn’t enough, on the Internet there are hundreds of tutorials that explain how to do most of the things you want.
