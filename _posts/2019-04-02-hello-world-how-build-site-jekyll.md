@@ -49,12 +49,14 @@ First of all you have to create an `index.html` in the root of your site folder.
 Liquid has three main parts: objects, tags and filters. **Objects**, can have different types and tell Liquid where to output content (like variables in other programming languages), **tags** create the logic and control flow for templates and finally **filters** change the output of a Liquid object (some kind of methods).
 
 {% highlight css %}
+{% raw %}
 <h2>Recent blog posts</h2>
 {% for post in site.posts limit:4 %}
     <a href="{{ post.url | prepend: site.baseurl }}"><h4 class=title>{{ post.title }}</h4></a>
     <p>{{ post.description }}</p>
 {% endfor %}
 <a href="{{ site.baseurl }}/blog" class=all>See all blog posts</a>
+{% endraw %}
 {% endhighlight %}
 
 The previous code is an example on how Liquid can generate the post preview for the homepage.
