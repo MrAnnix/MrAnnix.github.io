@@ -85,6 +85,6 @@ Most likely, blog’s owners want to add comments features in their blog entries
 
 I personally have chosen [Commentbox](https://commentbox.io "No ads.  No Tracking.  Just Comments."), but there are great options to consider. e.g: [Commento](https://gitlab.com/commento/commento "A fast, bloat-free, privacy-focused commenting platform") (my second candidate in the list), [Remark42](https://remark42.com/ "self-hosted, lightweight, and simple commenting system"), [Just Comments](https://just-comments.com/ "Easy to set up, ad-free and fairly priced comment system") (it’s not free but it’s quite cheap)...
 
-___________________________________________________
+## And that’s all!
 
-And that’s all! I hope I have encouraged you to create your own blog with Jekyll or migrate the one you already have. If you really want to start, you can do it [here](https://jekyllrb.com/docs/step-by-step/01-setup/ "Guía paso a paso de Jekyll"). Jekyll has a lot of documentation and if it isn’t enough, on the Internet there are hundreds of tutorials that explain how to do most of the things you want.
+I hope I have encouraged you to create your own blog with Jekyll or migrate the one you already have. If you really want to start, you can do it [here](https://jekyllrb.com/docs/step-by-step/01-setup/ "Guía paso a paso de Jekyll"). Jekyll has a lot of documentation and if it isn’t enough, on the Internet there are hundreds of tutorials that explain how to do most of the things you want.
