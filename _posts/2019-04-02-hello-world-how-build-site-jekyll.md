@@ -8,6 +8,8 @@ categories: Jekyll
 tags: [Jekyll, SSG, CMS, Github Pages, blog, Sass, Liquid]
 ---
 
+![GeekMag]({{ page.image }} "How I built this site on GitHub Pages using Jekyll")
+
 First of all, clarify that this is not a presentation and a lot less a tutorial about how to set up a site with [Jekyll](https://jekyllrb.com/ "Jekyll's homepage"). Rather it’s a post narrating a bit the process that can serve to inspire people who want to encourage themselves to do something similar or even use my code as a basis.
 
 ## What the hell is Jekyll?
