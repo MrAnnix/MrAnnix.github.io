@@ -23,6 +23,9 @@ layout: default
     </div>
     <div class="row-cols">
         <div class="main text">
+            {% if page.image %}
+            <p><img src="{{ page.image }}" alt="{{ page.description }}" title="{{ page.title }}"></p>
+            {% endif %}
             {{ content }}
         </div>
         <p class="post-tags">
