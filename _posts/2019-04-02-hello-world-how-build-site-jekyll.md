@@ -52,7 +52,9 @@ Liquid has three main parts: objects, tags and filters. **Objects**, can have di
 {% raw %}
 <h2>Recent blog posts</h2>
 {% for post in site.posts limit:4 %}
-    <a href="{{ post.url | prepend: site.baseurl }}"><h4 class=title>{{ post.title }}</h4></a>
+    <a href="{{ post.url | prepend: site.baseurl }}">
+        <h4 class=title>{{ post.title }}</h4>
+    </a>
     <p>{{ post.description }}</p>
 {% endfor %}
 <a href="{{ site.baseurl }}/blog" class=all>See all blog posts</a>
