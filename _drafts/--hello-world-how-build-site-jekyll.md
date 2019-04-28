@@ -1,20 +1,20 @@
 ---
 layout: post
 title:  "Hello World! (or how I build this site with Jekyll)"
-description: "Sobre cómo monté todo este sitio en GitHub Pages usando Jekyll."
-date: 2019-04-02T18:20:00Z
-image: /assets/images/blog/2019-04-2-Hola-mundo-como-montar-blog-Jekyll.jpg
+description: "About how I built this site on GitHub Pages using Jekyll."
+date: 2019-04-28T18:20:00Z
+image: /assets/images/blog/hello-world-how-build-site-jekyll.jpg
 categories: Jekyll
 tags: [Jekyll, SSG, Github Pages, blog, Sass, Liquid]
 ---
 
-Primero de todo aclarar que esto no es un presentacion, para eso ya está la sección Sobre Mí en la página principal, así como tampoco pretende ser un tutorial acerca de como montar un sitio con [Jekyll](https://jekyllrb.com/ "Página de inicio de Jekyll"). Más bien se trata de un post narrando un poco el proceso y que puede servir para inspirar a personas que quieran animarse a hacer algo parecido o incluso utilizar mi código como base.
+First of all clarify that this is not a presentation and a lot less a tutorial about how to set up a site with [Jekyll](https://jekyllrb.com/ "Jekyll's homepage"). Rather it’s a post narrating a bit the process that can serve to inspire people who want to encourage themselves to do something similar or even use my code as a basis.
 
-### ¿Qué demonios es Jekyll?
+### What the hell is Jekyll?
 
-Así a *grosso modo*, es un generador de sitios web estáticos o SSG por ahorrar un poco de espacio, de código abierto y escrito en Ruby; de hecho su slogan es: *Transforma tu texto sin formato en sitios web y blogs estáticos*, es decir, puedes añadir contenido a tu web con la única ayuda de un editor de texto.
+In a rough way, it’s a static site generator (SSG for saving a bit of space). It is open source and written in Ruby. You can literally *transform your plain text into a nice website or blog*. Even you don’t have to know how to code. So you can generate your own content only with a text editor.
 
-Generadores de sitios web estáticos hay muchos: Hugo, Hexo, Gastby, Next... son [algunos](https://www.staticgen.com/ "Algunos generadores de sitios web estáticos") de los más conocidos.
+
 
 Estos generadores nos aportan muchísimas ventajas y en la mayoría de los casos ninguna limitación. A diferencia de los sistema de gestión de contenidos o CMS, podemos generar un sitio web completo solamente con HTML, CSS y puede que JavaScript, por lo que podremos alojarlo en prácticamente en cualquier sitio (incluso en una Raspberry Pi) y apenas consumiendo recursos. Teniendo en cuenta que la mayoría de los sitios de Internet necesitan poco más, a parte lo ya mencionado, Jekyll o cualquier otro SSG son una opción muy potente a tener en cuenta.
 
