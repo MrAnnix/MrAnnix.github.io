@@ -48,7 +48,7 @@ First of all, you have to create an `index.html` and a `_config.yml` files in th
 
 Liquid has three main parts: objects, tags, and filters. **Objects**, can have different types and tell Liquid where to output content (like variables in other programming languages), **tags** create the logic and control flow for templates and finally **filters** change the output of a Liquid object (some kind of methods).
 
-```html
+{% highlight html %}
 {% raw %}
 <h2>Recent blog posts</h2>
 {% for post in site.posts limit:4 %}
@@ -59,7 +59,7 @@ Liquid has three main parts: objects, tags, and filters. **Objects**, can have d
 {% endfor %}
 <a href="{{ site.baseurl }}/blog" class=all>See all blog posts</a>
 {% endraw %}
-```
+{% endhighlight %}
 
 The previous code is an example on how Liquid can generate the post preview for the homepage.
 
