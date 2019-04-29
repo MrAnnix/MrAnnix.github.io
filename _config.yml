@@ -8,6 +8,7 @@ lang: en
 logo: "/assets/images/logo.png"
 favicon: "/assets/images/favicon.png"
 logo: "/assets/images/logo.png"
+name_img: "/assets/images/RaulSanMartin.png"
 author: "Raúl San Martín Aniceto"
 permalink: /:categories/:title/
 theme: null # https://github.com/jekyll/jekyll/issues/7478#issuecomment-454346783

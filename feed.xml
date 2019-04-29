@@ -13,6 +13,7 @@ layout: null
     <id>{{ page.url | absolute_url | xml_escape }}</id>
     <updated>{{ site.time | date_to_xmlschema }}</updated>
     <generator uri="https://jekyllrb.com/" version="{{ jekyll.version }}">Jekyll</generator>
+    <logo>{{ site.name_img | prepend: site.baseurl | prepend: site.url }}</logo>
     <icon>{{ site.favicon | prepend: site.baseurl | prepend: site.url }}</icon>
     {% for post in site.posts limit:10 %}
     <entry>
