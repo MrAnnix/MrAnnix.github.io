@@ -39,6 +39,11 @@ audio:not([controls]) {
     height: 0
 }
 
+figcaption {
+    margin: 0.5rem 0;
+    font-size: 80%
+}
+
 progress {
     vertical-align: baseline
 }
