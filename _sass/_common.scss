@@ -634,8 +634,11 @@ code,pre,tt {
 
 .post .text img {
     display: block;
-    width: 100%;
-    margin: 0 auto
+    max-width: 100%;
+    margin: 0 auto;
+    border-style: none;
+    vertical-align: middle;
+    -ms-interpolation-mode: bicubic
 }
 
 .post .text blockquote {
