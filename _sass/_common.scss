@@ -533,6 +533,10 @@ code,pre,tt {
     display: block;
 }
 
+/* ==========================================================================
+   Post style
+   ========================================================================== */
+
 @charset "UTF-8";.post {
     padding-top: 3rem;
     padding-bottom: 2rem;
@@ -773,6 +777,10 @@ code,pre,tt {
     color: #999
 }
 
+/* ==========================================================================
+   Top bar
+   ========================================================================== */
+
 .top-bar {
     transition: background-position .3s;
     margin-top: 14px;
@@ -829,6 +837,10 @@ code,pre,tt {
     color: #c8463e;
     font-family: moniker
 }
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
 
 .footer {
     padding-left: 6px;
@@ -971,4 +983,65 @@ code,pre,tt {
 
 .footer a:hover {
     color: #747e86
+}
+
+/* ==========================================================================
+   Alignment
+   ========================================================================== */
+
+.align-baseline {
+  vertical-align: baseline !important;
+} /* Browser default */
+.align-top {
+  vertical-align: top !important;
+}
+.align-middle {
+  vertical-align: middle !important;
+}
+.align-bottom {
+  vertical-align: bottom !important;
+}
+.align-text-bottom {
+  vertical-align: text-bottom !important;
+}
+.align-text-top {
+  vertical-align: text-top !important;
+}
+
+/*
+   Image Alignment
+   ========================================================================== */
+
+.align-center,
+div.align-center,
+a img.align-center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+figure.align-center {
+  img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  figcaption {
+    text-align: center;
+  }
+}
+
+.align-right,
+a img.align-right {
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  float: right;
+}
+
+.align-left,
+a img.align-left {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  float: left;
 }
