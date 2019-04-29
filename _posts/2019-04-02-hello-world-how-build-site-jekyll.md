@@ -76,11 +76,6 @@ For the rest of the functionalities I have used Liquid exclusively, specifically
 
 This design was originally conceived by [Benjamin Sago](https://bsago.me/ "Web de Benjamin Sago") but has been ported to Jekyll by me. I have added more functionalities and changed some styles how I liked it.
 
-<figure class="align-center">
-  <a href="/"><img src="https://mmistakes.github.io/so-simple-theme/images/image-alignment-580x300.jpg" alt="test img"></a>
-  <figcaption>Look at 580 x 300 <a href="/">getting some</a> love.</figcaption>
-</figure>
-
 Anyone is free to use my code for their website, for a friend, for a client or whatever they want. But you must know that I don’t allow to redistribute my code, and the credits at the bottom of the page must remain. In addition, it would not hurt to send a cake to Benjamin.
 
 Having said that, start using it, is as simple as accessing [this repository](https://github.com/MrAnnix/MrAnnix.github.io "Webs repo") and downloading it.
