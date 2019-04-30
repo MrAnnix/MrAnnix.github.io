@@ -667,6 +667,16 @@ code,pre,tt {
     font-size: 13pt
 }
 
+.post .text blockquote footer {
+    font-size: 80%;
+    font-style: normal
+}
+
+.post .text blockquote footer::before {
+    padding-right: 0.25rem;
+    content: "\2014"
+}
+
 .post .text ul {
     color: #606060;
     list-style-type: square
