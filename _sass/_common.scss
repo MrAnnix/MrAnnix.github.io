@@ -559,29 +559,42 @@ code,pre,tt {
 
 .post .text h2 {
     margin-top: 2rem;
+    margin-bottom 0;
     text-transform: uppercase;
-    font-family: moniker;
-    font-size: 14pt;
     font-family: bryant;
     font-size: 16pt
 }
 
 .post .text h3 {
     margin-top: 2rem;
+    margin-bottom 0;
     text-transform: uppercase;
-    font-family: moniker;
-    font-size: 11pt;
     font-family: bryant;
     font-size: 13pt
 }
 
 .post .text h4 {
     margin-top: 2rem;
+    margin-bottom 0;
     text-transform: uppercase;
-    font-family: moniker;
-    font-size: 9pt;
+    font-family: bryant;
+    font-size: 11pt
+}
+
+.post .text h5 {
+    margin-top: 2rem;
+    margin-bottom 0;
+    text-transform: uppercase;
     font-family: bryant;
     font-size: 10pt
+}
+
+.post .text h6 {
+    margin-top: 2rem;
+    margin-bottom 0;
+    text-transform: uppercase;
+    font-family: bryant;
+    font-size: 9pt
 }
 
 .post .text>code,.post .text>.scrolley-div>code {
