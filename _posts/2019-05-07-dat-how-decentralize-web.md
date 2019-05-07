@@ -2,7 +2,7 @@
 layout: post
 title:  "dat:// — How to decentralize your website?"
 description: "Decentralize your website with dat, a P2P protocol that will make the Web more efficient and secure."
-last_modified_at: 2019-05-07T23:16:13Z
+last_modified_at: 2019-05-07T23:38:26Z
 image: "/assets/images/blog/dat-how-decentralize-web.jpg"
 categories: Web
 tags: [dat, P2P, DWeb, Hashbase, Beaker]
@@ -38,4 +38,4 @@ Once you’re happy with your site, **you probably want it up even if your compu
 
 Fortunately, there’s a more easy way: [Hashbase](https://hashbase.io "Hashbase"), public peer for files published with the Dat protocol. It’ll behave as a seeder of your files keeping them always online.
 
-And that’s all. If you wanna visit the Dat version of this web, you can find it here 👉 [dat://raulsanmartin.me](dat://raulsanmartin.me '"datized" version of this web')
+And that’s all. If you wanna visit the Dat version of this web, you can find it at [dat://raulsanmartin.me](dat://raulsanmartin.me '"datized" version of this web')
