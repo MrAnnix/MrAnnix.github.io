@@ -5,7 +5,7 @@ description: "Decentralize your website with dat, a peer-to-peer protocol that w
 date: 2019-05-07T21:57:00Z
 last_modified_at: 2019-05-07T21:57:00Z
 image: /assets/images/blog/dat-how-decentralize-web.jpg
-categories: Web
+categories: DWeb
 tags: [dat, P2P, DWeb, Hashbase, Beaker]
 ---
 
