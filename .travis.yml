@@ -2,7 +2,7 @@ language: ruby
 script:
   - bundle exec jekyll build
   - bundle exec htmlproofer ./_site --only-4xx --check-favicon --check-html --check-opengraph
-  - ls ./_site
+  - ls -Ra | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
