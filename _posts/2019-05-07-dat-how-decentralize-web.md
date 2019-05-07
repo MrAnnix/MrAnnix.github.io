@@ -2,7 +2,6 @@
 layout: post
 title:  "dat:// — How to decentralize your website?"
 description: "Decentralize your website with dat, a P2P protocol that will make the Web more efficient and secure."
-date: 2019-05-07T21:57:00Z
 last_modified_at: 2019-05-07T23:16:13Z
 image: "/assets/images/blog/dat-how-decentralize-web.jpg"
 categories: Web
