@@ -19,13 +19,10 @@ As I’ve said Dat is a new p2p protocol to transfer hypermedia, as HTTP. It’s
 
 Here’s an example of what a Dat URL is like:
 
-<svg class="daturl" width="1052" height="64" style="background-color: #eee; padding: 10px">
-<text class="code" x="0" y="18"><tspan>dat://</tspan><tspan fill="#bf8e82">8248f8d6e394ebed25bb24f0434f52c0ce5fa8cf85dc5e3eed13f3bc479d155d</tspan><tspan>/index.html</tspan></text>
-<path stroke="#93a0b6" strokewidth="1" fill="none" d="M0.5,24 v4.5 h60 v-4.5 m0,4.5 h640 v-4.5 m0,4.5 h140 v-4.5"></path>
-<text y="44" text-anchor="middle"><tspan x="30">protocol</tspan><tspan x="30" dy="1.2em">identifier</tspan></text>
-<text y="44" text-anchor="middle"><tspan x="380">ed25519 public key</tspan><tspan x="380" dy="1.2em">(hexadecimal)</tspan></text>
-<text y="44" text-anchor="middle"><tspan x="770">optional suffix</tspan><tspan x="770" dy="1.2em">path to data within Dat</tspan></text>
-</svg>
+<figure class="align-center">
+  <img src="{{ '/assets/images/blog/dat-how-decentralize-web_dat-url.png' | absolute_url }}" alt="Dat URL example">
+  <figcaption>Dat URL example.</figcaption>
+</figure>
 
 The [ed25519](https://ed25519.cr.yp.to/ "ed25519: High-speed high-security signatures") public key unique to this Dat, used by the author to create and update data within it. The public key enables you to discover other peers who have the data and is also verify that the data was not corrupted or tampered with as it passed through the network.
 
