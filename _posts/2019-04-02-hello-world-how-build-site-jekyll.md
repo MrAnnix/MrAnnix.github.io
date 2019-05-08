@@ -2,7 +2,7 @@
 layout: post
 title:  "Hello World! (or how I build this site with Jekyll)"
 description: "About how I built this site on GitHub Pages using Jekyll."
-last_modified_at: 2019-04-29T11:50:00Z
+last_modified_at: 2019-04-29 11:50 +0200
 image: /assets/images/blog/hello-world-how-build-site-jekyll.jpg
 categories: Jekyll
 tags: [Jekyll, SSG, CMS, Github Pages, blog, Sass, Liquid]
