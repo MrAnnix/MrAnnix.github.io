@@ -2,7 +2,7 @@
 layout: post
 title:  "dat:// — How to decentralize your website?"
 description: "Decentralize your website with dat, a P2P protocol that will make the Web more efficient and secure."
-last_modified_at: 2019-05-07 23:38 +0200
+last_modified_at: 2019-05-07 18:09 +0200
 image: "/assets/images/blog/dat-how-decentralize-web.jpg"
 categories: Web
 tags: [dat, P2P, DWeb, Hashbase, Beaker]
@@ -20,10 +20,10 @@ Here’s an example of what a Dat URL is like:
 
 <figure class="align-center">
   <img src="{{ '/assets/images/blog/dat-how-decentralize-web_dat-url.svg' | absolute_url }}" alt="Dat URL example">
-  <figcaption>Dat URL example.</figcaption>
+  <figcaption>This site Dat URL as an example.</figcaption>
 </figure>
 
-The [ed25519](https://ed25519.cr.yp.to/ "ed25519: High-speed high-security signatures") public key unique to this Dat, used by the author to create and update data within it. The public key enables you to discover other peers who have the data and is also verify that the data was not corrupted or tampered with as it passed through the network.
+The [ed25519](https://ed25519.cr.yp.to/ "ed25519: High-speed high-security signatures") public key unique to this Dat. It’s used by me to create and update data within it. The public key allows you to discover other peers who have the data and is also verify that the data was not corrupted or tampered with as it passed through the network.
 
 ## Last-gen Web (Beaker browser)
 
