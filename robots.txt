@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /.well-known/
+
+Sitemap: https://raulsanmartin.me/sitemap.xml
