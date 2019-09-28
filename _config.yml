@@ -16,7 +16,7 @@ timezone: Europe/Madrid
 include: [".well-known"] # dat:// protocol support
 
 # Top bar
-topbar: "<b>Raul San Martin Aniceto</b> / MrAnnix"
+topbar: "<b>Raul San Martin</b> / MrAnnix"
 
 # Liquid
 liquid:
