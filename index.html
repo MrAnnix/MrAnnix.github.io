@@ -12,14 +12,19 @@ layout: default
         </div>
         <div class=sites-list>
             <ul>
+                {% for social in site.social %}
+                <li class={{ social.title }}>
+                    <a href="{{ social.link }}" title="{{ social.alt }}"> {{ social.description }}
+                </li>
+                {% endfor %}
                 <li class=e-mail>
                     <a href="{{ site.baseurl }}/contact"><b><tt>hello@[this domain]</tt></b> for e-mail</a>
                 </li>
                 <li class=github>
-                    <a href={{ site.social.github.link }} title="MrAnnix on GitHub"><strong>MrAnnix</strong> on GitHub</a>
+                    <a href="{{ site.social.github.link }}" title="MrAnnix on GitHub"><strong>MrAnnix</strong> on GitHub</a>
                 </li>
                 <li class=linkedin>
-                    <a href={{ site.social.linkedin.link }} title="Raul San Martin on Linkedin"><strong>Raul San Martin</strong> on Linkedin</a>
+                    <a href="{{ site.social.linkedin.link }}" title="Raul San Martin on Linkedin"><strong>Raul San Martin</strong> on Linkedin</a>
                 </li>
             </ul>
         </div>

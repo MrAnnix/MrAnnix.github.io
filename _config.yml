@@ -51,12 +51,14 @@ email: hello@[this domain]
 
 social:
   - title: e-mail
-    description: "hello@[this domain] for e-mail"
+    description: "<b><tt>hello@[this domain]</tt></b> for e-mail</a>"
     link: "/contact"
+    alt: "Contact page"
   - title: github
     description: "MrAnnix on GitHub"
     link: "https://github.com/MrAnnix"
+    alt: "MrAnnix on GitHub"
   - title: linkedin
     description: "Raul San Martin on Linkedin"
     link: "https://www.linkedin.com/in/raul-san-martin-aniceto"
-  - title: twitter
+    alt: "MrAnnix on LindedIn"
