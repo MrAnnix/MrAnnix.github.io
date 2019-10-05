@@ -129,7 +129,14 @@
     padding: 4px 0
 }
 
-.sites-list>ul tt .sites-list>ul>.e-mail>.address {
+.sites-list>ul tt {
+    line-height: 1;
+    font-size: 11pt;
+    font-weight: 400
+}
+
+.sites-list>ul>.e-mail>.address {
+    font-family: iosevka term;
     line-height: 1;
     font-size: 11pt;
     font-weight: 400
