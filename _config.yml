@@ -51,7 +51,7 @@ email: hello@[this domain]
 
 social:
   - title: e-mail
-    description: '<span class="address"><b>hello@[this domain]</b></span> for e-mail'
+    description: '<b><span class="address">hello@[this domain]</span></b> for e-mail'
     link: "/contact"
     alt: "Contact page"
   - title: github
