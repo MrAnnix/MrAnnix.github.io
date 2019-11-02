@@ -19,7 +19,7 @@ As I’ve said Dat is a new p2p protocol to transfer hypermedia, like HTTP. It�
 Here’s an example of what a Dat URL is like:
 
 <figure class="align-center">
-  <img src="{{ '/assets/images/blog/dat-how-decentralize-web_dat-url.svg' | absolute_url }}" alt="Dat URL example">
+  <img src="{{ '/assets/images/blog/dat-how-decentralize-web_dat/url.svg' | absolute_url }}" alt="Dat URL example">
   <figcaption>This site Dat URL as an example.</figcaption>
 </figure>
 
