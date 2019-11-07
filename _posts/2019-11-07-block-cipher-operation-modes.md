@@ -51,7 +51,7 @@ If an error occurs during the transmission of the ciphertext, the message will o
 
 From here things get interesting, now we want the ciphertext to seem as random as possible.
 
-In the Cipher Block Chaining (CBC) mode of operation, an initialization vector \\( IV \\) is used. That vector will be x-ored with the plaintext, the result is encripted generating the ciphertext corresponding to that block and also used as *initialization vector* for the next block. Basically is encrypting the plaintext with a pseudo one-time pad and later encrypt it with the proper function offering a great security.
+In the Cipher Block Chaining (CBC) mode of operation, an initialization vector \\( IV \\) is used. That vector will be XORed with the plaintext, the result is encripted generating the ciphertext corresponding to that block and also used as *initialization vector* for the next block. Basically is encrypting the plaintext with a pseudo one-time pad and later encrypt it with the proper function. In this way, when chaining the encryption, the same blocks will be encrypted differently offering a great security.
 
 For encrypt: \\( C_0 = E(P_0 \oplus IV, k) \\); \\( C_{i} = E(P_i \oplus C_{i-1}, k) \\)
 
@@ -59,5 +59,19 @@ and for decrypt: \\( P_0 = D(C_0, k) \oplus IV \\); \\( P_{i} = E(C_i, k) \oplus
 
 As an scheme:
 
-![Cipher Block Chaining (CBC) mode of operation]({{ '/assets/images/blog/block-cipher-operation-modes/CBC_encryption.svg' | absolute_url }}){: .align-center}
-![Cipher Block Chaining (CBC) mode of operation]({{ '/assets/images/blog/block-cipher-operation-modes/CBC_decryption.svg' | absolute_url }}){: .align-center}
+![Cipher Block Chaining (CBC) mode of operation encrption]({{ '/assets/images/blog/block-cipher-operation-modes/CBC_encryption.svg' | absolute_url }}){: .align-center}
+![Cipher Block Chaining (CBC) mode of operation decrption]({{ '/assets/images/blog/block-cipher-operation-modes/CBC_decryption.svg' | absolute_url }}){: .align-center}
+
+If an error occurs during transmission (a single bit), the block corresponding to the error will be completely lost and there will be a minimum error in the next block.
+
+### PCBC mode of operation
+
+Propagating Cipher Block Chaining (PCBC) was designed to cause small changes in the ciphertext to propagate indefinitely when decrypting, each block of plaintext is XORed with both the previous plaintext block and the previous ciphertext block before being encrypted.
+
+So now \\( C_0 = E(P_0 \oplus IV, k) \\); \\( C_{i} = E(P_i \oplus P_{i-1} \oplus C_{i-1}, k) \\)
+
+\\( P_0 = D(C_0, k) \oplus IV \\); \\( P_{i} = E(C_i, k) \oplus P_{i-1} \oplus C_{i-1} \\)
+
+![Propagating Cipher Block Chaining (PCBC) mode of operation encrption]({{ '/assets/images/blog/block-cipher-operation-modes/PCBC_encryption.svg' | absolute_url }}){: .align-center}
+![Propagating Cipher Block Chaining (PCBC) mode of operation decrption]({{ '/assets/images/blog/block-cipher-operation-modes/PCBC_decryption.svg' | absolute_url }}){: .align-center}
+
