@@ -25,9 +25,18 @@ One way to encrypt information is to divide the problem into several parts. This
 However, proceeding block by block (ECB mode) is not always the best idea. When the blocks are equal, the result of the cipher will also be the same for all of them, that is a big problem in [very redundant messages](https://blog.filippo.io/the-ecb-penguin/ "The ECB penguin") (for example a photo with many equal pixels). Let’s see it with the blog’s favicon.
 
 <figure class="align-center">
-  ![Original image]({{ '/assets/images/blog/block-cipher-operation-modes/original.jpg' | absolute_url }}){: .align-center}
-  ![Encrypted using ECB mode]({{ '/assets/images/blog/block-cipher-operation-modes/ecb.jpg' | absolute_url }}){: .align-center}
-  ![Encrypted using CBC mode that results in pseudo-randomness]({{ '/assets/images/blog/block-cipher-operation-modes/cbc.jpg' | absolute_url }}){: .align-center}
+  <figure class="align-center">
+    <img src="{{ '/assets/images/blog/block-cipher-operation-modes/original.jpg' | absolute_url }}" alt="Original image">
+    <figcaption>Original image</figcaption>
+  </figure>
+  <figure class="align-center">
+    <img src="{{ '/assets/images/blog/block-cipher-operation-modes/ecb.jpg' | absolute_url }}" alt="ECB encripted image">
+    <figcaption>Encrypted using ECB mode</figcaption>
+  </figure>
+  <figure class="align-center">
+    <img src="{{ '/assets/images/blog/block-cipher-operation-modes/cbc.jpg' | absolute_url }}" alt="CBC encripted image">
+    <figcaption>Encrypted using CBC mode that results in pseudo-randomness</figcaption>
+  </figure>
   <figcaption>The reason why proceed block by block is not always the best idea.</figcaption>
 </figure>
 
