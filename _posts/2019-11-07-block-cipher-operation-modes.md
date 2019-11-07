@@ -18,7 +18,7 @@ We can classify all current cryptography into three large families based on the 
 
 Today’s topic focuses on a range of algorithms belonging to the first family, symmetric encryption, called block ciphers.
 
-> Divide and conquer
+> Divide et impera
 
 One way to encrypt information is to divide the problem into several parts. This is what block encryption algorithms do; they divide information into blocks of a set length and perform their magic on them. As the size of the information to be encrypted is not always a multiple of the block size, padding is added at the end of the message. In case it was a multiple of the block size, padding is added too. In this way, by deciphering and eliminating the padding, the original message is recovered.
 
@@ -26,19 +26,19 @@ However, proceeding block by block (ECB mode) is not always the best idea. When 
 
 <figure class="align-center">
   <ul>
-    <li>
+    <li style="display:inline;list-style-type:none">
       <figure class="align-center">
         <img src="{{ '/assets/images/blog/block-cipher-operation-modes/original.jpg' | absolute_url }}" alt="Original image">
         <figcaption>Original image</figcaption>
       </figure>
     </li>
-    <li>
+    <li style="display:inline;list-style-type:none">
       <figure class="align-center">
         <img src="{{ '/assets/images/blog/block-cipher-operation-modes/ecb.jpg' | absolute_url }}" alt="ECB encripted image">
         <figcaption>Encrypted using ECB mode</figcaption>
       </figure>
     </li>
-    <li>
+    <li style="display:inline;list-style-type:none">
       <figure class="align-center">
         <img src="{{ '/assets/images/blog/block-cipher-operation-modes/cbc.jpg' | absolute_url }}" alt="CBC encripted image">
         <figcaption>Encrypted using CBC mode that results in pseudo-randomness</figcaption>
