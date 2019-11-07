@@ -106,11 +106,11 @@ The Output Feedback (OFB) mode is equal as CFB mode but the result of encrypting
 
 ### CTR mode of operation
 
-Like in OFB mode, in Counter (CTR) mode we generate a one-time pad. But now we achieve it encrypting the value of a counter \\( CV_i \\) that is increased in each block. For security reasons the counter starts at a non-zero value. Obviously, errors are propagated as in OFB.
+Like in OFB mode, in Counter (CTR) mode we generate a one-time pad. But now we achieve it encrypting the value of a counter \\( V_i \\) that is increased in each block. For security reasons the counter starts at a non-zero value. Obviously, errors are propagated as in OFB.
 
-\\( C_i = E(CV_i, k) \oplus P_i \\)
+\\( C_i = E(V_i, k) \oplus P_i \\)
 
-\\( P_i = E(CV_i, k) \oplus C_i \\)
+\\( P_i = E(V_i, k) \oplus C_i \\)
 
 Better seen in an scheme:
 ![Counter (CTR) mode of operation encrption]({{ '/assets/images/blog/block-cipher-operation-modes/CTR_encryption.svg' | absolute_url }}){: .align-center}
