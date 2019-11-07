@@ -23,7 +23,7 @@ Today’s topic focuses on a range of algorithms belonging to the first family, 
 
 One way to encrypt information is to divide the problem into several parts. This is what block encryption algorithms do; they divide information into blocks of a set length and perform their magic on them. As the size of the information to be encrypted is not always a multiple of the block size, padding is added at the end of the message. In case it was a multiple of the block size, padding is added too. In this way, by deciphering and eliminating the padding, the original message is recovered.
 
-However, proceeding block by block (ECB mode) is not always the best idea. When the blocks are equal, the result of the cipher will also be the same for all of them, that is a big problem in [very redundant messages](https://blog.filippo.io/the-ecb-penguin/ "The ECB penguin") (for example a photo with many equal pixels). Let’s see it with the blog’s favicon.
+However, proceeding block by block (ECB mode) is not always the best idea. **When the blocks are equal, the result of the cipher will also be the same** for all of them, that is a big problem in [very redundant messages](https://blog.filippo.io/the-ecb-penguin/ "The ECB penguin") (for example a photo with many equal pixels). Let’s see it with the blog’s favicon.
 
 <figure class="align-center">
   <img src="{{ '/assets/images/blog/block-cipher-operation-modes/comparison.jpg' | absolute_url }}" alt="Comparison between modes">
@@ -45,7 +45,7 @@ In an easy and visual way:
 ![Electronic Code Book (ECB) mode encrption]({{ '/assets/images/blog/block-cipher-operation-modes/ECB_encryption.svg' | absolute_url }}){: .align-center}
 ![Electronic Code Book (ECB) mode decrption]({{ '/assets/images/blog/block-cipher-operation-modes/ECB_decryption.svg' | absolute_url }}){: .align-center}
 
-If an error occurs during the transmission of the ciphertext, the message will only be altered in a block.
+If an error occurs during the transmission of the ciphertext, the message will **only be altered in a block**.
 
 ### CBC mode of operation
 
@@ -62,11 +62,11 @@ As an scheme:
 ![Cipher Block Chaining (CBC) mode of operation encrption]({{ '/assets/images/blog/block-cipher-operation-modes/CBC_encryption.svg' | absolute_url }}){: .align-center}
 ![Cipher Block Chaining (CBC) mode of operation decrption]({{ '/assets/images/blog/block-cipher-operation-modes/CBC_decryption.svg' | absolute_url }}){: .align-center}
 
-If an error occurs during transmission (a single bit), the block corresponding to the error will be completely lost and there will be a minimum error in the next block.
+If an error occurs during transmission (a single bit), the block corresponding to the error will be **completely lost** and there will be a **minimum error** in the next block.
 
 ### PCBC mode of operation
 
-Propagating Cipher Block Chaining (PCBC) was designed to cause small changes in the ciphertext to propagate indefinitely when decrypting, each block of plaintext is XORed with both the previous plaintext block and the previous ciphertext block before being encrypted.
+Propagating Cipher Block Chaining (PCBC) was designed to cause **small changes in the ciphertext to propagate indefinitely when decrypting**, each block of plaintext is XORed with both the previous plaintext block and the previous ciphertext block before being encrypted.
 
 So now \\( C_0 = E(P_0 \oplus IV, k) \\); \\( C_{i} = E(P_i \oplus P_{i-1} \oplus C_{i-1}, k) \\)
 
@@ -75,3 +75,14 @@ So now \\( C_0 = E(P_0 \oplus IV, k) \\); \\( C_{i} = E(P_i \oplus P_{i-1} \oplu
 ![Propagating Cipher Block Chaining (PCBC) mode of operation encrption]({{ '/assets/images/blog/block-cipher-operation-modes/PCBC_encryption.svg' | absolute_url }}){: .align-center}
 ![Propagating Cipher Block Chaining (PCBC) mode of operation decrption]({{ '/assets/images/blog/block-cipher-operation-modes/PCBC_decryption.svg' | absolute_url }}){: .align-center}
 
+### CFB mode of operation
+
+In the Cipher Feedback (CFB) mode is also used an initialization vector \\( IV \\), but now the result of encrypt the initialization vector is XORed with the plaintext to generate the ciphertext block. Later, this result is used as *initialization vector* for the next block. This is full equivalent to encrypt the plaintext with an one-time pad.
+
+\\( C_0 = E(IV, k) \oplus P_0 \\); \\( C_{i} = E(C_{i-1}, k) \oplus P_{i} \\)
+
+\\( P_0 = E(IV, k) \oplus C_0 \\); \\( P_{i} = E(C_{i-1}, k) \oplus C_{i} \\)
+
+Better seen in a scheme:
+![Cipher Feedback (CFB) mode of operation encrption]({{ '/assets/images/blog/block-cipher-operation-modes/CFB_encryption.svg' | absolute_url }}){: .align-center}
+![Cipher Feedback (CFB) mode of operation decrption]({{ '/assets/images/blog/block-cipher-operation-modes/CFB_decryption.svg' | absolute_url }}){: .align-center}
