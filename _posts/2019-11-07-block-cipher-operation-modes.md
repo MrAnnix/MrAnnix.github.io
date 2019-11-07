@@ -34,7 +34,7 @@ For this reason the modes of operations appears.
 
 ### ECB mode of operation
 
-Electronic Code Book (ECB) is the simplest one. In fact, we have already explained it. Each message's block is encrypted separately and that provokes the problem above mentioned.
+[Electronic Code Book]("https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_Codebook_(ECB)") (ECB) is the simplest one. In fact, we have already explained it. Each message's block is encrypted separately and that provokes the problem above mentioned.
 
 If \\( E(\cdot) \\) is the cipher function for encrypt, \\( D(\cdot) \\) is the cipher function for decrypt, \\( P_i \\) and \\( C_i \\) are the i-th block of the plaintext and ciphertext respectively, and \\( k \\) is the key.
 
@@ -51,7 +51,7 @@ If an error occurs during the transmission of the ciphertext, the message will *
 
 From here things get interesting, now we want the ciphertext to seem as random as possible.
 
-In the Cipher Block Chaining (CBC) mode of operation, an initialization vector \\( IV \\) is used. That vector will be XORed with the plaintext, the result is encripted generating the ciphertext corresponding to that block and also used as *initialization vector* for the next block. Basically is encrypting the plaintext with a pseudo one-time pad and later encrypt it with the proper function. In this way, when chaining the encryption, the same blocks will be encrypted differently offering a great security.
+In the [Cipher Block Chaining]("https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Block_Chaining_(CBC)") (CBC) mode of operation, an initialization vector \\( IV \\) is used. That vector will be XORed with the plaintext, the result is encripted generating the ciphertext corresponding to that block and also used as *initialization vector* for the next block. Basically is encrypting the plaintext with a pseudo one-time pad and later encrypt it with the proper function. In this way, when chaining the encryption, the same blocks will be encrypted differently offering a great security.
 
 For encrypt: \\( C_0 = E(P_0 \oplus IV, k) \\); \\( C_{i} = E(P_i \oplus C_{i-1}, k) \\)
 
@@ -66,7 +66,7 @@ If an error occurs during transmission (a single bit), the block corresponding t
 
 ### PCBC mode of operation
 
-Propagating Cipher Block Chaining (PCBC) was designed to cause **small changes in the ciphertext to propagate indefinitely when decrypting**, each block of plaintext is XORed with both the previous plaintext block and the previous ciphertext block before being encrypted.
+[Propagating Cipher Block Chaining]("https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Propagating_Cipher_Block_Chaining_(PCBC)") (PCBC) was designed to cause **small changes in the ciphertext to propagate indefinitely when decrypting**, each block of plaintext is XORed with both the previous plaintext block and the previous ciphertext block before being encrypted.
 
 So now \\( C_0 = E(P_0 \oplus IV, k) \\); \\( C_{i} = E(P_i \oplus P_{i-1} \oplus C_{i-1}, k) \\)
 
@@ -77,7 +77,7 @@ So now \\( C_0 = E(P_0 \oplus IV, k) \\); \\( C_{i} = E(P_i \oplus P_{i-1} \oplu
 
 ### CFB mode of operation
 
-In the Cipher Feedback (CFB) mode is also used an initialization vector \\( IV \\), but now the result of encrypting the initialization vector is XORed with the plaintext to generate the ciphertext block. Later, this result is used as *initialization vector* for the next block. This is full equivalent to encrypt the plaintext with an one-time pad.
+In the [Cipher Feedback]("https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Feedback_(CFB)") (CFB) mode is also used an initialization vector \\( IV \\), but now the result of encrypting the initialization vector is XORed with the plaintext to generate the ciphertext block. Later, this result is used as *initialization vector* for the next block. This is full equivalent to encrypt the plaintext with an one-time pad.
 
 \\( C_0 = E(IV, k) \oplus P_0 \\); \\( C_{i} = E(C_{i-1}, k) \oplus P_{i} \\)
 
@@ -91,7 +91,7 @@ Then if an error occurs during the transmission, it will provoke a minimal error
 
 ### OFB mode of operation
 
-The Output Feedback (OFB) mode is equal as CFB mode but the result of encrypting the initialization vector is not XORed with the plaintext. With this small change, we achieve that if an error occurs during the transmission, it only will provoke a minimal error in the actual block without affecting the following ones.
+The [Output Feedback]("https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Output_Feedback_(OFB)") (OFB) mode is equal as CFB mode but the result of encrypting the initialization vector is not XORed with the plaintext. With this small change, we achieve that if an error occurs during the transmission, it only will provoke a minimal error in the actual block without affecting the following ones.
 
 \\( I_0 = IV \\);
 
@@ -106,7 +106,7 @@ The Output Feedback (OFB) mode is equal as CFB mode but the result of encrypting
 
 ### CTR mode of operation
 
-Like in OFB mode, in Counter (CTR) mode we generate a one-time pad. But now we achieve it encrypting the value of a counter \\( V_i \\) that is increased in each block. For security reasons the counter starts at a non-zero value. Obviously, errors are propagated as in OFB.
+Like in OFB mode, in [Counter]("https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_(CTR)") (CTR) mode we generate a one-time pad. But now we achieve it encrypting the value of a counter \\( V_i \\) that is increased in each block. For security reasons the counter starts at a non-zero value. Obviously, errors are propagated as in OFB.
 
 \\( C_i = E(V_i, k) \oplus P_i \\)
 
