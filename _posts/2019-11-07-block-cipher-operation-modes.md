@@ -115,3 +115,5 @@ Like in OFB mode, in [Counter](https://en.wikipedia.org/wiki/Block_cipher_mode_o
 Better seen in an scheme:
 ![Counter (CTR) mode of operation encrption]({{ '/assets/images/blog/block-cipher-operation-modes/CTR_encryption.svg' | absolute_url }}){: .align-center}
 ![Counter (CTR) mode of operation decrption]({{ '/assets/images/blog/block-cipher-operation-modes/CTR_decryption.svg' | absolute_url }}){: .align-center}
+
+As an honorable mention, we have the Galois Counter Mode (GCM), which is a special case of counter mode with differences. First, it starts at zero, and finally, it also calculates a *message authentication code* (MAC) that will be used to check that the ciphertext has not been altered in the transmission.  
