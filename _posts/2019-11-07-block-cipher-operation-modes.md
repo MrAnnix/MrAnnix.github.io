@@ -26,26 +26,26 @@ However, proceeding block by block (ECB mode) is not always the best idea. When 
 
 <figure class="align-center">
   <ul>
-    <li style="display:inline;list-style-type:none">
-      <figure class="align-center">
+    <li style="list-style-type:none">
+      <figure class="align-center" style="display:inline">
         <img src="{{ '/assets/images/blog/block-cipher-operation-modes/original.jpg' | absolute_url }}" alt="Original image">
         <figcaption>Original image</figcaption>
       </figure>
     </li>
-    <li style="display:inline;list-style-type:none">
-      <figure class="align-center">
+    <li style="list-style-type:none">
+      <figure class="align-center" style="display:inline">
         <img src="{{ '/assets/images/blog/block-cipher-operation-modes/ecb.jpg' | absolute_url }}" alt="ECB encripted image">
         <figcaption>Encrypted using ECB mode</figcaption>
       </figure>
     </li>
-    <li style="display:inline;list-style-type:none">
-      <figure class="align-center">
+    <li style="list-style-type:none">
+      <figure class="align-center" style="display:inline">
         <img src="{{ '/assets/images/blog/block-cipher-operation-modes/cbc.jpg' | absolute_url }}" alt="CBC encripted image">
-        <figcaption>Encrypted using CBC mode that results in pseudo-randomness</figcaption>
+        <figcaption>Encrypted using CBC mode</figcaption>
       </figure>
     </li>
   </ul>
-  <figcaption>The reason why proceed block by block is not always the best idea.</figcaption>
+  <figcaption>The reason why proceed block by block is not always the best idea. As seen, encrypt using CBC mode results in pseudo-randomness</figcaption>
 </figure>
 
 For this reason the modes of operations appears.
