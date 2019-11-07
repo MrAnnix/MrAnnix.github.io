@@ -36,7 +36,7 @@ For this reason the modes of operations appears.
 
 Electronic Code Book (ECB) is the simplest one. In fact, we have already explained it. Each message's block is encrypted separately and that provokes the problem above mentioned.
 
-If \\( E(\bullet) \\) is the cypher function for encrypt, \\( D(\bullet) \\) is the cypher function for decrypt, \\( P_i \\) and \\( C_i \\) are the i-th block of the plaintext and ciphertext respectively, and \\( k \\) is the key. Then: \\( C_i = E(P_i, k) \\) and \\( P_i = D(C_i, k) \\).
+If \\( E(\cdot) \\) is the cypher function for encrypt, \\( D(\cdot) \\) is the cypher function for decrypt, \\( P_i \\) and \\( C_i \\) are the i-th block of the plaintext and ciphertext respectively, and \\( k \\) is the key. Then: \\( C_i = E(P_i, k) \\) and \\( P_i = D(C_i, k) \\).
 
 In an easy and visual way:
 
