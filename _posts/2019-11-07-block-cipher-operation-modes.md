@@ -51,8 +51,12 @@ If an error occurs during the transmission of the ciphertext, the message will o
 
 From here things get interesting, now we want the ciphertext to seem as random as possible.
 
-In the cipher block chaining (CBC) mode of operation, an initialization vector \\( \textbf{IV} \\) is used. That vector will be x-ored with the plaintext, the result is encripted generating the ciphertext corresponding to that block and also used as *initialization vector* for the next block. Basically is encrypting the plaintext with a pseudo one-time pad and later encrypt it with the proper function offering a great security.
+In the Cipher Block Chaining (CBC) mode of operation, an initialization vector \\( IV \\) is used. That vector will be x-ored with the plaintext, the result is encripted generating the ciphertext corresponding to that block and also used as *initialization vector* for the next block. Basically is encrypting the plaintext with a pseudo one-time pad and later encrypt it with the proper function offering a great security.
 
-\\( C_0 = E(P_0 \oplus IV, k) \\); \\( C_{i} = E(P_i \oplus P_{i-1}, k) \\)
+\\( C_0 = E(P_0 \oplus IV, k) \\); \\( C_{i} = E(P_i \oplus C_{i-1}, k) \\)
+\\( P_0 = D(C_0, k) \oplus IV \\); \\( P_{i} = E(C_i, k) \oplus P_{i-1}\\)
 
-and \\( \textbf{P_i} = D(\textbf{C_i}, \textbf{k}) \\).
+As an scheme:
+
+![Cipher Block Chaining (CBC) mode of operation]({{ '/assets/images/blog/block-cipher-operation-modes/CBC_encryption.svg' | absolute_url }}){: .align-center}
+![Cipher Block Chaining (CBC) mode of operation]({{ '/assets/images/blog/block-cipher-operation-modes/CBC_decryption.svg' | absolute_url }}){: .align-center}
