@@ -36,11 +36,23 @@ For this reason the modes of operations appears.
 
 Electronic Code Book (ECB) is the simplest one. In fact, we have already explained it. Each message's block is encrypted separately and that provokes the problem above mentioned.
 
-If \\( E(\cdot) \\) is the cypher function for encrypt, \\( D(\cdot) \\) is the cypher function for decrypt, \\( P_i \\) and \\( C_i \\) are the i-th block of the plaintext and ciphertext respectively, and \\( k \\) is the key. Then: \\( C_i = E(P_i, k) \\) and \\( P_i = D(C_i, k) \\).
+If \\( E(\cdot) \\) is the cipher function for encrypt, \\( D(\cdot) \\) is the cipher function for decrypt, \\( \textbf{P_i} \\) and \\( \textbf{C_i} \\) are the i-th block of the plaintext and ciphertext respectively, and \\( \textbf{k} \\) is the key.
+
+Then: \\( \textbf{C_i} = E(\textbf{P_i}, \textbf{k}) \\) and \\( \textbf{P_i} = D(\textbf{C_i}, \textbf{k}) \\).
 
 In an easy and visual way:
 
 ![Electronic Code Book (ECB) mode encrption]({{ '/assets/images/blog/block-cipher-operation-modes/ECB_encryption.svg' | absolute_url }}){: .align-center}
 ![Electronic Code Book (ECB) mode decrption]({{ '/assets/images/blog/block-cipher-operation-modes/ECB_decryption.svg' | absolute_url }}){: .align-center}
 
+If an error occurs during the transmission of the ciphertext, the message will only be altered in a block.
 
+### CBC mode of operation
+
+From here things get interesting, now we want the ciphertext to seem as random as possible.
+
+In the cipher block chaining (CBC) mode of operation, an initialization vector \\( \textbf{IV} \\) is used. That vector will be x-ored with the plaintext, the result is encripted generating the ciphertext corresponding to that block and also used as *initialization vector* for the next block. Basically is encrypting the plaintext with a pseudo one-time pad and later encrypt it with the proper function offering a great security.
+
+\\( \textbf{C_0} = E(\textbf{P_0} \oplus \textbf{IV}, \textbf{k}) \\); \\( \textbf{C_i} = E(\textbf{P_i} \oplus \textbf{P_{i-1}}, \textbf{k}) \\)
+
+and \\( \textbf{P_i} = D(\textbf{C_i}, \textbf{k}) \\).
