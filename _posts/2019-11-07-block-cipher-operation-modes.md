@@ -87,11 +87,11 @@ Better seen in an scheme:
 ![Cipher Feedback (CFB) mode of operation encrption]({{ '/assets/images/blog/block-cipher-operation-modes/CFB_encryption.svg' | absolute_url }}){: .align-center}
 ![Cipher Feedback (CFB) mode of operation decrption]({{ '/assets/images/blog/block-cipher-operation-modes/CFB_decryption.svg' | absolute_url }}){: .align-center}
 
-Then if an error occurs during the transmission, it will provoke a minimal error in the actual block, but the complete loss of the next one.
+Then if an error occurs during the transmission, it will provoke a **minimal error in the actual block, but the complete loss of the next one**.
 
 ### OFB mode of operation
 
-The [Output Feedback](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Output_Feedback_(OFB)) (OFB) mode is equal as CFB mode but the result of encrypting the initialization vector is not XORed with the plaintext. With this small change, we achieve that if an error occurs during the transmission, it only will provoke a minimal error in the actual block without affecting the following ones.
+The [Output Feedback](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Output_Feedback_(OFB)) (OFB) mode is equal as CFB mode but the result of encrypting the initialization vector is not XORed with the plaintext. With this small change, we achieve that if an error occurs during the transmission, it **only will provoke a minimal error in the actual block** without affecting the following ones.
 
 \\( I_0 = IV \\);
 
@@ -106,7 +106,7 @@ The [Output Feedback](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operati
 
 ### CTR mode of operation
 
-Like in OFB mode, in [Counter](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_(CTR)) (CTR) mode we generate a one-time pad. But now we achieve it encrypting the value of a counter \\( V_i \\) that is increased in each block. For security reasons the counter starts at a non-zero value. Obviously, errors are propagated as in OFB.
+Like in OFB mode, in [Counter](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_(CTR)) (CTR) mode we generate a one-time pad. But now we achieve it encrypting the value of a counter \\( V_i \\) that is increased in each block. For security reasons the counter starts at a non-zero value. Obviously, **errors are propagated as in OFB**.
 
 \\( C_i = E(V_i, k) \oplus P_i \\)
 
