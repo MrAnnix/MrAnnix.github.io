@@ -77,7 +77,7 @@ So now \\( C_0 = E(P_0 \oplus IV, k) \\); \\( C_{i} = E(P_i \oplus P_{i-1} \oplu
 
 ### CFB mode of operation
 
-In the Cipher Feedback (CFB) mode is also used an initialization vector \\( IV \\), but now the result of encrypt the initialization vector is XORed with the plaintext to generate the ciphertext block. Later, this result is used as *initialization vector* for the next block. This is full equivalent to encrypt the plaintext with an one-time pad.
+In the Cipher Feedback (CFB) mode is also used an initialization vector \\( IV \\), but now the result of encrypting the initialization vector is XORed with the plaintext to generate the ciphertext block. Later, this result is used as *initialization vector* for the next block. This is full equivalent to encrypt the plaintext with an one-time pad.
 
 \\( C_0 = E(IV, k) \oplus P_0 \\); \\( C_{i} = E(C_{i-1}, k) \oplus P_{i} \\)
 
@@ -86,3 +86,24 @@ In the Cipher Feedback (CFB) mode is also used an initialization vector \\( IV \
 Better seen in an scheme:
 ![Cipher Feedback (CFB) mode of operation encrption]({{ '/assets/images/blog/block-cipher-operation-modes/CFB_encryption.svg' | absolute_url }}){: .align-center}
 ![Cipher Feedback (CFB) mode of operation decrption]({{ '/assets/images/blog/block-cipher-operation-modes/CFB_decryption.svg' | absolute_url }}){: .align-center}
+
+Then if an error occurs during the transmission, it will provoke a minimal error in the actual block, but the complete loss of the next one.
+
+### OFB mode of operation
+
+The Output Feedback (OFB) mode is equal as CFB mode but the result of encrypting the initialization vector is not XORed with the plaintext. With this small change, we achieve that if an error occurs during the transmission, it only will provoke a minimal error in the actual block without affecting the following ones.
+
+\\( I_0 = IV \\); \\( I_i = E(I_{i-1}, k) \\); \\( C_i = E(I_{i}, k) \oplus P_i \\); \\( P_i = E(I_{i}, k) \oplus C_i \\)
+
+![Output Feedback (OFB) mode of operation encrption]({{ '/assets/images/blog/block-cipher-operation-modes/OFB_encryption.svg' | absolute_url }}){: .align-center}
+![Output Feedback (OFB) mode of operation decrption]({{ '/assets/images/blog/block-cipher-operation-modes/OFB_decryption.svg' | absolute_url }}){: .align-center}
+
+### CTR mode of operation
+
+Like in OFB mode, in Counter (CTR) mode we generate a one-time pad. But now we achieve it encrypting the value of a counter \\( CV_i \\) that is increased in each block.
+
+\\( C_i = E(CV_i, k) \oplus P_i \\); \\( P_i = E(CV_i, k) \oplus C_i \\)
+
+Better seen in an scheme:
+![Counter (CTR) mode of operation encrption]({{ '/assets/images/blog/block-cipher-operation-modes/CTR_encryption.svg' | absolute_url }}){: .align-center}
+![Counter (CTR) mode of operation decrption]({{ '/assets/images/blog/block-cipher-operation-modes/CTR_decryption.svg' | absolute_url }}){: .align-center}
