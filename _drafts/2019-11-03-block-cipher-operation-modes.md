@@ -16,13 +16,13 @@ Precisely we will talk today about a set of these modern algorithms.
 
 We can classify all current cryptography into three large families based on the characteristics of their key. Symmetric encryption, where the key used to encrypt and decrypt is the same. Asymmetric, in which the key to encrypt is different from the one to decrypt (there are a pair of keys). And cryptography without a key, which forms the basis of the digital signature.
 
-Today's topic focuses on a range of algorithms belonging to the first family, symmetric encryption, called block ciphers.
+Today’s topic focuses on a range of algorithms belonging to the first family, symmetric encryption, called block ciphers.
 
 > Divide and conquer
 
 One way to encrypt information is to divide the problem into several parts. This is what block encryption algorithms do; they divide information into blocks of a set length and perform their magic on them. As the size of the information to be encrypted is not always a multiple of the block size, padding is added at the end of the message. In case it was a multiple of the block size, padding is added too. In this way, by deciphering and eliminating the padding, the original message is recovered.
 
-However, you may proceed block by block, not always the best. When the blocks are equal, the result of the cipher will also be the same for all of them, that is a big problem in [very redundant messages](https://blog.filippo.io/the-ecb-penguin/ "The ECB penguin") (for example a photo with many equal pixels).
+However, proceeding block by block (ECB mode) is not always the best idea. When the blocks are equal, the result of the cipher will also be the same for all of them, that is a big problem in [very redundant messages](https://blog.filippo.io/the-ecb-penguin/ "The ECB penguin") (for example a photo with many equal pixels). Let’s see it with the blog’s favicon.
 
 <figure class="align-center">
   <figure class="align-center">
@@ -30,13 +30,27 @@ However, you may proceed block by block, not always the best. When the blocks ar
     <figcaption>Original image</figcaption>
   </figure>
   <figure class="align-center">
-    <img src="{{ '/assets/images/blog/block-cipher-operation-modes/original.jpg' | absolute_url }}" alt="Original image">
+    <img src="{{ '/assets/images/blog/block-cipher-operation-modes/ecb.jpg' | absolute_url }}" alt="ECB encripted image">
     <figcaption>Encrypted using ECB mode</figcaption>
   </figure>
   <figure class="align-center">
-    <img src="{{ '/assets/images/blog/block-cipher-operation-modes/original.jpg' | absolute_url }}" alt="Original image">
+    <img src="{{ '/assets/images/blog/block-cipher-operation-modes/cbc.jpg' | absolute_url }}" alt="CBC encripted image">
     <figcaption>Encrypted using CBC mode that results in pseudo-randomness</figcaption>
   </figure>
-  <figcaption>The reason why proceed block by block is not always the best idea</figcaption>
+  <figcaption>The reason why proceed block by block is not always the best idea.</figcaption>
 </figure>
+
+For this reason the modes of operations appears.
+
+### ECB mode of operation
+
+Electronic Code Book (ECB) is the simplest one. In fact, we have already explained it. Each message's block is encrypted separately and that provokes the problem above mentioned.
+
+If \(E()\) is the cypher function for encrypt, \(D()\) is the cypher function for decrypt, \(P_i\) and \(C_i\) are the i-th block of the plaintext and ciphertext respectively, and \(k\) is the key. Then: \(C_i = E(P_i, k)\) and \(P_i = D(C_i, k)\).
+
+In an easy and visual way:
+
+![Electronic Code Book (ECB) mode encrption]({{ '/assets/images/blog/block-cipher-operation-modes/ecb_encrypt.jpg' | absolute_url }}){: .align-center}
+![Electronic Code Book (ECB) mode decrption]({{ '/assets/images/blog/block-cipher-operation-modes/ecb_decrypt.jpg' | absolute_url }}){: .align-center}
+
 
