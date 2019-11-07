@@ -93,7 +93,13 @@ Then if an error occurs during the transmission, it will provoke a minimal error
 
 The Output Feedback (OFB) mode is equal as CFB mode but the result of encrypting the initialization vector is not XORed with the plaintext. With this small change, we achieve that if an error occurs during the transmission, it only will provoke a minimal error in the actual block without affecting the following ones.
 
-\\( I_0 = IV \\); \\( I_i = E(I_{i-1}, k) \\); \\( C_i = E(I_{i}, k) \oplus P_i \\); \\( P_i = E(I_{i}, k) \oplus C_i \\)
+\\( I_0 = IV \\);
+
+\\( I_i = E(I_{i-1}, k) \\)
+
+\\( C_i = E(I_{i}, k) \oplus P_i \\)
+
+\\( P_i = E(I_{i}, k) \oplus C_i \\)
 
 ![Output Feedback (OFB) mode of operation encrption]({{ '/assets/images/blog/block-cipher-operation-modes/OFB_encryption.svg' | absolute_url }}){: .align-center}
 ![Output Feedback (OFB) mode of operation decrption]({{ '/assets/images/blog/block-cipher-operation-modes/OFB_decryption.svg' | absolute_url }}){: .align-center}
@@ -102,7 +108,9 @@ The Output Feedback (OFB) mode is equal as CFB mode but the result of encrypting
 
 Like in OFB mode, in Counter (CTR) mode we generate a one-time pad. But now we achieve it encrypting the value of a counter \\( CV_i \\) that is increased in each block. Obviously, errors are propagated as in OFB.
 
-\\( C_i = E(CV_i, k) \oplus P_i \\); \\( P_i = E(CV_i, k) \oplus C_i \\)
+\\( C_i = E(CV_i, k) \oplus P_i \\)
+
+\\( P_i = E(CV_i, k) \oplus C_i \\)
 
 Better seen in an scheme:
 ![Counter (CTR) mode of operation encrption]({{ '/assets/images/blog/block-cipher-operation-modes/CTR_encryption.svg' | absolute_url }}){: .align-center}
