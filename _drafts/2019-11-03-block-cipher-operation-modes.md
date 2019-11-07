@@ -25,20 +25,18 @@ One way to encrypt information is to divide the problem into several parts. This
 However, you may proceed block by block, not always the best. When the blocks are equal, the result of the cipher will also be the same for all of them, that is a big problem in [very redundant messages](https://blog.filippo.io/the-ecb-penguin/ "The ECB penguin") (for example a photo with many equal pixels).
 
 <figure class="align-center">
-  <div class="imgSet">
-    <div class="imgSingle" style="width:198px;max-width:198px">
-      <img src="{{ '/assets/images/blog/block-cipher-operation-modes/original.jpg' | absolute_url }}" alt="Original image">
-      <figcaption>This site Dat URL as an example.</figcaption>
-    </div>
-    <div class="imgSingle" style="width:198px;max-width:198px">
-      <img src="{{ '/assets/images/blog/block-cipher-operation-modes/original.jpg' | absolute_url }}" alt="Original image">
-      <figcaption>This site Dat URL as an example.</figcaption>
-    </div>
-    <div class="imgSingle" style="width:198px;max-width:198px">
-      <img src="{{ '/assets/images/blog/block-cipher-operation-modes/original.jpg' | absolute_url }}" alt="Original image">
-      <figcaption>This site Dat URL as an example.</figcaption>
-    </div>
-  </div>
-  <figcaption>This site Dat URL as an example.</figcaption>
+  <figure class="align-center">
+    <img src="{{ '/assets/images/blog/block-cipher-operation-modes/original.jpg' | absolute_url }}" alt="Original image">
+    <figcaption>Original image</figcaption>
+  </figure>
+  <figure class="align-center">
+    <img src="{{ '/assets/images/blog/block-cipher-operation-modes/original.jpg' | absolute_url }}" alt="Original image">
+    <figcaption>Encrypted using ECB mode</figcaption>
+  </figure>
+  <figure class="align-center">
+    <img src="{{ '/assets/images/blog/block-cipher-operation-modes/original.jpg' | absolute_url }}" alt="Original image">
+    <figcaption>Encrypted using CBC mode that results in pseudo-randomness</figcaption>
+  </figure>
+  <figcaption>The reason why proceed block by block is not always the best idea</figcaption>
 </figure>
 
