@@ -2,7 +2,7 @@
 layout: post
 title:  "Block ciphers and modes of operation"
 description: "A look at the modes of operation of block encryption algorithms and their resilience to errors."
-last_modified_at: 2019-11-03 13:45 +0100
+last_modified_at: 2019-11-07 19:34 +0200
 image: "/assets/images/blog/block-cipher-operation-modes.jpg"
 categories: Cryptography
 tags: [Cryptography, Block ciphers, Security, Modes of operation, DES, AES]
