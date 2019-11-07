@@ -53,6 +53,6 @@ From here things get interesting, now we want the ciphertext to seem as random a
 
 In the cipher block chaining (CBC) mode of operation, an initialization vector \\( \textbf{IV} \\) is used. That vector will be x-ored with the plaintext, the result is encripted generating the ciphertext corresponding to that block and also used as *initialization vector* for the next block. Basically is encrypting the plaintext with a pseudo one-time pad and later encrypt it with the proper function offering a great security.
 
-\\( \textbf{C_0} = E(\textbf{P_0} \oplus \textbf{IV}, \textbf{k}) \\); \\( \textbf{C_{i}} = E(\textbf{P_i} \oplus \textbf{P_{i-1}}, \textbf{k}) \\)
+\\( \textbf{C_0} = E(\textbf{P_0} \oplus \textbf{IV}, \textbf{k}) \\); \\( C_{i} = E(\textbf{P_i} \oplus \textbf{P_{i-1}}, \textbf{k}) \\)
 
 and \\( \textbf{P_i} = D(\textbf{C_i}, \textbf{k}) \\).
