@@ -83,6 +83,6 @@ In the Cipher Feedback (CFB) mode is also used an initialization vector \\( IV \
 
 \\( P_0 = E(IV, k) \oplus C_0 \\); \\( P_{i} = E(C_{i-1}, k) \oplus C_{i} \\)
 
-Better seen in a scheme:
+Better seen in an scheme:
 ![Cipher Feedback (CFB) mode of operation encrption]({{ '/assets/images/blog/block-cipher-operation-modes/CFB_encryption.svg' | absolute_url }}){: .align-center}
 ![Cipher Feedback (CFB) mode of operation decrption]({{ '/assets/images/blog/block-cipher-operation-modes/CFB_decryption.svg' | absolute_url }}){: .align-center}
