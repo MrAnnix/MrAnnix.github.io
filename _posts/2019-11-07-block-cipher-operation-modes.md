@@ -26,7 +26,7 @@ One way to encrypt information is to divide the problem into several parts. This
 However, proceeding block by block (ECB mode) is not always the best idea. When the blocks are equal, the result of the cipher will also be the same for all of them, that is a big problem in [very redundant messages](https://blog.filippo.io/the-ecb-penguin/ "The ECB penguin") (for example a photo with many equal pixels). Let’s see it with the blog’s favicon.
 
 <figure class="align-center">
-  <img src="{{ '/assets/images/blog/block-cipher-operation-modes/comparisin.jpg' | absolute_url }}" alt="Comparision between modes">
+  <img src="{{ '/assets/images/blog/block-cipher-operation-modes/comparison.jpg' | absolute_url }}" alt="Comparison between modes">
   <figcaption>The reason why proceed block by block is not always the best idea. As seen, encrypt using CBC mode results in pseudo-randomness</figcaption>
 </figure>
 
