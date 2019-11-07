@@ -6,6 +6,7 @@ last_modified_at: 2019-11-07 19:34 +0200
 image: "/assets/images/blog/block-cipher-operation-modes.jpg"
 categories: Cryptography
 tags: [Cryptography, Block ciphers, Security, Modes of operation, DES, AES]
+mathjax: true
 ---
 
 Since ancient times, man has been concerned that only the recipient of the message, and not an evil third party, can know the information it contains. From the ancient Hebrews who developed Atbash encryption, a primitive monoalphabetic substitution cipher, Spartans who used transposition cipher of the scytale, or even the Romans with the famous Caesar cipher; to current encryption much more complex and secure.
