@@ -36,9 +36,9 @@ For this reason the modes of operations appears.
 
 Electronic Code Book (ECB) is the simplest one. In fact, we have already explained it. Each message's block is encrypted separately and that provokes the problem above mentioned.
 
-If \\( E(\cdot) \\) is the cipher function for encrypt, \\( D(\cdot) \\) is the cipher function for decrypt, \\( \textbf{P_i} \\) and \\( \textbf{C_i} \\) are the i-th block of the plaintext and ciphertext respectively, and \\( \textbf{k} \\) is the key.
+If \\( E(\cdot) \\) is the cipher function for encrypt, \\( D(\cdot) \\) is the cipher function for decrypt, \\( P_i \\) and \\( C_i \\) are the i-th block of the plaintext and ciphertext respectively, and \\( k \\) is the key.
 
-Then: \\( \textbf{C_i} = E(\textbf{P_i}, \textbf{k}) \\) and \\( \textbf{P_i} = D(\textbf{C_i}, \textbf{k}) \\).
+Then: \\( C_i = E(P_i, k) \\) and \\( P_i = D(C_i, k) \\).
 
 In an easy and visual way:
 
@@ -53,6 +53,6 @@ From here things get interesting, now we want the ciphertext to seem as random a
 
 In the cipher block chaining (CBC) mode of operation, an initialization vector \\( \textbf{IV} \\) is used. That vector will be x-ored with the plaintext, the result is encripted generating the ciphertext corresponding to that block and also used as *initialization vector* for the next block. Basically is encrypting the plaintext with a pseudo one-time pad and later encrypt it with the proper function offering a great security.
 
-\\( \textbf{C_0} = E(\textbf{P_0} \oplus \textbf{IV}, \textbf{k}) \\); \\( C_{i} = E(\textbf{P_i} \oplus \textbf{P_{i-1}}, \textbf{k}) \\)
+\\( C_0 = E(P_0 \oplus IV, k) \\); \\( C_{i} = E(P_i \oplus P_{i-1}, k) \\)
 
 and \\( \textbf{P_i} = D(\textbf{C_i}, \textbf{k}) \\).
