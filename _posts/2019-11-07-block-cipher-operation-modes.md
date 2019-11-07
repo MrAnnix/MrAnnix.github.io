@@ -27,20 +27,20 @@ However, proceeding block by block (ECB mode) is not always the best idea. When 
 
 <figure class="align-center">
   <div><ul>
-    <li style="list-style-type:none">
-      <figure class="align-center" style="display:inline-block;width:198px;max-width:198px">
+    <li style="display:inline-block;list-style-type:none">
+      <figure class="align-center" style="width:198px;max-width:198px">
         <img src="{{ '/assets/images/blog/block-cipher-operation-modes/original.jpg' | absolute_url }}" alt="Original image">
         <figcaption>Original image</figcaption>
       </figure>
     </li>
-    <li style="list-style-type:none">
-      <figure class="align-center" style="display:inline-block;width:198px;max-width:198px">
+    <li style="display:inline-block;list-style-type:none">
+      <figure class="align-center" style="width:198px;max-width:198px">
         <img src="{{ '/assets/images/blog/block-cipher-operation-modes/ecb.jpg' | absolute_url }}" alt="ECB encripted image">
         <figcaption>Encrypted using ECB mode</figcaption>
       </figure>
     </li>
-    <li style="list-style-type:none">
-      <figure class="align-center" style="display:inline-block;width:198px;max-width:198px">
+    <li style="display:inline-block;list-style-type:none">
+      <figure class="align-center" style="width:198px;max-width:198px">
         <img src="{{ '/assets/images/blog/block-cipher-operation-modes/cbc.jpg' | absolute_url }}" alt="CBC encripted image">
         <figcaption>Encrypted using CBC mode</figcaption>
       </figure>
