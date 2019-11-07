@@ -20,32 +20,25 @@ Today's topic focuses on a range of algorithms belonging to the first family, sy
 
 > Divide and conquer
 
-One way to encrypt information is to divide the problem into several parts. This is what block encryption algorithms do; they divide information into fixed-size blocks and perform *their magic* on them.
+One way to encrypt information is to divide the problem into several parts. This is what block encryption algorithms do; they divide information into blocks of a set length and perform their magic on them. As the size of the information to be encrypted is not always a multiple of the block size, padding is added at the end of the message. In case it was a multiple of the block size, padding is added too. In this way, by deciphering and eliminating the padding, the original message is recovered.
 
-
-
-As I’ve said Dat is a new p2p protocol to transfer hypermedia, like HTTP. It’s **fast**, since the archives can be synced from multiple sources, and it can work even if the original uploader is offline. It’s **secure** because all updates of the files are signed and integrity-checked. And of course, it’s **decentralized**.
-
-Here’s an example of what a Dat URL is like:
+However, you may proceed block by block, not always the best. When the blocks are equal, the result of the cipher will also be the same for all of them, that is a big problem in [very redundant messages](https://blog.filippo.io/the-ecb-penguin/ "The ECB penguin") (for example a photo with many equal pixels).
 
 <figure class="align-center">
-  <img src="{{ '/assets/images/blog/dat-how-decentralize-web_dat-url.svg' | absolute_url }}" alt="Dat URL example">
+  <div class="imgSet">
+    <div class="imgSingle" style="width:198px;max-width:198px">
+      <img src="{{ '/assets/images/blog/block-cipher-operation-modes/original.jpg' | absolute_url }}" alt="Original image">
+      <figcaption>This site Dat URL as an example.</figcaption>
+    </div>
+    <div class="imgSingle" style="width:198px;max-width:198px">
+      <img src="{{ '/assets/images/blog/block-cipher-operation-modes/original.jpg' | absolute_url }}" alt="Original image">
+      <figcaption>This site Dat URL as an example.</figcaption>
+    </div>
+    <div class="imgSingle" style="width:198px;max-width:198px">
+      <img src="{{ '/assets/images/blog/block-cipher-operation-modes/original.jpg' | absolute_url }}" alt="Original image">
+      <figcaption>This site Dat URL as an example.</figcaption>
+    </div>
+  </div>
   <figcaption>This site Dat URL as an example.</figcaption>
 </figure>
 
-The [ed25519](https://ed25519.cr.yp.to/ "ed25519: High-speed high-security signatures") public key unique to this Dat. It’s used by the owner to create and update data within it. The public key allows you to discover other peers who have the data and is also verify that the data was not corrupted or tampered with as it passed through the network.
-
-## Last-gen Web (Beaker browser)
-
-That sounds great, but, what’s the promise about **decentralizing my website**. Here’s where [Beaker](https://beakerbrowser.com/ "A browser for the
-next-generation Web") appears.
-
-Beaker defines himself as an experimental browser to explore and build the peer-to-peer Web. It’ll allow you to create your own decentralized site and, obviously, to see the ones other users have created. Once the content has been uploaded, we can take a preview and, if everything goes well, share it with its link. For more info, you can take [their tour](https://beakerbrowser.com/docs/tour/ "Beaker browser tour").
-
-## Hashbase
-
-Once you’re happy with your site, **you probably want it up even if your computer is off**. To solve that problem, you could share your website with a lot of friends and make them *host* your site turning them *seeders* of your files.
-
-Fortunately, there’s a more easy way: [Hashbase](https://hashbase.io "Hashbase"), public peer for files published with the Dat protocol. It’ll behave as a seeder of your files keeping them always online.
-
-And that’s all. If you wanna visit the Dat version of this web, you can find it at [dat://raulsanmartin.me](dat://raulsanmartin.me '"datized" version of this web')
