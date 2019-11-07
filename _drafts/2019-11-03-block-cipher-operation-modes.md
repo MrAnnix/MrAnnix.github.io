@@ -50,7 +50,7 @@ If \(E()\) is the cypher function for encrypt, \(D()\) is the cypher function fo
 
 In an easy and visual way:
 
-![Electronic Code Book (ECB) mode encrption]({{ '/assets/images/blog/block-cipher-operation-modes/ecb_encrypt.jpg' | absolute_url }}){: .align-center}
-![Electronic Code Book (ECB) mode decrption]({{ '/assets/images/blog/block-cipher-operation-modes/ecb_decrypt.jpg' | absolute_url }}){: .align-center}
+![Electronic Code Book (ECB) mode encrption]({{ '/assets/images/blog/block-cipher-operation-modes/ECB_encryption.svg' | absolute_url }}){: .align-center}
+![Electronic Code Book (ECB) mode decrption]({{ '/assets/images/blog/block-cipher-operation-modes/ECB_decryption.svg' | absolute_url }}){: .align-center}
 
 
