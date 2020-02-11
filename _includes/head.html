@@ -22,17 +22,11 @@
     
     {% endif %}
     <!-- CSS -->
-    {% if page.title == 'Home' %}
-    <link rel="stylesheet" href="{{ "/assets/css/index.css" | prepend: site.baseurl }}">
-    {% elsif page.title == 'Contact' %}
-    <link rel="stylesheet" href="{{ "/assets/css/contact.css" | prepend: site.baseurl }}">
-    {% elsif page.title == 'Blog' %}
-    <link rel="stylesheet" href="{{ "/assets/css/blog-index.css" | prepend: site.baseurl }}">
-    {% elsif page.layout == "post" %}
-    <link rel="stylesheet" href="{{ "/assets/css/post.css" | prepend: site.baseurl }}">
-    {% else %}
-    <link rel="stylesheet" href="{{ "/assets/css/styles.css" | prepend: site.baseurl }}">
-    {% endif %}
+    {% if page.title == 'Home' %}<link rel="stylesheet" href="{{ "/assets/css/index.css" | prepend: site.baseurl }}">
+    {% elsif page.title == 'Contact' %}<link rel="stylesheet" href="{{ "/assets/css/contact.css" | prepend: site.baseurl }}">
+    {% elsif page.title == 'Blog' %}<link rel="stylesheet" href="{{ "/assets/css/blog-index.css" | prepend: site.baseurl }}">
+    {% elsif page.layout == "post" %}<link rel="stylesheet" href="{{ "/assets/css/post.css" | prepend: site.baseurl }}">
+    {% else %}<link rel="stylesheet" href="{{ "/assets/css/styles.css" | prepend: site.baseurl }}">{% endif %}
     <meta name=viewport content="width=device-width,initial-scale=1">
     <meta name=theme-color content=#c8463e>
 
