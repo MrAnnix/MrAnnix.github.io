@@ -11,9 +11,10 @@ layout: default
             <p>I consider myself a full-time learner.</p>
         </div>
         <div class=sites-list>
-            <ul>
+            <ul class="fa-ul">
                 {% for social in site.social %}
-                <li class={{ social.title }}>
+                <li>
+                    <span class="fa-li"><i class="{{ social.icon }}"></i></span>
                     <a href="{{ social.link }}" title="{{ social.alt }}">{{ social.description }}</a>
                 </li>
                 {% endfor %}
