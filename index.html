@@ -14,7 +14,7 @@ layout: default
             <ul class="fa-ul">
                 {% for social in site.social %}
                 <li>
-                    <span class="fa-li"><i class="{{ social.icon }}"></i></span>
+                    <span class="fa-li"><i class="fa {{ social.icon }}"></i></span>
                     <a href="{{ social.link }}" title="{{ social.alt }}">{{ social.description }}</a>
                 </li>
                 {% endfor %}
