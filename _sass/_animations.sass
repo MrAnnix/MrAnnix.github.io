@@ -52,6 +52,17 @@
   }
 }
 
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .hi>h1 {
   animation-name: slideDown;
 }
@@ -63,7 +74,7 @@
 
 .sites-list>ul>li {
   animation-duration: 500ms;
-  animation-name: slideUp;
+  animation-name: slideRight;
   animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
 }
 
