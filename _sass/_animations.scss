@@ -23,6 +23,8 @@
 .recent-blog-posts>.recent-post-3,
 .recent-blog-posts>.all,
 .sites-list>ul>li,
+.projects-column>h2,
+.projects-column>.project,
 .footer {
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
@@ -132,6 +134,15 @@
 
 .recent-blog-posts>.all {
   animation-delay: 400ms;
+}
+
+.projects-column>h2,
+.projects-column>.project {
+  animation-name: slideLeft;
+}
+
+.projects-column>.project {
+  animation-delay: 100ms;
 }
 
 .footer {
