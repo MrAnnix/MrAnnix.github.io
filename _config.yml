@@ -49,20 +49,16 @@ google-site-verification: "4KpPIPbUzRNI1DJR-OrOS5tNYrNvTIMj2Xh9bIybdPE"
 # Social settings (you can use Font Awesome icons [fa fa-icon] or Iconmonstr ones [im im-icon])
 email: hello@[this domain]
 
-# Browse icons at https://fontawesome.com/v4.7.0/icons/
 social:
   - title: e-mail
-    icon: "fa-envelope-o"
     description: '<span class="email-address">hello@[this domain]</span> for e-mail'
     link: "/contact"
     alt: "Contact page"
   - title: github
-    icon: "fa-github"
     description: "MrAnnix on GitHub"
     link: "https://github.com/MrAnnix"
     alt: "MrAnnix's GitHub profile"
   - title: linkedin
-    icon: "fa-linkedin"
     description: "Raul San Martin on Linkedin"
     link: "https://www.linkedin.com/in/raul-san-martin-aniceto"
     alt: "MrAnnix's Linkedin profile"
