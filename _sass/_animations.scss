@@ -134,12 +134,12 @@
   animation-delay: 400ms;
 }
 
-.projects-column>h2,
-.projects-column>.project {
+.projects-column>h2 {
   animation-name: slideLeft;
 }
 
-.projects-column>.project {
+.projects-column>.project.is-loaded {
+  animation-name: slideLeft;
   animation-delay: 100ms;
 }
 
