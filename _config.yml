@@ -51,17 +51,17 @@ email: hello@[this domain]
 
 social:
   - title: e-mail
-    icon: "fas fa-envelope-o"
+    icon: "fa fa-envelope-o"
     description: '<span class="email-address">hello@[this domain]</span> for e-mail'
     link: "/contact"
     alt: "Contact page"
   - title: github
-    icon: "fab fa-github"
+    icon: "fa fa-github"
     description: "MrAnnix on GitHub"
     link: "https://github.com/MrAnnix"
     alt: "MrAnnix's GitHub profile"
   - title: linkedin
-    icon: "fab fa-linkedin"
+    icon: "fa fa-linkedin"
     description: "Raul San Martin on Linkedin"
     link: "https://www.linkedin.com/in/raul-san-martin-aniceto"
     alt: "MrAnnix's Linkedin profile"
