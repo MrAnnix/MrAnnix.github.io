@@ -1,5 +1,6 @@
 function loadProjectImage(id) {
     var el = document.getElementById(id);
+    console.log(el);
     var theImg = el.getElementsByClassName('project-borders').getElementsByTagName('img');
     var imageToLoad;
     if (theImg.dataset.image) {
