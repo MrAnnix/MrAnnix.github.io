@@ -14,8 +14,9 @@
   }
 }
 
-.hi,
-.recent-blog-posts,
+.hi>h1,
+.hi>p,
+.recent-post,
 .sites-list>ul>li {
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
