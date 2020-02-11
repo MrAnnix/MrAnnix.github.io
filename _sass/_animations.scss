@@ -17,12 +17,13 @@
 .hi>h1,
 .hi>p,
 .recent-blog-posts>.recent-post,
-.recent-blog-posts>h1,
+.recent-blog-posts>h2,
 .recent-blog-posts>.recent-post-1,
 .recent-blog-posts>.recent-post-2,
 .recent-blog-posts>.recent-post-3,
 .recent-blog-posts>.all,
-.sites-list>ul>li {
+.sites-list>ul>li,
+.footer {
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
   animation-fill-mode: both;
@@ -107,7 +108,7 @@
   animation-delay: 1.2s;
 }
 
-.recent-blog-posts>h1,
+.recent-blog-posts>h2,
 .recent-blog-posts>.recent-post-1,
 .recent-blog-posts>.recent-post-2,
 .recent-blog-posts>.recent-post-3,
@@ -117,22 +118,23 @@
   animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
 }
 
-.recent-blog-posts>h1 {
-  animation-delay: 800ms;
-}
-
 .recent-blog-posts>.recent-post-1 {
-  animation-delay: 900ms;
+  animation-delay: 100ms;
 }
 
 .recent-blog-posts>.recent-post-2 {
-  animation-delay: 1s;
+  animation-delay: 200ms;
 }
 
 .recent-blog-posts>.recent-post-3 {
-  animation-delay: 1.1s;
+  animation-delay: 300ms;
 }
 
 .recent-blog-posts>.all {
-  animation-delay: 1.2s;
+  animation-delay: 400ms;
+}
+
+.footer {
+  animation-name: slideUp;
+  animation-delay: 1.3s;
 }
