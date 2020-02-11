@@ -100,3 +100,21 @@
 .sites-list>ul>li:nth-child(5) {
   animation-delay: 1.2s;
 }
+
+.recent-post {
+  animation-duration: 500ms;
+  animation-name: slideRight;
+  animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
+}
+
+.recent-post:nth-child(1) {
+  animation-delay: 800ms;
+}
+
+.recent-post:nth-child(2) {
+  animation-delay: 900ms;
+}
+
+.recent-post:nth-child(3) {
+  animation-delay: 1s;
+}
