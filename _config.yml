@@ -51,7 +51,7 @@ email: hello@[this domain]
 
 social:
   - title: e-mail
-    icon: "fas fa-envelope"
+    icon: "fas fa-envelope-o"
     description: '<span class="email-address">hello@[this domain]</span> for e-mail'
     link: "/contact"
     alt: "Contact page"
