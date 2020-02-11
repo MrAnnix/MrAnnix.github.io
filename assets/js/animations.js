@@ -1,7 +1,7 @@
-function loadProjectImage(id) {
+function loadProjectImage(id, imgId) {
     var el = document.getElementById(id);
     console.log(el);
-    var theImg = el.getElementsByTagName('img');
+    var theImg = el.getElementById(imgId);
     console.log(theImg);
     var imageToLoad;
     if (theImg.dataset.image) {
@@ -21,5 +21,5 @@ function loadProjectImage(id) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    loadProjectImage('GeekMag');
+    loadProjectImage('GeekMag', 'GeekMagScreenshot');
 });
