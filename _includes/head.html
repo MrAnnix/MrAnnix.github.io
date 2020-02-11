@@ -28,11 +28,7 @@
     {% if page.title == 'Home' %}
     <link rel="stylesheet" href="{{ "/assets/css/index.css" | prepend: site.baseurl }}">
     <script defer type="text/javascript" src="{{ "/assets/js/animations.js" | prepend: site.baseurl }}"></script>
-    <noscript>
-      <style type="text/css">
-        .projects-column>.project {animation-name: slideLeft;}
-      </style>
-    </noscript>
+    <noscript><style type="text/css">.projects-column>.project{animation-name:slideLeft;}</style></noscript>
     {% elsif page.title == 'Contact' %}
     <link rel="stylesheet" href="{{ "/assets/css/contact.css" | prepend: site.baseurl }}">
     {% elsif page.title == 'Blog' %}
