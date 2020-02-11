@@ -24,15 +24,15 @@
     <meta name="google-site-verification" content="{{ site.google-site-verification }}">
     
     {% endif %}
-    <!-- CSS -->
+    <!-- Styles -->
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta name=theme-color content=#c8463e>
     {% if page.title == 'Home' %}<link rel="stylesheet" href="{{ "/assets/css/index.css" | prepend: site.baseurl }}">
     {% elsif page.title == 'Contact' %}<link rel="stylesheet" href="{{ "/assets/css/contact.css" | prepend: site.baseurl }}">
     {% elsif page.title == 'Blog' %}<link rel="stylesheet" href="{{ "/assets/css/blog-index.css" | prepend: site.baseurl }}">
     {% elsif page.layout == "post" %}<link rel="stylesheet" href="{{ "/assets/css/post.css" | prepend: site.baseurl }}">
-    {% else %}<link rel="stylesheet" href="{{ "/assets/css/styles.css" | prepend: site.baseurl }}">{% endif %}
-    <meta name=viewport content="width=device-width,initial-scale=1">
-    <meta name=theme-color content=#c8463e>
-
+    {% else %}<link rel="stylesheet" href="{{ "/assets/css/styles.css" | prepend: site.baseurl }}">
+    {% endif %}
     <!-- Icons -->
     <link href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
