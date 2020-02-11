@@ -16,7 +16,9 @@
 
 .hi>h1,
 .hi>p,
-.recent-blog-posts>.recent-post,
+.recent-blog-posts>.recent-post-1,
+.recent-blog-posts>.recent-post-2,
+.recent-blog-posts>.recent-post-3
 .sites-list>ul>li {
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
@@ -102,20 +104,27 @@
   animation-delay: 1.2s;
 }
 
-.recent-blog-posts>.recent-post {
+.recent-blog-posts>h1 {
+  animation-delay: 400ms;
+  animation-name: slideUp;
+}
+
+.recent-blog-posts>.recent-post-1,
+.recent-blog-posts>.recent-post-2,
+.recent-blog-posts>.recent-post-3 {
   animation-duration: 500ms;
   animation-name: slideRight;
   animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
 }
 
-.recent-blog-posts>.recent-post:nth-child(1) {
+.recent-blog-posts>.recent-post-1 {
   animation-delay: 800ms;
 }
 
-.recent-blog-posts>.recent-post:nth-child(2) {
+.recent-blog-posts>.recent-post-2 {
   animation-delay: 900ms;
 }
 
-.recent-blog-posts>.recent-post:nth-child(3) {
+.recent-blog-posts>.recent-post-3 {
   animation-delay: 1s;
 }
