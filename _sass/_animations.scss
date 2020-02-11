@@ -115,9 +115,7 @@
 .recent-blog-posts>.recent-post-2,
 .recent-blog-posts>.recent-post-3,
 .recent-blog-posts>.all {
-  animation-duration: 500ms;
   animation-name: slideRight;
-  animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
 }
 
 .recent-blog-posts>.recent-post-1 {
