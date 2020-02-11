@@ -19,5 +19,5 @@ function loadImage(id, targetId) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    loadImage('GeekMag', 'GeekMagScreenshot');
+    loadImage('GeekMagScreenshot', 'GeekMag');
 });
