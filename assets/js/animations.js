@@ -1,25 +1,23 @@
-function loadProjectImage(id, imgId) {
+function loadImage(id, targetId) {
     var el = document.getElementById(id);
-    console.log(el);
-    var theImg = el.getElementById(imgId);
-    console.log(theImg);
+    var targetEl = targetId ? document.getElementById(targetId) : el;
     var imageToLoad;
-    if (theImg.dataset.image) {
-        imageToLoad = theImg.dataset.image;
-    } else if (typeof theImg.currentSrc === 'undefined') {
-        imageToLoad = theImg.src;
+    if (el.dataset.image) {
+        imageToLoad = el.dataset.image;
+    } else if (typeof el.currentSrc === 'undefined') {
+        imageToLoad = el.src;
     } else {
-        imageToLoad = theImg.currentSrc;
+        imageToLoad = el.currentSrc;
     }
     if (imageToLoad) {
         var img = new Image();
         img.src = imageToLoad;
         img.onload = function () {
-            el.classList.add('is-loaded');
+            targetEl.classList.add('is-loaded');
         };
     }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    loadProjectImage('GeekMag', 'GeekMagScreenshot');
+    loadImage('GeekMag', 'GeekMagScreenshot');
 });
