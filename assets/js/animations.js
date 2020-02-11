@@ -1,23 +1,23 @@
-function loadImage(id, targetId) {
+function loadProjectImage(id) {
     var el = document.getElementById(id);
-    var targetEl = targetId ? document.getElementById(targetId) : el;
+    var theImg = el.getElementsByClassName('project-borders').getElementsByTagName('img');
     var imageToLoad;
-    if (el.dataset.image) {
-        imageToLoad = el.dataset.image;
-    } else if (typeof el.currentSrc === 'undefined') {
-        imageToLoad = el.src;
+    if (theImg.dataset.image) {
+        imageToLoad = theImg.dataset.image;
+    } else if (typeof theImg.currentSrc === 'undefined') {
+        imageToLoad = theImg.src;
     } else {
-        imageToLoad = el.currentSrc;
+        imageToLoad = theImg.currentSrc;
     }
     if (imageToLoad) {
         var img = new Image();
         img.src = imageToLoad;
         img.onload = function () {
-            targetEl.classList.add('is-loaded');
+            el.classList.add('is-loaded');
         };
     }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    loadImage('screenshot');
+    loadProjectImage('project1');
 });
