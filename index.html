@@ -22,7 +22,7 @@ layout: default
         <div class=recent-blog-posts>
             <h2>Recent blog posts</h2>
             {% for post in site.posts limit:4 %}
-            <div class="recent-post">
+            <div class="recent-post-{{ forloop.index }}">
               <a href="{{ post.url | prepend: site.baseurl }}"><h4 class=title>{{ post.title }}</h4></a>
               <p>{{ post.description }}</p>
             </div>
