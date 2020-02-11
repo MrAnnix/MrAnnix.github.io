@@ -1,0 +1,10 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+---
+
+@import
+  "common",
+  "syntax-highlighting",
+  "mathjax",
+  "comments"
+;
