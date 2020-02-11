@@ -5,6 +5,9 @@
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 110 }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta name="author" content="{{ site.author }}">
     
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ site.favicon | prepend: site.baseurl }}">
+    
     <!-- Open Graph -->
     <meta property="og:title" content="{% if page.title == 'Home' %}{{ site.SEOtitle }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}">
     <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 110 }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
@@ -35,7 +38,4 @@
 
     <!-- Fonts -->
     <link rel=preload crossorigin="anonymous" href="{{ "/assets/fonts/moniker/light.woff2" | prepend: site.baseurl }}" as=font type=font/woff2>
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ site.favicon | prepend: site.baseurl }}">
 </head>
