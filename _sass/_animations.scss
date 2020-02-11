@@ -14,14 +14,7 @@
   }
 }
 
-.wallpaper,
-.picture-shadow,
-.picture-image,
-.name,
-.job,
-.hr,
-.description,
-.contact,
+.hi,
 .recent-blog-posts,
 .sites-list>ul>li {
   animation-duration: 1s;
@@ -51,10 +44,21 @@
   }
 }
 
-@keyframes slideRight {
+@keyframes slideLeft {
   from {
     opacity: 0;
     transform: translateX(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-1rem);
   }
   to {
     opacity: 1;
