@@ -21,5 +21,5 @@ function loadProjectImage(id) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    loadProjectImage('project1');
+    loadProjectImage('GeekMag');
 });
