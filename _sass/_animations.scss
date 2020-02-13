@@ -19,7 +19,7 @@
 .recent-blog-posts>.recent-post,
 .recent-blog-posts>h2,
 .recent-blog-posts>.recent-post,
-.recent-blog-posts>.all,
+.recent-blog-posts>.all-post,
 .sites-list>ul>li,
 .projects-column>h2,
 .projects-column>.project,
@@ -110,7 +110,7 @@
 
 .recent-blog-posts>h2,
 .recent-blog-posts>.recent-post,
-.recent-blog-posts>.all {
+.recent-blog-posts>.all-post {
   animation-name: slideRight;
 }
 
@@ -126,7 +126,7 @@
   animation-delay: 300ms;
 }
 
-.recent-blog-posts>.all {
+.recent-blog-posts>.all-post {
   animation-delay: 400ms;
 }
 
