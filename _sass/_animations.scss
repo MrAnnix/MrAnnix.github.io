@@ -18,9 +18,7 @@
 .hi>p,
 .recent-blog-posts>.recent-post,
 .recent-blog-posts>h2,
-.recent-blog-posts>.recent-post-1,
-.recent-blog-posts>.recent-post-2,
-.recent-blog-posts>.recent-post-3,
+.recent-blog-posts>.recent-post,
 .recent-blog-posts>.all,
 .sites-list>ul>li,
 .projects-column>h2,
@@ -111,22 +109,20 @@
 }
 
 .recent-blog-posts>h2,
-.recent-blog-posts>.recent-post-1,
-.recent-blog-posts>.recent-post-2,
-.recent-blog-posts>.recent-post-3,
+.recent-blog-posts>.recent-post,
 .recent-blog-posts>.all {
   animation-name: slideRight;
 }
 
-.recent-blog-posts>.recent-post-1 {
+.recent-blog-posts>#recent-post-1 {
   animation-delay: 100ms;
 }
 
-.recent-blog-posts>.recent-post-2 {
+.recent-blog-posts>#recent-post-2 {
   animation-delay: 200ms;
 }
 
-.recent-blog-posts>.recent-post-3 {
+.recent-blog-posts>#recent-post-3 {
   animation-delay: 300ms;
 }
 
