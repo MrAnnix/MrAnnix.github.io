@@ -125,7 +125,7 @@
     list-style-type: none
 }
 
-.sites-list>ul>li {
+.sites-list li {
     padding: .25em 0
 }
 
@@ -144,7 +144,7 @@
 
 /*Icons by Iconmonstr*/
 
-.sites-list>ul>.e-mail {
+.sites-list li.e-mail {
     background-image: url(../images/icons/e-mail.svg);
     background-repeat: no-repeat;
     background-position: 0 0;
@@ -152,7 +152,7 @@
     padding-left: 36px
 }
 
-.sites-list>ul>.github {
+.sites-list li.github {
     background-image: url(../images/icons/github.svg);
     background-repeat: no-repeat;
     background-position: 0 0;
@@ -160,7 +160,7 @@
     padding-left: 36px
 }
 
-.sites-list>ul>.stacko {
+.sites-list li.stacko {
     background-image: url(../images/icons/stacko.svg);
     background-repeat: no-repeat;
     background-position: 0 0;
@@ -168,7 +168,7 @@
     padding-left: 36px
 }
 
-.sites-list>ul>.linkedin {
+.sites-list li.linkedin {
     background-image: url(../images/icons/linkedin.svg);
     background-repeat: no-repeat;
     background-position: 0 0;
@@ -176,7 +176,7 @@
     padding-left: 36px
 }
 
-.sites-list>ul>.twitter {
+.sites-list li.twitter {
     background-image: url(../images/icons/twitter.svg);
     background-repeat: no-repeat;
     background-position: 0 0;
