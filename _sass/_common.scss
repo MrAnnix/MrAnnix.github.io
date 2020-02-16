@@ -15,6 +15,30 @@
 }
 
 html {
+    --scrollbarBG: transparent;
+    --thumbBG: var(--current-shade)
+}
+
+body::-webkit-scrollbar {
+    width: .5rem;
+}
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG)
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--scrollbarBG)
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
+    border-radius: .25rem;
+    border: .125rem solid var(--scrollbarBG)
+}
+
+html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
