@@ -34,6 +34,7 @@ plugins:
 sass:
   sass_dir: _sass
   style: compressed
+  add_charset: true
 
 # Paginate blog
 paginate: 10
