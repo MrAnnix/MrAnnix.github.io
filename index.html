@@ -35,7 +35,11 @@ layout: default
             <h2>Stuff I've done</h2>
             <a id=GeekMag href=https://web.archive.org/web/https://www.geekmag.es/ class=project>
                 <div class=project-borders>
-                    <img id=GeekMagScreenshot src="/assets/images/GeekMag.webp" alt="Screenshot of GeekMag" class=screenshot>
+					<picture>
+                        <source data-srcset="/assets/images/GeekMag.webp" type="image/webp">
+                        <source data-srcset="/assets/images/GeekMag.png" type="image/png">
+						<img id=GeekMagScreenshot data-src="/assets/images/GeekMag.png" alt="Screenshot of GeekMag" class=screenshot>
+                    </picture>
                     <b>GeekMag</b> was an online publication focused on technology, science, movies and videogames.
                 </div>
             </a>
