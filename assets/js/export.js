@@ -5,5 +5,6 @@ var rawData = "hello"
 				
 var tmpLink = document.createElement("a");
 tmpLink.href = "data:application/force-download," + escape(rawData);
+tmpLink.textContent = Descarga el savegame
 
 document.body.appendChild(tmpLink);
