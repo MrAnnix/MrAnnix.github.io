@@ -3,5 +3,9 @@ title: Export
 layout: default
 ---
 
-<a id="downloadSavegame"></a>
+<input id="filename" name="filename" type="text" placeholder="Nombre" required="">
+<button onclick="downloadSavegame()" id="goButton">Go</button>
+
+<a id="downloadSavegame">Type the ROMs name first and press GO button!</a>
+
 <script defer type="text/javascript" src="{{ "/assets/js/export.js" | prepend: site.baseurl }}"></script>
