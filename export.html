@@ -8,4 +8,13 @@ layout: default
 
 <a id="downloadSavegame">Type the ROMs name first and press GO button!</a>
 
-<script defer type="text/javascript" src="{{ "/assets/js/export.js" | prepend: site.baseurl }}"></script>
+<script>
+function downloadSavegame() {
+    var filename = document.getElementById("filename").value;
+    var rawData = base64ToArray(findValue("B64_SRAM_" + filename)).map(function (a) { return String.fromCharCode(a); }).join("");
+    			
+    var tmpLink = document.getElementById("downloadSavegame");
+    tmpLink.href = "data:application/force-download," + escape(rawData);
+    tmpLink.textContent = "Descarga el savegame"
+}
+</script>
