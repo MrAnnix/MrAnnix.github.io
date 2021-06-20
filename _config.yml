@@ -13,7 +13,7 @@ author: "Raúl San Martín Aniceto"
 permalink: /:categories/:title/
 theme: null # https://github.com/jekyll/jekyll/issues/7478#issuecomment-454346783
 timezone: Europe/Madrid
-include: [".well-known"] # dat:// protocol support
+include: [".well-known"] # for dat:// protocol support
 
 # Top bar
 topbar: "<b>Raul San Martin</b> / MrAnnix"
