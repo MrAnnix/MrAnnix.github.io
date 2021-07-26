@@ -32,7 +32,7 @@ SSGs provides less complexity, you don’t need PHP, MySQL, ASP... just a web se
 
 ## Why Jekyll?
 
-Initially, I had planned to use [Grav](https://getgrav.org/ "Grav’s homepage") to build this site. Grav is a plain-text CMS, something halfway between a dynamic CMS and an SSG. I had already worked with Wordpress and PHP in [GeekMag](https://www.geekmag.es "GeekMag") but I needed something lighter and it did not depend on a heavy database. Although I tried [Ghost](https://ghost.org/es/ "Página de inicio de Ghost") too, this one suffers from many of the features of Wordpress that it tried to avoid (like the database).
+Initially, I had planned to use [Grav](https://getgrav.org/ "Grav’s homepage") to build this site. Grav is a plain-text CMS, something halfway between a dynamic CMS and an SSG. I had already worked with Wordpress and PHP in [GeekMag](https://www.geekmag.es "GeekMag") but I needed something lighter and it did not depend on a heavy database. Although I tried [Ghost](https://ghost.org/docs/install/ "How to install Ghost") too, this one suffers from many of the features of Wordpress that it tried to avoid (like the database).
 
 Grav promised to offer me everything I needed to manage and add content to the site. It’s even possible to install a plugin that allows you to manage it from a Wordpress-style panel. However, using a whole CMS for just a personal website and a blog seemed to me and still seems more than I need.
 
