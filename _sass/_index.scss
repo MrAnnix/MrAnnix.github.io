@@ -96,68 +96,44 @@
     text-decoration: none
 }
 
-.recent-blog-posts a {
+.recent-blog-posts .recent-post {
     position: relative;
-    transition: box-shadow .3s,background-color .3s cubic-bezier(.25,1,.5,1);
-    box-shadow: transparent 0 0;
+    transition: box-shadow .3s;
+    box-shadow: none;
     padding: 8px;
-    vertical-align: middle;
-    display: block
+    vertical-align: middle
 }
 
 .recent-blog-posts .recent-post::before,.recent-blog-posts .recent-post::after {
     position: absolute;
     top: 0;
     left: 0;
-    border: 1px solid transparent;
+    border: 1px solid #0000;
     border-radius: 2px;
+    width: 0;
+    height: 0;
     content: ''
 }
 
-@media(prefers-reduced-motion:no-preference) {
-    .recent-blog-posts .recent-post>a::before,.recent-blog-posts .recent-post>a::after {
-        width: 0;
-        height: 0
-    }
-}
-
-@media(prefers-reduced-motion:reduce) {
-    .recent-blog-posts .recent-post>a::before,.recent-blog-posts .recent-post>a::after {
-        transition: border-color .15s cubic-bezier(.25,1,.5,1);
-        width: calc(100% - 1px);
-        height: calc(100% - 1px)
-    }
-}
-
-.recent-blog-posts .recent-post>a:hover {
+.recent-blog-posts .recent-post:hover {
     box-shadow: 0 3px 4px #ccc
 }
 
-.recent-blog-posts .recent-post>a:hover::before,.recent-blog-posts .recent-post>a:hover::after {
+.recent-blog-posts .recent-post:hover::before,.recent-blog-posts .recent-post:hover::after {
     width: calc(100% - 1px);
     height: calc(100% - 1px)
 }
 
-.recent-blog-posts .recent-post>a:hover::before {
+.recent-blog-posts .recent-post:hover::before {
+    transition: width .15s ease-in 0s,height .15s ease-out .15s;
     border-top-color: #c8463e;
     border-right-color: #c8463e
 }
 
-@media(prefers-reduced-motion:no-preference) {
-    .recent-blog-posts .recent-post>a:hover::before {
-        transition: width .15s ease-in 0s,height .15s ease-out .15s
-    }
-}
-
-.recent-blog-posts .recent-post>a:hover::after {
+.recent-blog-posts .recent-post:hover::after {
+    transition: height .15s ease-in 0s,width .15s ease-out .15s;
     border-left-color: #c8463e;
     border-bottom-color: #c8463e
-}
-
-@media(prefers-reduced-motion:no-preference) {
-    .recent-blog-posts .recent-post>a:hover::after {
-        transition: height .15s ease-in 0s,width .15s ease-out .15s
-    }
 }
 
 .recent-blog-posts p {
