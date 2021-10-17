@@ -20,7 +20,7 @@ They are maximum margin classifiers using the **kernel trick** to project the tr
 
 Let's borrow a [great explanation of SVMs](https://www.reddit.com/r/MachineLearning/comments/15zrpp/comment/c7rkwce/?utm_source=share&utm_medium=web2x&context=3) for dummies:
 
-We have 2 colors (red and blue) of balls on a table that we want to separate or classify.
+We have balls of two colors (red and blue) on a table that we want to separate or classify.
 
 ![Dataset to classify]({{ '/assets/images/blog/introduction-support-vector-machines-svm/initial-set.webp' | absolute_url }}){: .align-center}
 
