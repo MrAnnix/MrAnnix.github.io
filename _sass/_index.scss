@@ -105,7 +105,7 @@
     display: block
 }
 
-.recent-blog-posts .recent-post>a::before,.recent-blog-posts .recent-post>a::after {
+.recent-blog-posts .recent-post::before,.recent-blog-posts .recent-post::after {
     position: absolute;
     top: 0;
     left: 0;
