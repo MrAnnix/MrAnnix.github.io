@@ -96,25 +96,6 @@
     text-decoration: none
 }
 
-.recent-blog-posts a {
-    position: relative;
-    transition: box-shadow .3s,background-color .3s cubic-bezier(.25,1,.5,1);
-    box-shadow: transparent 0 0;
-    padding: 8px;
-    vertical-align: middle;
-    display: block
-}
-
-.recent-blog-posts>a::before,.recent-blog-posts>a::after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: 1px solid transparent;
-    border-radius: 2px;
-    content: ''
-}
-
-
 .recent-blog-posts p {
     margin-top: 0;
     color: #606060
