@@ -93,6 +93,10 @@
 }
 
 .recent-blog-posts a {
+    text-decoration: none
+}
+
+.recent-blog-posts a {
     position: relative;
     transition: box-shadow .3s,background-color .3s cubic-bezier(.25,1,.5,1);
     box-shadow: transparent 0 0;
@@ -109,6 +113,7 @@
     border-radius: 2px;
     content: ''
 }
+
 
 .recent-blog-posts p {
     margin-top: 0;
