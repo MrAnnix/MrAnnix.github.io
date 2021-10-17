@@ -23,8 +23,9 @@ layout: default
             <h2>Recent blog posts</h2>
             {% for post in site.posts limit:4 %}
             <div id="recent-post-{{ forloop.index }}" class="recent-post">
-              <a href="{{ post.url | prepend: site.baseurl }}"><h4 class=title>{{ post.title }}</h4></a>
-              <p>{{ post.description }}</p>
+              <a href="{{ post.url | prepend: site.baseurl }}"><h4 class=title>{{ post.title }}</h4>
+                <p>{{ post.description }}</p>
+              </a>
             </div>
             {% endfor %}
             <a href="{{ site.baseurl }}/blog" class=all-post>See all blog posts</a>
