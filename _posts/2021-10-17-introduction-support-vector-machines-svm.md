@@ -3,7 +3,7 @@ layout: post
 title:  "Introduction to support vector machines"
 description: "An easy introduction to support vector machines (SVMs)."
 last_modified_at: 2021-10-17 22:00 +0200
-image: "/assets/images/blog/introduction-support-vector-machines-svm.jpg"
+image: "/assets/images/blog/introduction-support-vector-machines-svm.webp"
 categories: "Machine-Learning"
 tags: [AI, Machine Learning, SVM]
 ---
