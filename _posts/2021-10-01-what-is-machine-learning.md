@@ -18,6 +18,16 @@ Machine Learning appears alongside computational machines. It arises collaterall
 
 In 1943, the neurologist Warren McCulloch and the mathematician Walter Pitts published an article in which they proposed the logical implementation of a [biological neuron, on a Turing machine](https://doi.org/10.1007/BF02478259). They had just created the foundation for neural networks and formally ushered in the age of Machine Learning.
 
+<figure class="align-center">
+  <a href="#"><img src="{{ '/assets/images/blog/what-is-machine-learning/biological-neuron.webp' | absolute_url }}" alt=""></a>
+  <figcaption>A biological neuron.</figcaption>
+</figure> 
+
+<figure class="align-center">
+  <a href="#"><img src="{{ '/assets/images/blog/what-is-machine-learning/computational-neuron.webp' | absolute_url }}" alt=""></a>
+  <figcaption>Computational neuron proposed by McCulloch and Pitts.</figcaption>
+</figure> 
+
 ## ML model types
 
 The different Machine Learning models can be classified into three large movements depending on the nature of the data received or the feedback of the model.
