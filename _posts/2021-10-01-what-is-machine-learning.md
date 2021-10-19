@@ -20,7 +20,7 @@ In 1943, the neurologist Warren McCulloch and the mathematician Walter Pitts pub
 
 <figure class="align-center">
   <a href="#"><img src="{{ '/assets/images/blog/what-is-machine-learning/biological-neuron.webp' | absolute_url }}" alt=""></a>
-  <figcaption>A biological neuron with its parts names.</figcaption>
+  <figcaption>A biological neuron with its overly simplified parts names.</figcaption>
 </figure> 
 
 <figure class="align-center">
