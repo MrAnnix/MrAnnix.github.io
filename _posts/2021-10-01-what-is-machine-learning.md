@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "What is Machine Learning?"
-description: "What is machine learning, how does it work, and what can we do with it."
+description: "What machine learning is, how does it work, and what can we do with it."
 last_modified_at: 2021-10-01 15:30 +0200
 image: "/assets/images/blog/what-is-machine-learning.webp"
 categories: "Machine-Learning"
