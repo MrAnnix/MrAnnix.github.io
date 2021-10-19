@@ -23,6 +23,8 @@ In 1943, the neurologist Warren McCulloch and the mathematician Walter Pitts pub
   <figcaption>A biological neuron with its overly simplified parts names.</figcaption>
 </figure> 
 
+Developing this idea, Frank Rosenblatt proposed in 1958 the first neural network model, the Perceptron. These neural networks were the hegemonic technology until the 1990s. Due to the limited computing power of the computers of the time and the difficulty of performing statistical and mathematical analysis of neural networks, they caused the need for new methods of machine learning and new forms of analysis, such as Vapnik–Chervonenkis theory.
+
 <figure class="align-center">
   <a href="#"><img src="{{ '/assets/images/blog/what-is-machine-learning/computational-neuron.webp' | absolute_url }}" alt=""></a>
   <figcaption>Computational neuron proposed by McCulloch and Pitts. It can be seen that the structure of this computational neuron is pretty similar to the biological one.</figcaption>
