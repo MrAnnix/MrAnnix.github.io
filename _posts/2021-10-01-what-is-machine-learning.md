@@ -27,7 +27,7 @@ Developing this idea, Frank Rosenblatt proposed in 1958 the first neural network
 
 <figure class="align-center">
   <a href="#"><img src="{{ '/assets/images/blog/what-is-machine-learning/computational-neuron.webp' | absolute_url }}" alt=""></a>
-  <figcaption>Computational neuron proposed by McCulloch and Pitts. It can be seen that the structure of this computational neuron is pretty similar to the biological one.</figcaption>
+  <figcaption>Computational neuron proposed by McCulloch and Pitts. It can be seen that the structure of this computational neuron is pretty similar to the biological one. Source: O’Reilly.</figcaption>
 </figure>
 
 They had just created the foundation for neural networks and formally ushered in the age of Machine Learning.
