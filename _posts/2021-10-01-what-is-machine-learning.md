@@ -16,17 +16,19 @@ Today, this allows for technological applications such as autonomous cars; recom
 
 Machine Learning appears alongside computational machines. It arises collaterally when addressing the problem of mathematical decidability, the *Entscheidungsproblem*, formally proposed by David Hilbert. In 1937 the British mathematician Alan Turing designed a [computing machine](https://doi.org/https://doi.org/10.1112/plms/s2-42.1.230) in which a paradox in its execution implied that mathematics was not decidable. This was a solution to this problem, and in addition, it laid the foundations of what would be the theory of modern computing.
 
-In 1943, the neurologist Warren McCulloch and the mathematician Walter Pitts published an article in which they proposed the logical implementation of a [biological neuron, on a Turing machine](https://doi.org/10.1007/BF02478259). They had just created the foundation for neural networks and formally ushered in the age of Machine Learning.
+In 1943, the neurologist Warren McCulloch and the mathematician Walter Pitts published an article in which they proposed the logical implementation of a [biological neuron, on a Turing machine](https://doi.org/10.1007/BF02478259).
 
 <figure class="align-center">
   <a href="#"><img src="{{ '/assets/images/blog/what-is-machine-learning/biological-neuron.webp' | absolute_url }}" alt=""></a>
-  <figcaption>A biological neuron.</figcaption>
+  <figcaption>A biological neuron with its parts names.</figcaption>
 </figure> 
 
 <figure class="align-center">
   <a href="#"><img src="{{ '/assets/images/blog/what-is-machine-learning/computational-neuron.webp' | absolute_url }}" alt=""></a>
-  <figcaption>Computational neuron proposed by McCulloch and Pitts.</figcaption>
-</figure> 
+  <figcaption>Computational neuron proposed by McCulloch and Pitts. It can be seen that the structure of this computational neuron is pretty similar to the biological one.</figcaption>
+</figure>
+
+They had just created the foundation for neural networks and formally ushered in the age of Machine Learning.
 
 ## ML model types
 
