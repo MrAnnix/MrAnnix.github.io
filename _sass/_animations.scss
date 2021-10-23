@@ -19,10 +19,10 @@
 .recent-blog-posts>.recent-post,
 .recent-blog-posts>h2,
 .recent-blog-posts>.recent-post,
-.recent-blog-posts>.all-post,
+.recent-blog-posts>.go-forward,
 .sites-list>ul>li,
 .projects-column>h2,
-.projects-column>.project
+.projects-column>.project.is-loaded,
 .footer {
   animation-duration: 1s;
   animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
