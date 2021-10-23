@@ -85,7 +85,7 @@
 .sites-list>ul>li {
   animation-duration: 500ms;
   animation-name: slideLeft;
-  animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5);
+  animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5)
 }
 
 .sites-list>ul>li:nth-child(1) {
@@ -110,21 +110,20 @@
 
 .recent-blog-posts>h2,
 .recent-blog-posts>.recent-post,
-.recent-blog-posts>.go-forward,
-.recent-blog-posts>.all-post {
-  animation-name: slideRight;
+.recent-blog-posts>.go-forward {
+  animation-name: slideRight
 }
 
 .recent-blog-posts>#recent-post-1 {
-  animation-delay: 100ms;
+  animation-delay: 100ms
 }
 
 .recent-blog-posts>#recent-post-2 {
-  animation-delay: 200ms;
+  animation-delay: 200ms
 }
 
 .recent-blog-posts>#recent-post-3 {
-  animation-delay: 300ms;
+  animation-delay: 300ms
 }
 
 .recent-blog-posts>#recent-post-4 {
@@ -132,19 +131,19 @@
 }
 
 .recent-blog-posts>.go-forward {
-  animation-delay: 500ms;
+  animation-delay: 500ms
 }
 
-.projects-column>h2 {
-  animation-name: slideLeft;
+.projects-column>h2,
+.projects-column>.project.is-loaded {
+  animation-name: slideLeft
 }
 
 .projects-column>.project.is-loaded {
-  animation-name: slideLeft;
-  animation-delay: 100ms;
+  animation-delay: 100ms
 }
 
 .footer {
   animation-name: slideUp;
-  animation-delay: 1s;
+  animation-delay: 1s
 }
