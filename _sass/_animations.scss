@@ -126,8 +126,12 @@
   animation-delay: 300ms;
 }
 
-.recent-blog-posts>.all-post {
-  animation-delay: 400ms;
+.recent-blog-posts>#recent-post-4 {
+    animation-delay: 400ms
+}
+
+.recent-blog-posts>.go-forward {
+  animation-delay: 500ms;
 }
 
 .projects-column>h2 {
