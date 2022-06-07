@@ -10,7 +10,7 @@ tags: [dat, P2P, DWeb, Hashbase, Beaker]
 
 Nowadays, the Internet is being more and more centralised, websites and applications are increasingly controlled by large monopolies as Google, Amazon, Facebook... These companies control and shape how we communicate and organize. How many of us don’t use one of their services every day?
 
-Decentralized software has the potential to return control of their digital information to the people. Precisely for this, initiatives as [Dat](https://datproject.org/ "Dat protocoll homepage") appears. Dat’s community aims to create a fast and secure peer-to-peer network, based on [their protocol](https://datprotocol.github.io/how-dat-works/ "How Dat Works"), that allows to building apps and shares documents.
+Decentralized software has the potential to return control of their digital information to the people. Precisely for this, initiatives as [Dat](https://datproject.org/ "Dat protocoll homepage") appears. Dat’s community aims to create a fast and secure peer-to-peer network, based on [their protocol](https://docs.datproject.org/docs/intro "How Dat Works"), that allows to building apps and shares documents.
 
 ## What is Dat protocol?
 
