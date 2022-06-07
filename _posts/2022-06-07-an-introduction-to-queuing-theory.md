@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "An Introduction to Queuing Theory"
+title:  "An introduction to queuing theory"
 description: "The mathematical study of waiting in line."
 last_modified_at: 2022-06-07 22:00 +0200
 image: "/assets/images/blog/an-introduction-to-queuing-theory.webp"
