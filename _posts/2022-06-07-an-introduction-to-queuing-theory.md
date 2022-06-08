@@ -12,7 +12,10 @@ We live surrounded by queues, we face them daily whether at the supermarket, dri
 
 ## Origins of queueing theory
 
-![Agner Krarup Erlang]({{ '/assets/images/blog/an-introduction-to-queueing-theory/erlang.webp' | absolute_url }}){: .align-left}
+<figure class="align-left">
+  <img src="{{ '/assets/images/blog/an-introduction-to-queueing-theory/erlang.webp' | absolute_url }}" alt="Agner Krarup Erlang">
+  <figcaption>Agner Krarup Erlang</figcaption>
+</figure>
 
 To model these systems and to be able to study and optimize them (to make our lives more pleasant, of course) the Danish mathematician **Agner Krarup Erlang** published in 1909 a first approach to queueing theory.
 
