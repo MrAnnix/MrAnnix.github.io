@@ -21,19 +21,21 @@ To model these systems and to be able to study and optimize them (to make our li
 
 With the growth of the telephone network at the time, it became necessary to know the most optimal way to scale it. The increase in the number of calls and users made it necessary to know what size should be assigned to the telephone switchboards. A switchboard that was too large, allowing a large number of connections, might be wasted in an area with few calls or with _low traffic_, and a small switchboard, not allowing many simultaneous connections, would always be saturated in an area with many calls or with _high traffic_.
 
-## Structure of queuing systems
+Nowadays, systems such as traffic in a city, how many pumps are needed at a gas station, or simply the management of requests to a web server, are studied and optimized using the queueing theory base that Erlang initiated.
 
-The following distinct components can be found in any queuing system:
+## Structure of queueing systems
+
+The following distinct components can be found in any queueing system:
 
 - Input source or the **population** of customers that may come to request the service.
 - The **queues** where customers wait to be served. There can be different types depending on the desired order of entry and exit.
 - The stations where customers are served or **servers**.
 
-![Structure of a queuing system]({{ '/assets/images/blog/an-introduction-to-queueing-theory/queueing-system-diagram.webp' | absolute_url }}){: .align-center}
+![Structure of a queueing system]({{ '/assets/images/blog/an-introduction-to-queueing-theory/queueing-system-diagram.webp' | absolute_url }}){: .align-center}
 
 ## Kendall's notation
 
-Kendall defined a notation to describe queuing models based on six characteristics (A/S/c/K/m/z) where:
+Kendall defined a notation to describe queueing models based on six characteristics (A/S/c/K/m/z) where:
 
 - **A** specifies what the **arrival process** is like: whether inter-arrivals are i.i.d and poissonian **M**, deterministic **D**, or follow some general distribution **GI**.
 - **S** determines the **service time distribution** type. It is used the same notation as for arrivals.
@@ -44,4 +46,4 @@ Kendall defined a notation to describe queuing models based on six characteristi
 
 For example, the notation that would be used for a system with a Poissonian arrival and service rate, a single server, infinite capacity, and population, and a FIFO queue would be M/M/1.
 
-Nowadays, systems such as traffic in a city, how many pumps are needed at a gas station, or simply the management of requests to a web server, are studied and optimized using the queuing theory base that Erlang initiated.
+With this, we could conclude this small approach to queueing theory. These systems are present in any area of our life. Without a doubt, getting to know them is exciting, don't you think so?
