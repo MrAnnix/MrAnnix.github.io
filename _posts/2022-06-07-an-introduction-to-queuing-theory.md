@@ -37,7 +37,7 @@ The following distinct components can be found in any queueing system:
 
 Kendall defined a notation to describe queueing models based on six characteristics (A/S/c/K/m/z) where:
 
-- **A** specifies what the **arrival process** is like: whether inter-arrivals are i.i.d and poissonian **M**, deterministic **D**, or follow some general distribution **GI**.
+- **A** specifies what the **arrival process** is like: whether inter-arrivals are i.i.d and Poissonian **M**, deterministic **D**, or follow some general distribution **GI**.
 - **S** determines the **service time distribution** type. It is used the same notation as for arrivals.
 - **c** is the **number of servers**.
 - **K** is the **system's capacity** or the number of places in the queue. If it is presumed to be infinity, it will be blank.
