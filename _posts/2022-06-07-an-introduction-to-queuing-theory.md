@@ -12,6 +12,8 @@ We live surrounded by queues, we face them daily whether at the supermarket, dri
 
 ## Origins of queueing theory
 
+![Agner Krarup Erlang]({{ '/assets/images/blog/an-introduction-to-queueing-theory/erlang.webp' | absolute_url }}){: .align-left}
+
 To model these systems and to be able to study and optimize them (to make our lives more pleasant, of course) the Danish mathematician **Agner Krarup Erlang** published in 1909 a first approach to queueing theory.
 
 With the growth of the telephone network at the time, it became necessary to know the most optimal way to scale it. The increase in the number of calls and users made it necessary to know what size should be assigned to the telephone switchboards. A switchboard that was too large, allowing a large number of connections, might be wasted in an area with few calls (low traffic), and a small switchboard, not allowing many simultaneous connections, would always be saturated in an area with many calls (high traffic).
