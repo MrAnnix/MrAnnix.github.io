@@ -834,6 +834,18 @@ code,pre,tt {
     text-shadow: none
 }
 
+::-moz-selection {
+    background: #dd8b86;
+    color: #3c3c3c;
+    text-shadow: none
+}
+
+::selection {
+    background: #dd8b86;
+    color: #3c3c3c;
+    text-shadow: none
+}
+
 .tombstone {
     cursor: default;
     user-select: none;
