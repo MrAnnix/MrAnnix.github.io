@@ -834,15 +834,17 @@ code,pre,tt {
     text-shadow: none
 }
 
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
     background: #dd8b86;
     color: #3c3c3c;
-  }
-  
-  ::selection {
+    text-shadow: none
+}
+
+::selection {
     background: #dd8b86;
     color: #3c3c3c;
-  }
+    text-shadow: none
+}
 
 .tombstone {
     cursor: default;
