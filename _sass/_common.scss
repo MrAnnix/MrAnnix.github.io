@@ -835,11 +835,13 @@ code,pre,tt {
 }
 
 ::-moz-selection { /* Code for Firefox */
-    background: #8a6666;
+    background: #dd8b86;
+    color: #3c3c3c;
   }
   
   ::selection {
-    background: #8a6666;
+    background: #dd8b86;
+    color: #3c3c3c;
   }
 
 .tombstone {
