@@ -69,7 +69,7 @@ Probably, you want your blog to do more things, for example: generate pages of l
 
 For this Jekyll has a myriad of plugins. However, if you want to use Github Pages, I don’t recommend trying to use more than just and necessary, since only a few are compatible. In the case of this template are used only `jekyll-sitemap` and `jekyll-paginate` generate the site map and distribute the blog entries on several pages respectively.
 
-For the rest of the functionalities I have used Liquid exclusively, specifically for the pages of categories and labels I followed [this tutorial](http://codinfox.github.io/dev/2015/03/06/use-tags-and-categories-in-your-jekyll-based-github-pages/ "Use Tags and Categories in your Jekyll based Github Pages without plugins - Codinfox").
+For the rest of the functionalities I have used Liquid exclusively, specifically for the pages of categories and labels I followed [this tutorial](https://codinfox.github.io/dev/2015/03/06/use-tags-and-categories-in-your-jekyll-based-github-pages/ "Use Tags and Categories in your Jekyll based Github Pages without plugins - Codinfox").
 
 ### Design
 
