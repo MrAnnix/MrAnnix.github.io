@@ -5,10 +5,10 @@ description: "The mathematical study of waiting in line."
 last_modified_at: 2022-12-12 11:00 +0200
 image: "/assets/images/blog/understanging-apache-spark-runtime-architecture.webp"
 categories: "Big Data"
-tags: [Big Data, Spark Architecture]
+tags: [Big Data, Spark Architecture, Spark, Apache]
 ---
 
-Spark is a popular distributed computing platform that is used for processing large amounts of data. It has a runtime architecture that is based on the concept of distributed computing, where data is divided into smaller chunks and distributed across a cluster of machines for parallel processing. This allows Spark to quickly and easily process large amounts of data in parallel, enabling efficient and scalable distributed computing. We will see the main components of the Spark runtime architecture and how they work together to enable distributed computing with Spark.
+Apache Spark is a popular distributed computing platform that is used for processing large amounts of data. It has a runtime architecture that is based on the concept of distributed computing, where data is divided into smaller chunks and distributed across a cluster of machines for parallel processing. This allows Spark to quickly and easily process large amounts of data in parallel, enabling efficient and scalable distributed computing. We will see the main components of the Spark runtime architecture and how they work together to enable distributed computing with Spark.
 
 ## Main components of the Spark architecture
 
@@ -48,6 +48,12 @@ RDD or Resilient Distributed Dataset is a data structure that is used to represe
 
 Transformations are operations that are applied to the data to create a new RDD. Transformations are lazy, which means that they are not executed immediately. Instead, they are added to the DAG and scheduled for execution by the DAGScheduler.
 
+In Spark, **transformations** are operations that are applied to a dataset to create a new one. These operations are lazily executed, meaning that they are not actually performed until an **action** is called. This allows for more efficient processing, as Spark can optimize the sequence of transformations by grouping them together and executing them in a single pass over the data. In general, transformations are used to manipulate and transform the data in a dataset, such as selecting specific columns, filtering rows, or performing calculations on the data.
 
+In against, **actions** are operations that trigger the execution of the transformations and return results to the driver program. These operations allow the user to see the results of the transformations that have been applied to the dataset. In general, actions are used to collect the results of the transformations that have been applied to a dataset and return them to the driver program for further processing.
 
+A stage typically consists of all the transformations that are applied to a dataset up until the next shuffle operation or action. This means that a stage typically ends with an action, as this triggers the execution of the transformations and causes the tasks in the stage to be executed.
 
+The stages in a Spark program form a directed acyclic graph (DAG), which represents the sequence of transformations and actions that are applied to the input data. This DAG is used by the Spark engine to optimize the execution of the program and distribute the tasks across the available executors.
+
+In summary, a stage in Spark is a group of tasks that can be executed together and consists of the transformations applied to a dataset up until the next shuffle operation or action. These stages are organized into a DAG, which represents the sequence of transformations and actions in a Spark program.
