@@ -2,13 +2,13 @@
 layout: post
 title:  "Understanding Apache Spark runtime architecture"
 description: "The mathematical study of waiting in line."
-last_modified_at: 2022-12-12 11:00 +0200
+last_modified_at: 2022-12-13 11:00 +0200
 image: "/assets/images/blog/understanging-apache-spark-runtime-architecture.webp"
 categories: "Big Data"
 tags: [Big Data, Spark Architecture, Spark, Apache]
 ---
 
-Apache Spark is a popular distributed computing platform that is used for processing large amounts of data. It has a runtime architecture that is based on the concept of distributed computing, where data is divided into smaller chunks and distributed across a cluster of machines for parallel processing. This allows Spark to quickly and easily process large amounts of data in parallel, enabling efficient and scalable distributed computing. We will see the main components of the Spark runtime architecture and how they work together to enable distributed computing with Spark.
+Apache Spark is a popular open-source distributed computing platform that is used for processing large amounts of data. It has a runtime architecture that is based on the concept of distributed computing, where data is divided into smaller chunks and distributed across a cluster of machines for parallel processing. This allows Spark to quickly and easily process large amounts of data in parallel, enabling efficient and scalable distributed computing. We will see the main components of the Spark runtime architecture and how they work together to enable distributed computing with Spark.
 
 ## Main components of the Spark architecture
 
@@ -18,19 +18,19 @@ In addition to the driver and executors, the Spark runtime architecture also inc
 
 ### Driver
 
-For Spark to be able to process large amounts of data in parallel, it needs to be able to divide the data into smaller chunks and distribute them across a cluster of machines. The driver is the main program that runs on the master node of the cluster and is responsible for coordinating the execution of the parallel operations on the data. The driver is responsible for dividing the data into smaller chunks and distributing them across the cluster, and for coordinating the execution of the parallel operations on the data. The driver is also responsible for monitoring the health of the cluster, and for restarting failed executors.
+The driver is the central component of the Apache Spark runtime architecture. It is responsible for running the user's main function and creating the SparkContext, which is the main entry point for interacting with Spark. The driver also communicates with the cluster manager to acquire resources on the cluster and to schedule the execution of tasks on the worker nodes. It monitors the progress of tasks and provides status updates to the user, and it handles the flow of data between the various components of the application. In short, the driver coordinates the execution of a Spark application and is essential to its functioning.
 
 ### Executors
 
-In Spark, the executors are worker processes that run on the slave nodes of the cluster and are responsible for executing the tasks assigned to them by the driver. The executors are responsible for executing the tasks assigned to them by the driver, and for reporting the results of the tasks back to the driver. The executors are also responsible for monitoring the health of the cluster, and for restarting failed executors.
+In Spark, the executor is a process that runs on a worker node and is responsible for executing the tasks assigned to that node. It communicates with the driver process to request tasks and to report the progress of tasks, and it manages the execution of the tasks, including any data shuffles or other operations that are required. The executor also manages the memory and other resources on the worker node, including caching RDDs and other data in memory to improve performance. In short, the executor is responsible for executing the tasks assigned to a worker node and for managing the resources on the node to ensure that the application runs efficiently and effectively.
 
 ### Cluster manager
 
-Cluster managers are responsible for managing the allocation of resources across the cluster. They are responsible for allocating resources to the executors, and for launching new executors when the load of the cluster increases. Cluster managers are also responsible for monitoring the health of the cluster, and for restarting failed executors.
+In Apache Spark, the cluster manager is a system that is responsible for managing the resources on a cluster of compute nodes, such as a cluster of computers in a data center. It is responsible for allocating resources to the various applications running on the cluster, and it monitors the health and status of the nodes in the cluster. Spark supports several different cluster managers and even includes a native cluster manager. The cluster manager is an important component of the Apache Spark runtime architecture, as it plays a key role in managing the resources on the cluster and in ensuring that the application runs efficiently and effectively.
 
-### Scheduling algorithm
+## How scheduling works in Spark
 
-The scheduling algorithm is used to determine how tasks are assigned to executors. It is responsible for deciding which tasks should be assigned to which executors, and how many tasks should be assigned to each executor. The scheduling algorithm is also responsible for deciding when to launch new executors to handle the load of the cluster.
+In Apache Spark, the scheduling process is the process by which the driver program divides the work of a Spark application into a set of tasks and assigns those tasks to the executors on the worker nodes in the cluster. The scheduling process is performed by the SparkContext, which coordinates with the cluster manager to acquire the resources needed to execute the application. Once the resources have been acquired, the SparkContext divides the work of the application into tasks and schedules those tasks for execution on the worker nodes. The scheduling process in Spark is highly configurable, and it plays a critical role in the execution of a Spark application.
 
 ## Tasks and stages
 
