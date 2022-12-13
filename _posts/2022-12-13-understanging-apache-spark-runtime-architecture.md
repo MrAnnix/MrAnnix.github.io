@@ -30,10 +30,12 @@ RDD or Resilient Distributed Dataset is a data structure that is used to represe
 
 In Spark, the cluster manager is a system that is responsible for managing the resources on a cluster of compute nodes, such as a cluster of computers in a data center. It is responsible for allocating resources to the various applications running on the cluster, and it monitors the health and status of the nodes in the cluster. Spark supports several different cluster managers and even includes a native cluster manager. The cluster manager is an important component of the Apache Spark runtime architecture, as it plays a key role in managing the resources on the cluster and in ensuring that the application runs efficiently and effectively.
 
+<!--
 <figure class="align-center">
   <img src="{{ '/assets/images/blog/understanging-apache-spark-runtime-architecture/Spark_architecture_schema.webp' | absolute_url }}" alt="Apache Spark runtime architecture schema.">
   <figcaption>An schema of the Spark runtime architecture.</figcaption>
 </figure>
+-->
 
 ## How scheduling works in Spark
 
@@ -48,10 +50,12 @@ A task is a unit of work that is executed by an executor on a worker node in a c
 
 Transformations are operations that are applied to the data to create a new RDD. Transformations are lazy, which means that they are not executed immediately. Instead, they are added to the DAG.
 
+<!--
 <figure class="align-left">
   <img src="{{ '/assets/images/blog/understanging-apache-spark-runtime-architecture/SparkContext_schema.webp' | absolute_url }}" alt="SparkContext schema">
   <figcaption>SparkContext a bit more visual.</figcaption>
 </figure>
+-->
 
 In Spark, **transformations** are operations that are applied to a dataset to create a new one. These operations are lazily executed, meaning that they are not performed until an **action** is called. This allows for more efficient processing, as Spark can optimize the sequence of transformations by grouping them and executing them in a single pass over the data. In general, transformations are used to manipulate and transform the data in a dataset, such as selecting specific columns, filtering rows, or performing calculations on the data.
 
