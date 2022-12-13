@@ -14,6 +14,8 @@ Apache Spark is a popular open-source distributed computing platform that is use
 
 The main components of the Spark runtime architecture are the **driver** and the **executors**. The driver is the main program that runs on the **master node** of the cluster and is responsible for coordinating the execution of the parallel operations on the data. The executors are worker processes that run on the **slave nodes** of the cluster and are responsible for executing the tasks assigned to them by the driver.
 
+<img class="align-right" src="{{ '/assets/images/blog/understanging-apache-spark-runtime-architecture/Apache_Spark_logo.webp' | absolute_url }}" alt="Apache Spark logo">
+
 In addition to the driver and executors, the Spark runtime architecture also includes several other components, such as the **cluster manager**, which is responsible for managing the allocation of resources across the cluster, and the scheduling algorithm, which is used to determine how tasks are assigned to executors. These components work together to enable efficient and scalable distributed computing with Spark.
 
 ### Driver
@@ -60,19 +62,3 @@ In against, **actions** are operations that trigger the execution of the transfo
 A stage typically consists of all the transformations that are applied to a dataset up until the next shuffle operation or action. This means that a stage typically ends with an action, as this triggers the execution of the transformations and causes the tasks in the stage to be executed.
 
 Overall, the Apache Spark runtime architecture is designed to be highly modular and extensible, with a rich set of APIs and libraries that make it easy for developers to build powerful, scalable applications for big data processing and analysis. The various components of the runtime architecture work together to enable efficient, parallel execution of Spark applications on a distributed cluster of compute nodes.
-
-''' 
-The Apache Spark runtime architecture can be represented visually using a diagram or graph. This can be useful for understanding the relationships between the different components of the architecture and how they work together to execute a Spark application.
-
-A visual representation of the Apache Spark runtime architecture might include the following elements:
-
-The Spark Driver, which is the central coordinating process for a Spark application.
-The SparkContext, which is the main entry point for interacting with Spark and is responsible for scheduling the execution of tasks.
-The cluster manager, which is responsible for managing the resources on the cluster and for allocating those resources to the various applications running on the cluster.
-The worker nodes, which are the compute nodes in the cluster where the tasks of a Spark application are executed.
-The Spark Executor processes, which run on the worker nodes and are responsible for executing the tasks assigned to the node.
-The tasks and stages of a Spark application, which represent the units of work that are executed by the Executor processes.
-These elements can be connected in a diagram to show the relationships between them, such as the communication between the Driver and the SparkContext, or between the SparkContext and the cluster manager. The diagram can also show how the tasks and stages of a Spark application are executed on the worker nodes by the Executor processes.
-
-Overall, a visual representation of the Apache Spark runtime architecture can be a useful tool for understanding how the various components of the architecture work together to execute a Spark application.
-'''
