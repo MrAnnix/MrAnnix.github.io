@@ -2,7 +2,7 @@
 layout: post
 title:  "Understanding Apache Spark runtime architecture"
 description: "The mathematical study of waiting in line."
-last_modified_at: 2022-12-13 17:00 +0200
+last_modified_at: 2022-12-13 16:45 +0200
 image: "/assets/images/blog/understanging-apache-spark-runtime-architecture.webp"
 categories: "Big Data"
 tags: [Big Data, Spark Architecture, Spark, Apache]
@@ -14,7 +14,10 @@ Apache Spark is a popular open-source distributed computing platform that is use
 
 The main components of the Spark runtime architecture are the **driver** and the **executors**. The driver is the main program that runs on the **master node** of the cluster and is responsible for coordinating the execution of the parallel operations on the data. The executors are worker processes that run on the **slave nodes** of the cluster and are responsible for executing the tasks assigned to them by the driver.
 
-<img class="align-right" src="{{ '/assets/images/blog/understanging-apache-spark-runtime-architecture/Apache_Spark_logo.webp' | absolute_url }}" alt="Apache Spark logo">
+<figure class="align-right">
+  <img src="{{ '/assets/images/blog/understanging-apache-spark-runtime-architecture/Apache_Spark_logo.webp' | absolute_url }}" alt="Apache Spark logo">
+  <figcaption>Apache Spark logo.</figcaption>
+</figure>
 
 In addition to the driver and executors, the Spark runtime architecture also includes several other components, such as the **cluster manager**, which is responsible for managing the allocation of resources across the cluster, and the scheduling algorithm, which is used to determine how tasks are assigned to executors. These components work together to enable efficient and scalable distributed computing with Spark.
 
