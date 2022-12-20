@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Understanding Apache Spark runtime architecture"
-description: "The mathematical study of waiting in line."
+description: "The Internal Working of Apache Spark."
 last_modified_at: 2022-12-13 16:45 +0200
 image: "/assets/images/blog/understanging-apache-spark-runtime-architecture.webp"
 categories: "Big Data"
