@@ -59,6 +59,13 @@ jobs:
           ruby-version: '3.3'
           bundler-cache: true
 
+      - name: Verify platform compatibility
+        run: |
+          if ! bundle check &>/dev/null; then
+            echo "Adding current platform to lockfile..."
+            bundle lock --add-platform x86_64-linux
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
