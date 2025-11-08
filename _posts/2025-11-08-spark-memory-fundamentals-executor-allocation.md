@@ -351,21 +351,20 @@ While the MemoryManager handles executor-level memory allocation, individual tas
 
 ### Memory per task
 
-Tasks within an executor run as threads sharing the same JVM. To prevent the first task from hogging all the memory, TaskMemoryManager limits how much each task can grab:
+Tasks within an executor run as threads sharing the same JVM. The memory available to each task is managed dynamically through TaskMemoryManager and allocated on-demand from the execution memory pool. [3]
 
-$$
-\frac{1}{2n} \leq \text{Task Memory} \leq \frac{1}{n}
-$$
+With multiple concurrent tasks, memory is allocated dynamically. Each task can acquire memory from the execution memory pool based on availability. When execution memory becomes constrained:
 
-Where $n$ is the number of currently running tasks in the executor.
+- If a task cannot acquire more memory, it will attempt to spill intermediate data to disk
+- Memory becomes available when other tasks complete and release their allocations
+- The system prioritizes continued execution over immediate failure
 
-**For example**, if an executor has 4 GB of execution memory:
-
-| Concurrent Tasks | Memory per Task |
-|:----------------|:----------------|
-| 2 tasks | 1-2 GB each |
-| 4 tasks | 0.5-1 GB each |
-| 8 tasks | 0.25-0.5 GB each |
+| Concurrent Tasks | Memory Allocation | Typical Behavior |
+|:----------------|:-----------------|:-----------------|
+| 1 task | On-demand, up to full execution memory | Single task uses available execution space |
+| 2 tasks | Shared on-demand | Both tasks request memory as needed |
+| 4 tasks | Shared on-demand | Higher contention, possible disk spilling |
+| 8+ tasks | Shared on-demand | Significant contention, likely disk spilling |
 
 **The takeaway**: More concurrent tasks = less memory per task. This is controlled by `spark.executor.cores`—fewer cores per executor means fewer concurrent tasks and more memory for each task to work with.
 
