@@ -747,14 +747,16 @@ code,pre,tt {
 .post .post-tags .tags-list a {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
-    display: inline;
+    display: inline-block;
     border: 1px solid #cf5d56;
     border-radius: 32px;
     line-height: 28px;
     padding: 0 10px 0 10px;
     text-decoration: none;
     margin-bottom: 8px;
-    color: #cf5d56
+    margin-right: 4px;
+    color: #cf5d56;
+    white-space: nowrap;
 }
 
 .post .post-tags .tags-list a:hover {
