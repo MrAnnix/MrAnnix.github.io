@@ -39,14 +39,12 @@ The following part removes dulpicated tags and invalid tags like blank tag.
     <div class="tags-list">
         {% for tag in site.tags %}
         <h2 id="{{ tag[0] | slugify }}">{{ tag[0] }}</h2>
-        <div class="tags-list-posts">
-            {% for post in tag[1] %}
-            <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-                <h4>{{ post.title }}<small class="post-date">{{ post.date | date_to_string }}</small></h4>
-                <p>{{ post.description }}</p>
-            </a>
-            {% endfor %}
-        </div>
+        {% for post in tag[1] %}
+        <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+            <h4>{{ post.title }}<small class="post-date">{{ post.date | date_to_string }}</small></h4>
+            <p>{{ post.description }}</p>
+        </a>
+        {% endfor %}
         {% endfor %}
     </div>
 </div>
