@@ -70,11 +70,6 @@ jobs:
         run: htmlproofer ./_site --only-4xx --checks Images,Scripts,Links,Favicon,OpenGraph
         continue-on-error: ${{ !inputs.fail_on_html_errors }}
 
-      - name: Generate robots.txt (block crawlers)
-        if: inputs.block_robots
-        run: echo -e "User-agent: *\nDisallow: /" > _site/robots.txt
-        shell: bash
-
       - name: Show site structure
         run: tree _site
         continue-on-error: true
