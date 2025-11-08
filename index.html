@@ -3,46 +3,46 @@ title: Home
 layout: default
 ---
 
-<div class=two-columns>
-    <div class=left-column>
-        <div class=hi>
-            <h1>Hi, I’m Raul</h1>
+<div class="two-columns">
+    <div class="left-column">
+        <div class="hi">
+            <h1>Hi, I'm Raul</h1>
             <p>I’m a Big Data engineer and Machine Learning enthusiast living in Spain.</p>
             <p>I’ve a BSc in Telecommunication Technologies Engineering and a MSc in progress.</p>
             <p>I consider myself a full-time learner constantly seeking out new opportunities to learn and grow.</p>
         </div>
-        <div class=sites-list>
+        <div class="sites-list">
             <ul>
                 {% for social in site.social %}
-                <li class={{ social.title }}>
+                <li class="{{ social.title }}">
                     <a href="{{ social.link }}" title="{{ social.alt }}">{{ social.description }}</a>
                 </li>
                 {% endfor %}
             </ul>
         </div>
-        <div class=recent-blog-posts>
+        <div class="recent-blog-posts">
             <h2>Recent blog posts</h2>
             {% for post in site.posts limit:4 %}
             <div id="recent-post-{{ forloop.index }}" class="recent-post">
-              <a href="{{ post.url | prepend: site.baseurl }}"><h4 class=title>{{ post.title }}</h4>
+              <a href="{{ post.url | prepend: site.baseurl }}"><h4 class="title">{{ post.title }}</h4>
                 <p>{{ post.description }}</p>
               </a>
             </div>
             {% endfor %}
             <div class="go-forward">
-              <a href="{{ site.baseurl }}/blog" class=all-post>See all blog posts</a>
+              <a href="{{ site.baseurl }}/blog" class="all-post">See all blog posts</a>
             </div>
         </div>
     </div>
-    <div class=right-column>
+    <div class="right-column">
         <div class="projects-column">
             <h2>Stuff I've done</h2>
-            <a id=GeekMag href="https://web.archive.org/web/20180828031811/https://www.geekmag.es/" class=project>
-                <div class=project-borders>
+            <a id="GeekMag" href="https://web.archive.org/web/20180828031811/https://www.geekmag.es/" class="project">
+                <div class="project-borders">
 					<picture>
                         <source srcset="/assets/images/GeekMag.webp" type="image/webp">
                         <source srcset="/assets/images/GeekMag.png" type="image/png">
-                        <img id=GeekMagScreenshot src="/assets/images/GeekMag.png" alt="Screenshot of GeekMag" class=screenshot width="744" height="445">
+                        <img id="GeekMagScreenshot" src="/assets/images/GeekMag.png" alt="Screenshot of GeekMag" class="screenshot" width="744" height="445">
                     </picture>
                     <b>GeekMag</b> was an online publication focused on technology, science, movies and videogames.
                 </div>

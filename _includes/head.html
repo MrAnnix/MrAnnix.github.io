@@ -13,7 +13,7 @@
     <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 110 }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta property="og:image" content="{{ site.url }}{{ site.logo }}">
     <meta property="og:url" content="{{ site.url }}">
-    <meta property='og:type' {% if page %} content='article' {% else %} content="website" {% endif %}/>
+    <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
 
     <!-- Feeds -->
     <link rel="alternate" title="{{ site.title }} (ATOM feed)" type="application/atom+xml" href="{{ "/feed.xml" | absolute_url }}">
@@ -38,13 +38,13 @@
     {% else %}
     <link rel="stylesheet" href="{{ "/assets/css/styles.css" | prepend: site.baseurl }}">
     {% endif %}
-    <meta name=viewport content="width=device-width,initial-scale=1">
-    <meta name=theme-color content=#c8463e>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#c8463e">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css" media="print" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" onload="this.media='all'">
 
     <!-- Fonts -->
-    <link rel=preload crossorigin="anonymous" href="{{ "/assets/fonts/moniker/light.woff2" | prepend: site.baseurl }}" as=font type=font/woff2>
-	<link rel=preload crossorigin="anonymous" href="{{ "/assets/fonts/moniker/medium.woff2" | prepend: site.baseurl }}" as=font type=font/woff2>
+    <link rel="preload" crossorigin="anonymous" href="{{ "/assets/fonts/moniker/light.woff2" | prepend: site.baseurl }}" as="font" type="font/woff2">
+	<link rel="preload" crossorigin="anonymous" href="{{ "/assets/fonts/moniker/medium.woff2" | prepend: site.baseurl }}" as="font" type="font/woff2">
 </head>
