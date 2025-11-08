@@ -6,3 +6,65 @@
 .MathJax {
     color: #333
 }
+
+/* Responsive MathJax equations */
+mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    display: inline-block;
+}
+
+mjx-container[display="true"] {
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    margin: 1em 0;
+}
+
+/* Ensure MathJax content is responsive */
+mjx-math {
+    max-width: 100%;
+}
+
+/* Tablet and smaller */
+@media screen and (max-width: 1024px) {
+    mjx-container {
+        font-size: 95%;
+    }
+    
+    mjx-container[display="true"] {
+        padding: 0.5em 0;
+    }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 768px) {
+    mjx-container {
+        font-size: 90%;
+    }
+    
+    mjx-container[display="true"] {
+        font-size: 85%;
+        margin: 0.8em 0;
+        padding: 0.5em;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        /* Add visual indicator for scrollable content */
+        box-shadow: inset -10px 0 10px -10px rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Very small mobile devices */
+@media screen and (max-width: 480px) {
+    mjx-container {
+        font-size: 85%;
+    }
+    
+    mjx-container[display="true"] {
+        font-size: 80%;
+        margin: 0.5em 0;
+    }
+}
