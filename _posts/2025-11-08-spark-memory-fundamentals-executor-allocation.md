@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Spark Memory Fundamentals: How Executors Really Allocate Memory"
-description: "Understanding the fundamentals of memory management in Spark 3.5.x: from executor architecture to unified memory model."
+description: "Ever wondered why your Spark jobs run out of memory? Learn how Spark divides executor memory, manages dynamic borrowing between storage and execution, and why some tasks spill to disk while others fly through."
 last_modified_at: 2025-11-08 16:00 +0100
 image: "/assets/images/blog/spark-memory-fundamentals-executor-allocation.webp"
 categories: "Big Data"
@@ -48,7 +48,7 @@ When you configure Spark memory settings, you're primarily working at the Spark 
 
 ## How executor memory actually works
 
-In Apache Spark 3.5.x, each executor's memory is divided into several regions, each with a specific job. When Spark runs on cluster managers like YARN or Kubernetes, it requests containers to execute work. Each executor runs as a separate **JVM process** within these containers.
+In Apache Spark, each executor's memory is divided into several regions, each with a specific job. When Spark runs on cluster managers like YARN or Kubernetes, it requests containers to execute work. Each executor runs as a separate **JVM process** within these containers.
 
 ### Total container memory
 
