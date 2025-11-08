@@ -1,0 +1,22 @@
+name: Deploy Production Site
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/deploy.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    with:
+      environment: production
+      branch: master
+      config_files: '_config.yml'
+      block_robots: false
+      fail_on_html_errors: true
+

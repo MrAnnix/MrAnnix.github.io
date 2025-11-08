@@ -1,0 +1,42 @@
+name: Validate Pull Request
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - master
+
+jobs:
+  determine-config:
+    runs-on: ubuntu-latest
+    outputs:
+      environment: ${{ steps.set-env.outputs.environment }}
+      config_files: ${{ steps.set-env.outputs.config_files }}
+    steps:
+      - name: Determine environment and config
+        id: set-env
+        run: |
+          if [[ "${{ github.base_ref }}" == "master" ]]; then
+            echo "environment=production" >> $GITHUB_OUTPUT
+            echo "config_files=_config.yml" >> $GITHUB_OUTPUT
+          else
+            echo "environment=development" >> $GITHUB_OUTPUT
+            echo "config_files=_config.yml,_config.dev.yml" >> $GITHUB_OUTPUT
+          fi
+        shell: bash
+
+  validate:
+    needs: determine-config
+    uses: ./.github/workflows/deploy.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    with:
+      environment: ${{ needs.determine-config.outputs.environment }}
+      branch: ${{ github.head_ref }}
+      config_files: ${{ needs.determine-config.outputs.config_files }}
+      block_robots: false
+      fail_on_html_errors: true
+      deploy: false
+
