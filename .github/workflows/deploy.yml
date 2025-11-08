@@ -6,7 +6,7 @@ on:
       environment:
         required: true
         type: string
-        description: 'Environment to deploy to (development or production)'
+        description: 'Environment to deploy to'
       branch:
         required: true
         type: string
@@ -16,11 +16,6 @@ on:
         type: string
         default: '_config.yml'
         description: 'Comma-separated list of config files'
-      block_robots:
-        required: false
-        type: boolean
-        default: false
-        description: 'Whether to block robots with robots.txt'
       fail_on_html_errors:
         required: false
         type: boolean

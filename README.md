@@ -45,7 +45,7 @@ Technical articles covering **Big Data**, **Machine Learning**, **Computer Scien
 - **Language:** Ruby
 - **Markup:** Markdown, HTML5, Liquid templating
 - **Styling:** SASS/SCSS with custom architecture
-- **Deployment:** [Netlify](https://www.netlify.com/) (CI/CD)
+- **Deployment:** GitHub Pages
 
 ### Jekyll Plugins
 - `jekyll-sitemap` — XML sitemap generation
@@ -211,12 +211,6 @@ The site uses **Netlify** for continuous deployment:
 ### Manual Deployment
 
 If deploying elsewhere, build the site and upload the `_site/` directory:
-```bash
-bundle exec jekyll build
-```
-
----
-
 ```bash
 bundle exec jekyll build
 ```
