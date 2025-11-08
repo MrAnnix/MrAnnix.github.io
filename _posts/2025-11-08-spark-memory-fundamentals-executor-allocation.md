@@ -238,8 +238,7 @@ sequenceDiagram
         Note over E,S: Scenario 1: Execution needs more
         E->>U: Request additional memory
         U->>S: Check available space
-        alt [Memory Borrowing Decision]
-        Storage has free space
+        alt Storage has free space
             S->>E: Lend memory immediately
             Note over E,S: Execution uses borrowed space
         else Storage full but can evict
@@ -254,8 +253,7 @@ sequenceDiagram
         Note over E,S: Scenario 2: Storage needs more
         S->>U: Request additional memory
         U->>E: Check available space
-        alt [Memory Borrowing Decision]
-        Execution has free space
+        alt Execution has free space
             E->>S: Lend memory immediately
             Note over E,S: Storage uses borrowed space
         else Execution is full
