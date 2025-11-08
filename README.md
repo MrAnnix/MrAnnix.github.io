@@ -216,12 +216,6 @@ bundle exec jekyll build
 
 ---
 
-```bash
-bundle exec jekyll build
-```
-
----
-
 ## 📄 License
 
 This project is licensed under the **MIT License**.
