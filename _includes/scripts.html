@@ -11,20 +11,27 @@
 {% if page.mathjax == true %}
 <!-- MathJax -->
 <script>
-MathJax = {
+window.MathJax = {
   tex: {
     inlineMath: [['$', '$'], ['\\(', '\\)']],
     displayMath: [['$$', '$$'], ['\\[', '\\]']],
     processEscapes: true,
-    processEnvironments: true
+    processEnvironments: true,
+    tags: 'ams'
   },
   options: {
-    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  startup: {
+    pageReady: () => {
+      return MathJax.startup.defaultPageReady().then(() => {
+        console.log('MathJax initial typesetting complete');
+      });
+    }
   }
 };
 </script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 {% endif %}
 {% if page.mermaid == true %}
 <!-- Mermaid -->

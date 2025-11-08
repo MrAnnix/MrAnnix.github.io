@@ -54,9 +54,9 @@ In Apache Spark 3.5.x, each executor's memory is divided into several regions, e
 
 The total memory requested from the cluster manager isn't just the executor memory—there's more to it:
 
-\[
+$$
 \text{Total Container Memory} = \text{Executor Memory} + \text{Memory Overhead} + \text{Off-Heap Memory} + \text{PySpark Memory}
-\]
+$$
 
 Let's break this down piece by piece.
 
@@ -72,9 +72,9 @@ Before Spark can use memory for its operations, it reserves a chunk for **memory
 
 The formula is pretty straightforward:
 
-\[
+$$
 \text{Memory Overhead} = \max(\text{Executor Memory} \times 0.1, 384\text{ MB})
-\]
+$$
 
 So basically, 10% of your executor memory, but at least 384 MB. Let's see some examples:
 - If executor memory is **5 GB**: overhead = max(5120 MB × 0.1, 384 MB) = **512 MB**
@@ -162,17 +162,17 @@ A **fixed 300 MB** is reserved for Spark's internal objects and system operation
 
 The remaining memory after this reservation is called **usable memory**:
 
-\[
+$$
 \text{Usable Memory} = \text{Executor Memory} - 300\text{ MB}
-\]
+$$
 
 #### 2. User memory
 
 Controlled by the `spark.memory.fraction` parameter (default: **0.6**), user memory accounts for the remaining fraction after the unified memory region. With the default setting, **40%** of usable memory goes to user memory:
 
-\[
+$$
 \text{User Memory} = \text{Usable Memory} \times (1 - \text{spark.memory.fraction})
-\]
+$$
 
 Here's the catch: user memory is **completely unmanaged** by Spark. It's the wild west. It stores:
 
@@ -187,9 +187,9 @@ Here's the catch: user memory is **completely unmanaged** by Spark. It's the wil
 
 The unified memory region accounts for **60%** of usable memory by default and is where the magic happens—it's **shared dynamically** between storage and execution:
 
-\[
+$$
 \text{Unified Memory} = \text{Usable Memory} \times \text{spark.memory.fraction}
-\]
+$$
 
 This is where Spark's dynamic memory management really shines. The region is initially split equally between storage and execution (controlled by `spark.memory.storageFraction`, which defaults to **0.5**).
 
@@ -353,11 +353,11 @@ While the MemoryManager handles executor-level memory allocation, individual tas
 
 Tasks within an executor run as threads sharing the same JVM. To prevent the first task from hogging all the memory, TaskMemoryManager limits how much each task can grab:
 
-\[
+$$
 \frac{1}{2n} \leq \text{Task Memory} \leq \frac{1}{n}
-\]
+$$
 
-Where \( n \) is the number of currently running tasks in the executor.
+Where $n$ is the number of currently running tasks in the executor.
 
 **For example**, if an executor has 4 GB of execution memory:
 
