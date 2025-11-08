@@ -46,8 +46,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      image: jekyll/jekyll:latest
     
     steps:
       - name: Checkout ${{ inputs.branch }} branch
@@ -55,19 +53,23 @@ jobs:
         with:
           ref: ${{ inputs.branch }}
 
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+          bundler-cache: true
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Build with Jekyll
-        run: jekyll build --config ${{ inputs.config_files }}
+        run: bundle exec jekyll build --config ${{ inputs.config_files }}
         env:
           JEKYLL_ENV: ${{ inputs.environment }}
-
-      - name: Install html-proofer
-        run: gem install html-proofer
+          GITHUB_PAGES: true
 
       - name: Test site with HTMLProofer
-        run: htmlproofer ./_site --only-4xx --checks Images,Scripts,Links,Favicon,OpenGraph
+        run: bundle exec htmlproofer ./_site --only-4xx --checks Images,Scripts,Links,Favicon,OpenGraph
         continue-on-error: ${{ !inputs.fail_on_html_errors }}
 
       - name: Show site structure
