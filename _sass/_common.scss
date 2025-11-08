@@ -726,6 +726,57 @@ code,pre,tt {
     padding-top: 1rem
 }
 
+.post .text table {
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+    font-size: 13pt;
+    line-height: 1.5;
+}
+
+.post .text table thead {
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #bf8e82;
+}
+
+.post .text table th {
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 700;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+
+.post .text table td {
+    padding: 0.75rem;
+    color: #606060;
+    border-bottom: 1px solid #eee;
+}
+
+.post .text table tbody tr:hover {
+    background-color: #fdf6f4;
+}
+
+.post .text table code {
+    font-size: 12pt;
+    background-color: #f9f9f9;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+@media screen and (max-width: 820px) {
+    .post .text table {
+        font-size: 12pt;
+    }
+    
+    .post .text table th,
+    .post .text table td {
+        padding: 0.5rem;
+    }
+}
+
 .post .ui-click {
     border: 1px solid #eee;
     border-radius: 4px;

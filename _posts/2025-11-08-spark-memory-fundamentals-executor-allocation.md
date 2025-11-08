@@ -19,7 +19,7 @@ This is the first part of a two-part series on Spark memory management. Here we'
 One of the key reasons Spark revolutionized big data processing is its ability to keep data in memory rather than constantly reading from and writing to disk. The speed difference is huge:
 
 | Storage Medium | Typical Speed | Relative Performance |
-|---------------|---------------|---------------------|
+|:--------------|:--------------|:---------------------|
 | **DDR4/DDR5 RAM** | 20-60 GB/s | 200-600x faster than HDD |
 | **NVMe SSD** | 3-7 GB/s | 30-70x faster than HDD |
 | **SATA SSD** | 200-550 MB/s | 2-5x faster than HDD |
@@ -204,7 +204,7 @@ This is where Spark's dynamic memory management really shines. The region is ini
 When storage memory needs to free up space, Spark uses a **Least Recently Used (LRU)** algorithm to kick out cached blocks. How painful this eviction is depends on the storage level you chose:
 
 | Storage Level | Eviction Cost | Reason |
-|--------------|---------------|---------|
+|:-------------|:--------------|:-------|
 | `MEMORY_ONLY` | **High** | Evicted data must be recomputed from source |
 | `MEMORY_AND_DISK` | **Medium** | Evicted blocks written to disk and can be read back |
 | `MEMORY_AND_DISK_SER` | **Low** | Data already serialized, only disk I/O needed |
@@ -281,7 +281,7 @@ Execution wins over storage because a task crash is worse than evicting cached d
 
 Let's walk through a real example with a 12 GB executor to see how all this plays out in practice:
 
-```
+```text
 Executor Memory: 12 GB (12,288 MB)
 
 1. Memory Overhead:
@@ -316,7 +316,7 @@ So when you request a 12 GB executor, you're actually asking for about 13.2 GB f
 
 Here are the key memory configuration parameters:
 
-```properties
+```conf
 # Executor memory (JVM heap)
 spark.executor.memory=12g
 
@@ -362,7 +362,7 @@ Where \( n \) is the number of currently running tasks in the executor.
 **For example**, if an executor has 4 GB of execution memory:
 
 | Concurrent Tasks | Memory per Task |
-|-----------------|-----------------|
+|:----------------|:----------------|
 | 2 tasks | 1-2 GB each |
 | 4 tasks | 0.5-1 GB each |
 | 8 tasks | 0.25-0.5 GB each |
