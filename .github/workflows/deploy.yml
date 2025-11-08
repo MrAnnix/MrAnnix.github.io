@@ -69,7 +69,7 @@ jobs:
           GITHUB_PAGES: true
 
       - name: Test site with HTMLProofer
-        run: bundle exec htmlproofer ./_site --only-4xx --checks Images,Scripts,Links,Favicon,OpenGraph
+        run: bundle exec htmlproofer ./_site --checks Images,Scripts,Links,Favicon,OpenGraph --ignore-status-codes "403,429,503"
         continue-on-error: ${{ !inputs.fail_on_html_errors }}
 
       - name: Show site structure
