@@ -368,55 +368,6 @@ With multiple concurrent tasks, memory is allocated dynamically. Each task can a
 
 **The takeaway**: More concurrent tasks = less memory per task. This is controlled by `spark.executor.cores`—fewer cores per executor means fewer concurrent tasks and more memory for each task to work with.
 
-## Common memory issues (and how to fix them)
-
-### OutOfMemoryError
-
-**What you'll see**: Executors failing with OOM errors
-
-**Why it happens**:
-- Executor memory too small for workload
-- Too many concurrent tasks per executor
-- Large objects in user memory
-- Insufficient memory overhead for native operations
-
-**How to fix it**:
-1. Increase `spark.executor.memory`
-2. Increase `spark.executor.memoryOverhead` 
-3. Reduce `spark.executor.cores` (fewer concurrent tasks)
-4. Increase number of partitions to reduce per-task data
-
-### Excessive disk spilling
-
-**What you'll see**: Poor performance, high disk I/O in Spark UI, spill metrics showing large values
-
-**Why it happens**:
-- Insufficient execution memory
-- Too much memory used for caching
-- Large shuffle operations
-
-**How to fix it**:
-1. Increase executor memory
-2. Reduce caching if execution memory is more critical
-3. Increase shuffle partitions: `spark.sql.shuffle.partitions`
-4. Use more efficient serialization (Kryo instead of Java)
-
-### GC overhead limit exceeded
-
-**What you'll see**: Executors spending excessive time in garbage collection
-
-**Why it happens**:
-- Too many small objects in heap
-- Insufficient heap size
-- Memory fragmentation
-
-**How to fix it**:
-1. Increase executor memory
-2. Tune JVM GC parameters
-3. Consider using off-heap memory
-4. Reduce object creation in user code
-5. Use primitive types instead of objects where possible
-
 ## Best practices
 
 Here are some tips to keep your Spark jobs running smoothly:
@@ -454,16 +405,16 @@ In Part 2, we'll dive into advanced topics including Project Tungsten's memory o
 
 ## References
 
-[1] Apache Software Foundation, "Apache Spark Configuration," 2024. [Online]. Available: [https://spark.apache.org/docs/3.5.0/configuration.html](https://spark.apache.org/docs/3.5.0/configuration.html). [Accessed: Nov. 8, 2025].
+[1] Apache Software Foundation, ["Apache Spark Configuration,"](https://spark.apache.org/docs/3.5.0/configuration.html) 2024.
 
-[2] Apache Software Foundation, "Tuning Spark - Memory Management," 2024. [Online]. Available: [https://spark.apache.org/docs/3.5.0/tuning.html#memory-management-overview](https://spark.apache.org/docs/3.5.0/tuning.html#memory-management-overview). [Accessed: Nov. 8, 2025].
+[2] Apache Software Foundation, ["Tuning Spark - Memory Management,"](https://spark.apache.org/docs/3.5.0/tuning.html#memory-management-overview) 2024.
 
-[3] Apache Software Foundation, "Spark Memory Management Source Code," 2024. [Online]. Available: [https://github.com/apache/spark/tree/master/core/src/main/scala/org/apache/spark/memory](https://github.com/apache/spark/tree/master/core/src/main/scala/org/apache/spark/memory). [Accessed: Nov. 8, 2025].
+[3] Apache Software Foundation, ["Spark Memory Management Source Code,"](https://github.com/apache/spark/tree/master/core/src/main/scala/org/apache/spark/memory) 2024.
 
-[4] M. Zaharia et al., "Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing," in *Proc. 9th USENIX Symp. Networked Syst. Design and Implementation (NSDI)*, San Jose, CA, USA, 2012, pp. 15-28.
+[4] M. Zaharia et al., ["Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing,"](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf) in *Proc. 9th USENIX Symp. Networked Syst. Design and Implementation (NSDI)*, San Jose, CA, USA, 2012, pp. 15-28.
 
-[5] M. Armbrust et al., "Spark SQL: Relational Data Processing in Spark," in *Proc. ACM SIGMOD Int. Conf. Management of Data*, Melbourne, Australia, 2015, pp. 1383-1394.
+[5] M. Armbrust et al., ["Spark SQL: Relational Data Processing in Spark,"](https://dl.acm.org/doi/10.1145/2723372.2742797) in *Proc. ACM SIGMOD Int. Conf. Management of Data*, Melbourne, Australia, 2015, pp. 1383-1394.
 
-[6] H. Karau and R. Warren, *High Performance Spark: Best Practices for Scaling and Optimizing Apache Spark*. Sebastopol, CA, USA: O'Reilly Media, 2017.
+[6] H. Karau and R. Warren, [*High Performance Spark: Best Practices for Scaling and Optimizing Apache Spark*](https://www.oreilly.com/library/view/high-performance-spark/9781491943199/). Sebastopol, CA, USA: O'Reilly Media, 2017.
 
-[7] B. Chambers and M. Zaharia, *Spark: The Definitive Guide - Big Data Processing Made Simple*. Sebastopol, CA, USA: O'Reilly Media, 2018.
+[7] B. Chambers and M. Zaharia, [*Spark: The Definitive Guide - Big Data Processing Made Simple*](https://www.oreilly.com/library/view/spark-the-definitive/9781491912201/). Sebastopol, CA, USA: O'Reilly Media, 2018.
