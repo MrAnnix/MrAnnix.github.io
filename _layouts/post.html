@@ -21,23 +21,21 @@ layout: default
         </span>
         <a href="{{ page.url | prepend: site.baseurl }}"><h1 class="title">{{ page.title }}</h1></a>
     </div>
-    <div class="row-cols">
-        <div class="main text">
-            {% if page.image %}
-            <p><img src="{{ page.image }}" alt="{{ page.description }}" title="{{ page.title }}"></p>
-            {% endif %}
-            {{ content }}
-        </div>
-        <p class="post-tags">
-            <span class="tags-title">Tags</span>
-            <span class="tags-list">
-                {% for tag in page.tags %}
-                <a href="{{ site.tag_page | prepend: site.baseurl }}#{{ tag | slugify }}">{{ tag }}</a>
-                {% endfor %}
-            </span>
-        </p>
+    <div class="main text">
+        {% if page.image %}
+        <p><img src="{{ page.image }}" alt="{{ page.description }}" title="{{ page.title }}"></p>
+        {% endif %}
+        {{ content }}
     </div>
-    <div class="row-cols blog-navigation">
+    <div class="post-tags">
+        <span class="tags-title">Tags</span>
+        <span class="tags-list">
+            {% for tag in page.tags %}
+            <a href="{{ site.tag_page | prepend: site.baseurl }}#{{ tag | slugify }}">{{ tag }}</a>
+            {% endfor %}
+        </span>
+    </div>
+    <div class="blog-navigation">
         {% if page.previous.url %}
         <a href="{{page.previous.url | prepend: site.baseurl }}" class="previous-post">← Previous post</a>
         {% endif %}
@@ -45,7 +43,7 @@ layout: default
         <a href="{{page.next.url | prepend: site.baseurl }}" class="next-post">Next post →</a>
         {% endif %}
     </div>
-    <div class="row-cols blog-return">
+    <div class="blog-return">
         <a href="{{ site.baseurl }}/blog" class="back-to-blog">↺ All blog posts</a>
     </div>
 </article>
