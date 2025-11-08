@@ -19,7 +19,7 @@ This is the first part of a two-part series on Spark memory management. Here we'
 One of the key reasons Spark revolutionized big data processing is its ability to keep data in memory rather than constantly reading from and writing to disk. The speed difference is huge:
 
 | Storage Medium | Typical Speed | Relative Performance |
-|:--------------|:--------------|:---------------------|
+|:--------------|:--------------|:---------------------:|
 | **DDR4/DDR5 RAM** | 20-60 GB/s | 200-600x faster than HDD |
 | **NVMe SSD** | 3-7 GB/s | 30-70x faster than HDD |
 | **SATA SSD** | 200-550 MB/s | 2-5x faster than HDD |
@@ -55,8 +55,10 @@ In Apache Spark, each executor's memory is divided into several regions, each wi
 The total memory requested from the cluster manager isn't just the executor memory—there's more to it:
 
 $$
-\text{Total Container Memory} = \text{Executor Memory} + \text{Memory Overhead} + \text{Off-Heap Memory} + \text{PySpark Memory}
+\text{Total Container Memory} = \text{Executor Memory} + \text{Memory Overhead} + \text{Off-Heap Memory (if enabled)} + \text{PySpark Memory (if configured)}
 $$
+
+**Note:** All these components are additive. If any are not configured, they default to 0 and don't consume additional memory.
 
 Let's break this down piece by piece.
 
@@ -68,7 +70,7 @@ Before Spark can use memory for its operations, it reserves a chunk for **memory
 - **Interned strings**: String pool memory
 - **Native libraries**: Non-JVM operations (like Netty for networking)
 - **Thread stacks**: Memory for executor threads
-- **PySpark processes**: Python interpreter memory when using PySpark (if `spark.executor.pyspark.memory` is not configured separately)
+- **PySpark processes**: Python interpreter memory when using PySpark. When `spark.executor.pyspark.memory` is explicitly configured, it becomes a separate memory allocation beyond `spark.executor.memoryOverhead`; otherwise, Python processes consume part of the overhead memory.
 
 The formula is pretty straightforward:
 
@@ -81,7 +83,7 @@ So basically, 10% of your executor memory, but at least 384 MB. Let's see some e
 - If executor memory is **1 GB**: overhead = max(1024 MB × 0.1, 384 MB) = **384 MB**
 - If executor memory is **10 GB**: overhead = max(10240 MB × 0.1, 384 MB) = **1024 MB**
 
-You can explicitly configure this using `spark.executor.memoryOverhead`. One important thing: starting from Spark 3.0, this memory does **not** include off-heap memory, which is calculated separately (we'll get to that in a bit).
+You can explicitly configure this using `spark.executor.memoryOverhead`. One important thing: starting from Spark 3.0, off-heap memory (`spark.memory.offHeap.size`) is calculated **independently and is NOT included** in `spark.executor.memoryOverhead`. However, both are **additive to the total container memory**—meaning the container size is the sum of executor memory, overhead, off-heap memory, and PySpark memory if applicable.
 
 <pre class="mermaid">
 graph TB
@@ -204,7 +206,7 @@ This is where Spark's dynamic memory management really shines. The region is ini
 When storage memory needs to free up space, Spark uses a **Least Recently Used (LRU)** algorithm to kick out cached blocks. How painful this eviction is depends on the storage level you chose:
 
 | Storage Level | Eviction Cost | Reason |
-|:-------------|:--------------|:-------|
+|:-------------|:--------------|:-------:|
 | `MEMORY_ONLY` | **High** | Evicted data must be recomputed from source |
 | `MEMORY_AND_DISK` | **Medium** | Evicted blocks written to disk and can be read back |
 | `MEMORY_AND_DISK_SER` | **Low** | Data already serialized, only disk I/O needed |
@@ -351,7 +353,7 @@ While the MemoryManager handles executor-level memory allocation, individual tas
 
 ### Memory per task
 
-Tasks within an executor run as threads sharing the same JVM. The memory available to each task is managed dynamically through TaskMemoryManager and allocated on-demand from the execution memory pool. [3]
+Tasks within an executor run as threads sharing the same JVM. The memory available to each task is managed dynamically through **TaskMemoryManager** (see [3] for source code) and allocated on-demand from the execution memory pool. This ensures fair distribution of execution memory among concurrent tasks.
 
 With multiple concurrent tasks, memory is allocated dynamically. Each task can acquire memory from the execution memory pool based on availability. When execution memory becomes constrained:
 
@@ -360,7 +362,7 @@ With multiple concurrent tasks, memory is allocated dynamically. Each task can a
 - The system prioritizes continued execution over immediate failure
 
 | Concurrent Tasks | Memory Allocation | Typical Behavior |
-|:----------------|:-----------------|:-----------------|
+|:----------------|:-----------------|:---------------:|
 | 1 task | On-demand, up to full execution memory | Single task uses available execution space |
 | 2 tasks | Shared on-demand | Both tasks request memory as needed |
 | 4 tasks | Shared on-demand | Higher contention, possible disk spilling |
