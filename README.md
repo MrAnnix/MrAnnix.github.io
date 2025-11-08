@@ -4,6 +4,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Jekyll](https://img.shields.io/badge/Jekyll-CC0000?style=flat&logo=jekyll&logoColor=white)
+![Ruby](https://img.shields.io/badge/Ruby-3.3-CC342D?style=flat&logo=ruby&logoColor=white)
+[![Validate Pull Request](https://github.com/MrAnnix/MrAnnix.github.io/actions/workflows/validate-pr.yml/badge.svg)](https://github.com/MrAnnix/MrAnnix.github.io/actions/workflows/validate-pr.yml)
 
 | Environment | Status | URL |
 |:-----------|:-------|:----|
