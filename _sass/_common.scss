@@ -182,7 +182,8 @@ button,[type=button],[type=reset],[type=submit] {
 }
 
 button,html [type=button],[type=reset],[type=submit] {
-    -webkit-appearance: button
+    -webkit-appearance: button;
+    appearance: button
 }
 
 button::-moz-focus-inner,input::-moz-focus-inner {
@@ -223,7 +224,8 @@ textarea {
 }
 
 [type=search] {
-    -webkit-appearance: textfield
+    -webkit-appearance: textfield;
+    appearance: textfield
 }
 
 [type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration {
@@ -579,7 +581,7 @@ code,pre,tt {
    Post style
    ========================================================================== */
 
-@charset "UTF-8";.post {
+.post {
     padding-top: 3rem;
     padding-bottom: 2rem;
     width: 100%
@@ -592,6 +594,8 @@ code,pre,tt {
 }
 
 .post .text {
+    word-wrap: break-word;
+    overflow-wrap: break-word
 }
 
 .post .text h2 {
@@ -687,7 +691,6 @@ code,pre,tt {
     max-width: 100%;
     margin: 0 auto;
     border-style: none;
-    vertical-align: middle;
     -ms-interpolation-mode: bicubic
 }
 
@@ -854,7 +857,7 @@ code,pre,tt {
     overflow-x: scroll
 }
 
-@charset "UTF-8";.side-note {
+.side-note {
     margin: .5rem 0 0 1rem;
     color: #a0a0a0;
     font-size: 11pt

@@ -12,7 +12,7 @@
     margin-bottom: .5em
 }
 
-@charset "UTF-8";.project {
+.project {
     text-decoration: none!important;
     color: #333!important
 }
@@ -108,7 +108,6 @@
     transition: box-shadow .3s,background-color .3s cubic-bezier(.25,1,.5,1);
     box-shadow: transparent 0 0;
     padding: 8px;
-    vertical-align: middle;
     display: block
 }
 
