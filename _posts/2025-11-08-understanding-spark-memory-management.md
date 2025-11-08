@@ -6,6 +6,8 @@ last_modified_at: 2025-11-08 10:00 +0100
 image: "/assets/images/blog/understanding-spark-memory-management.webp"
 categories: "Big Data"
 tags: [Big Data, Spark, Apache, Memory Management, Performance]
+mathjax: true
+mermaid: true
 ---
 
 Apache Spark's performance heavily relies on how efficiently it manages memory across distributed executors. Unlike traditional disk-based systems, Spark leverages in-memory computing to achieve orders of magnitude faster processing speeds. However, this power comes with the complexity of managing memory carefully to avoid bottlenecks, out-of-memory errors, and performance degradation. Understanding how Spark allocates and manages memory is crucial for building robust and efficient big data applications.
@@ -65,7 +67,7 @@ $$
 \text{Total Container Memory} = \text{Executor Memory} + \text{Memory Overhead} + \text{Off-Heap Memory} + \text{PySpark Memory}
 $$
 
-```mermaid
+<pre class="mermaid">
 graph TB
     A[Total Container Memory] --> B[Memory Overhead]
     A --> C[Executor Memory]
@@ -76,7 +78,7 @@ graph TB
     style A fill:#e1f5ff
     style B fill:#ffe1e1
     style C fill:#e1ffe1
-```
+</pre>
 
 ### On-heap vs off-heap memory
 
@@ -104,7 +106,7 @@ The **UnifiedMemoryManager**, introduced in Spark 1.6, addresses these issues th
 
 The available executor memory (after overhead) is divided into several regions:
 
-```mermaid
+<pre class="mermaid">
 graph LR
     A[Executor Memory] --> B[Reserved Memory<br/>300 MB]
     A --> C[Usable Memory]
@@ -119,7 +121,7 @@ graph LR
     style E fill:#e1ffe1
     style F fill:#e1e1ff
     style G fill:#ffe1ff
-```
+</pre>
 
 #### 1. Reserved memory
 
@@ -191,7 +193,7 @@ Most performance issues in Spark pipelines stem from insufficient execution memo
 
 The beauty of unified memory management is its dynamic nature. When one region needs more memory and the other has free space, borrowing can occur:
 
-```mermaid
+<pre class="mermaid">
 sequenceDiagram
     participant E as Execution Memory
     participant S as Storage Memory
@@ -209,7 +211,7 @@ sequenceDiagram
     else Storage cannot evict
         E->>E: Spill to disk
     end
-```
+</pre>
 
 **Key borrowing rules**:
 1. **Execution can borrow from storage**: If storage memory has free space, execution can use it without restrictions
@@ -441,7 +443,7 @@ With 12 GB executor memory:
 
 The complete memory management decision flow in Spark:
 
-```mermaid
+<pre class="mermaid">
 flowchart TD
     A[Task Requests Memory] --> B{Memory Type?}
     B -->|Execution| C{Execution Memory Available?}
@@ -474,7 +476,8 @@ flowchart TD
     style O fill:#e1ffe1
     style H fill:#ffe1e1
     style N fill:#ffe1e1
-```
+</pre>
+
 
 ## Conclusion
 
