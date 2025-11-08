@@ -455,16 +455,16 @@ In Part 2, we'll dive into advanced topics including Project Tungsten's memory o
 
 ## References
 
-1. Apache Software Foundation. (2024). *Apache Spark Configuration*. Retrieved from https://spark.apache.org/docs/3.5.0/configuration.html
+[1] Apache Software Foundation, "Apache Spark Configuration," 2024. [Online]. Available: https://spark.apache.org/docs/3.5.0/configuration.html. [Accessed: Nov. 8, 2025].
 
-2. Apache Software Foundation. (2024). *Tuning Spark - Memory Management*. Retrieved from https://spark.apache.org/docs/3.5.0/tuning.html#memory-management-overview
+[2] Apache Software Foundation, "Tuning Spark - Memory Management," 2024. [Online]. Available: https://spark.apache.org/docs/3.5.0/tuning.html#memory-management-overview. [Accessed: Nov. 8, 2025].
 
-3. Apache Software Foundation. (2024). *Spark Memory Management Source Code*. Retrieved from https://github.com/apache/spark/tree/master/core/src/main/scala/org/apache/spark/memory
+[3] Apache Software Foundation, "Spark Memory Management Source Code," 2024. [Online]. Available: https://github.com/apache/spark/tree/master/core/src/main/scala/org/apache/spark/memory. [Accessed: Nov. 8, 2025].
 
-4. Zaharia, M., et al. (2012). *Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing*. In Proceedings of the 9th USENIX Symposium on Networked Systems Design and Implementation (NSDI '12).
+[4] M. Zaharia et al., "Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing," in *Proc. 9th USENIX Symp. Networked Syst. Design and Implementation (NSDI)*, San Jose, CA, USA, 2012, pp. 15-28.
 
-5. Armbrust, M., et al. (2015). *Spark SQL: Relational Data Processing in Spark*. In Proceedings of the 2015 ACM SIGMOD International Conference on Management of Data.
+[5] M. Armbrust et al., "Spark SQL: Relational Data Processing in Spark," in *Proc. ACM SIGMOD Int. Conf. Management of Data*, Melbourne, Australia, 2015, pp. 1383-1394.
 
-6. Karau, H., & Warren, R. (2017). *High Performance Spark: Best Practices for Scaling and Optimizing Apache Spark*. O'Reilly Media.
+[6] H. Karau and R. Warren, *High Performance Spark: Best Practices for Scaling and Optimizing Apache Spark*. Sebastopol, CA, USA: O'Reilly Media, 2017.
 
-7. Chambers, B., & Zaharia, M. (2018). *Spark: The Definitive Guide - Big Data Processing Made Simple*. O'Reilly Media.
+[7] B. Chambers and M. Zaharia, *Spark: The Definitive Guide - Big Data Processing Made Simple*. Sebastopol, CA, USA: O'Reilly Media, 2018.
