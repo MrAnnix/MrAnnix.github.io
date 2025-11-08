@@ -455,11 +455,11 @@ In Part 2, we'll dive into advanced topics including Project Tungsten's memory o
 
 ## References
 
-[1] Apache Software Foundation, "Apache Spark Configuration," 2024. [Online]. Available: https://spark.apache.org/docs/3.5.0/configuration.html. [Accessed: Nov. 8, 2025].
+[1] Apache Software Foundation, "Apache Spark Configuration," 2024. [Online]. Available: [https://spark.apache.org/docs/3.5.0/configuration.html](https://spark.apache.org/docs/3.5.0/configuration.html). [Accessed: Nov. 8, 2025].
 
-[2] Apache Software Foundation, "Tuning Spark - Memory Management," 2024. [Online]. Available: https://spark.apache.org/docs/3.5.0/tuning.html#memory-management-overview. [Accessed: Nov. 8, 2025].
+[2] Apache Software Foundation, "Tuning Spark - Memory Management," 2024. [Online]. Available: [https://spark.apache.org/docs/3.5.0/tuning.html#memory-management-overview](https://spark.apache.org/docs/3.5.0/tuning.html#memory-management-overview). [Accessed: Nov. 8, 2025].
 
-[3] Apache Software Foundation, "Spark Memory Management Source Code," 2024. [Online]. Available: https://github.com/apache/spark/tree/master/core/src/main/scala/org/apache/spark/memory. [Accessed: Nov. 8, 2025].
+[3] Apache Software Foundation, "Spark Memory Management Source Code," 2024. [Online]. Available: [https://github.com/apache/spark/tree/master/core/src/main/scala/org/apache/spark/memory](https://github.com/apache/spark/tree/master/core/src/main/scala/org/apache/spark/memory). [Accessed: Nov. 8, 2025].
 
 [4] M. Zaharia et al., "Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing," in *Proc. 9th USENIX Symp. Networked Syst. Design and Implementation (NSDI)*, San Jose, CA, USA, 2012, pp. 15-28.
 
