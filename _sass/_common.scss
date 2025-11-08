@@ -729,12 +729,15 @@ code,pre,tt {
 
 .post .text table {
     border-collapse: collapse;
-    margin: 1.5rem auto;
-    width: 100%;
-    overflow-x: auto;
-    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    width: auto;
+    max-width: 100%;
     font-size: 13pt;
     line-height: 1.5;
+    display: table;
 }
 
 .post .text table thead {
