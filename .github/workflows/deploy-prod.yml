@@ -17,6 +17,5 @@ jobs:
       environment: production
       branch: master
       config_files: '_config.yml'
-      block_robots: false
       fail_on_html_errors: true
 
