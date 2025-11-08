@@ -1,0 +1,22 @@
+name: Deploy Development Site
+
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/deploy.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    with:
+      environment: development
+      branch: develop
+      config_files: '_config.yml,_config.dev.yml'
+      block_robots: true
+      fail_on_html_errors: false
+
