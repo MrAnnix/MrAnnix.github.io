@@ -38,11 +38,12 @@
     {% else %}
     <link rel="stylesheet" href="{{ "/assets/css/styles.css" | prepend: site.baseurl }}">
     {% endif %}
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="theme-color" content="#c8463e">
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css" media="print" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" onload="this.media='all'">
+    <link rel="preload" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css" as="style" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"></noscript>
 
     <!-- Fonts -->
     <link rel="preload" crossorigin="anonymous" href="{{ "/assets/fonts/moniker/light.woff2" | prepend: site.baseurl }}" as="font" type="font/woff2">
