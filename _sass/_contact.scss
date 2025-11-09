@@ -6,20 +6,20 @@
 .contact-email>.e-mail, .contact-email>.address {
     padding-left: 24px;
     color: var(--color-link);
-    font-family: iosevka term;
+    font-family: var(--font-mono);
     font-size: 1.5rem
 }
 
 .pgp .fingerprint>.line {
     text-align: center;
     color: var(--color-link);
-    font-family: iosevka term;
+    font-family: var(--font-mono);
     font-size: 1.167rem
 }
 
 .pgp-key {
     color: var(--color-code);
-    font-family: iosevka term;
+    font-family: var(--font-mono);
     line-height: 1.4;
     font-size: 0.75rem
 }

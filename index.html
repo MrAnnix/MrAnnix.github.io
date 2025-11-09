@@ -40,9 +40,9 @@ layout: default
             <a id="GeekMag" href="https://web.archive.org/web/20180828031811/https://www.geekmag.es/" class="project">
                 <div class="project-borders">
 					<picture>
-                        <source srcset="/assets/images/GeekMag.webp" type="image/webp">
-                        <source srcset="/assets/images/GeekMag.png" type="image/png">
-                        <img id="GeekMagScreenshot" src="/assets/images/GeekMag.png" alt="Screenshot of GeekMag" class="screenshot" width="744" height="445">
+                        <source srcset="{{ '/assets/images/GeekMag.webp' | relative_url }}" type="image/webp">
+                        <source srcset="{{ '/assets/images/GeekMag.png' | relative_url }}" type="image/png">
+                        <img id="GeekMagScreenshot" src="{{ '/assets/images/GeekMag.png' | relative_url }}" alt="Screenshot of GeekMag" class="screenshot" width="744" height="445" loading="lazy" decoding="async" fetchpriority="low">
                     </picture>
                     <b>GeekMag</b> was an online publication focused on technology, science, movies and videogames.
                 </div>

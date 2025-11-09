@@ -1,6 +1,16 @@
 function loadImage(id, targetId) {
     var el = document.getElementById(id);
+    if (!el) {
+        console.warn('loadImage: element not found for id "' + id + '"');
+        return;
+    }
+
     var targetEl = targetId ? document.getElementById(targetId) : el;
+    if (targetId && !targetEl) {
+        console.warn('loadImage: target element not found for id "' + targetId + '"');
+        return;
+    }
+
     var imageToLoad;
     if (el.dataset.image) {
         imageToLoad = el.dataset.image;
