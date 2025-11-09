@@ -284,7 +284,7 @@ code,pre,tt {
 }
 
 .text a:link,.text a:visited {
-    color: #8a6666
+    color: var(--color-link)
 }
 
 .text a:hover {
@@ -306,21 +306,21 @@ code,pre,tt {
 
 @font-face {
     font-family: moniker;
-    font-display: fallback;
+    font-display: swap;
     font-weight: 400;
     src: url(../fonts/moniker/light.woff2) format("woff2"),url(../fonts/moniker/light.woff) format("woff")
 }
 
 @font-face {
     font-family: moniker;
-    font-display: fallback;
+    font-display: swap;
     font-weight: 700;
     src: url(../fonts/moniker/medium.woff2) format("woff2"),url(../fonts/moniker/medium.woff) format("woff")
 }
 
 @font-face {
     font-family: moniker;
-    font-display: fallback;
+    font-display: swap;
     font-weight: 400;
     font-style: italic;
     src: url(../fonts/moniker/litalic.woff2) format("woff2"),url(../fonts/moniker/litalic.woff) format("woff")
@@ -328,20 +328,20 @@ code,pre,tt {
 
 @font-face {
     font-family: bryant;
-    font-display: fallback;
+    font-display: swap;
     font-weight: 700;
     src: url(../fonts/bryantcond/medium.woff2) format("woff2"),url(../fonts/bryantcond/medium.woff) format("woff")
 }
 
 @font-face {
     font-family: iosevka term;
-    font-display: fallback;
+    font-display: swap;
     font-weight: 400;
     src: url(../fonts/iosevka-term/regular.woff2) format("woff2"),url(../fonts/iosevka-term/regular.woff) format("woff")
 }
 
 .code {
-    color: #646894
+    color: var(--color-code)
 }
 
 .red {
@@ -770,7 +770,7 @@ code,pre,tt {
     }
     
     .post .text table {
-        font-size: 12pt;
+        font-size: 0.75rem;
         margin-top: 0;
         margin-bottom: 0;
     }
@@ -876,7 +876,7 @@ code,pre,tt {
 }
 
 .post .text table code {
-    font-size: 12pt;
+    font-size: 0.75rem;
     background-color: #f9f9f9;
     padding: 2px 4px;
     border-radius: 3px;
@@ -970,10 +970,9 @@ code,pre,tt {
     margin-left: 2px;
     text-transform: uppercase;
     font-family: moniker;
-    font-size: 10pt;
+    font-size: 0.625rem;
     color: var(--color-primary-light);
     font-family: bryant;
-    font-size: 10pt;
     font-weight: 700
 }
 
@@ -1028,7 +1027,7 @@ code,pre,tt {
 }
 
 .side-note a:link,.side-note a:visited {
-    color: #8a6666
+    color: var(--color-link)
 }
 
 .side-note a:hover {
@@ -1037,14 +1036,14 @@ code,pre,tt {
 }
 
 ::-moz-selection {
-    background: #dd8b86;
-    color: #3c3c3c;
+    background: var(--color-primary-light);
+    color: var(--color-text);
     text-shadow: none
 }
 
 ::selection {
-    background: #dd8b86;
-    color: #3c3c3c;
+    background: var(--color-primary-light);
+    color: var(--color-text);
     text-shadow: none
 }
 
