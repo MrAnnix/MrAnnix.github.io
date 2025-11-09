@@ -20,19 +20,19 @@ layout: default
                 {% endfor %}
             </ul>
         </div>
-        <div class="recent-blog-posts">
+        <aside class="recent-blog-posts">
             <h2>Recent blog posts</h2>
             {% for post in site.posts limit:4 %}
-            <div id="recent-post-{{ forloop.index }}" class="recent-post">
+            <article id="recent-post-{{ forloop.index }}" class="recent-post">
               <a href="{{ post.url | prepend: site.baseurl }}"><h4 class="title">{{ post.title }}</h4>
                 <p>{{ post.description }}</p>
               </a>
-            </div>
+            </article>
             {% endfor %}
             <div class="go-forward">
               <a href="{{ site.baseurl }}/blog" class="all-post">See all blog posts</a>
             </div>
-        </div>
+        </aside>
     </div>
     <div class="right-column">
         <div class="projects-column">

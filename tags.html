@@ -30,7 +30,7 @@ The following part removes dulpicated tags and invalid tags like blank tag.
 
 <h1>{{ page.title }}</h1>
 
-<div class="blog-tags">
+<nav class="blog-tags">
     <div class="tags-cloud">
         {% for tag in site.tags %}
         <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }}</a>
@@ -47,4 +47,4 @@ The following part removes dulpicated tags and invalid tags like blank tag.
         {% endfor %}
         {% endfor %}
     </div>
-</div>
+</nav>
