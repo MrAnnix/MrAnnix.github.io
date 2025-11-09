@@ -5,13 +5,13 @@ layout: default
 
 <div class="two-columns">
     <div class="left-column">
-        <div class="hi">
+        <section class="hi">
             <h1>Hi, I'm Raul</h1>
-            <p>I’m a Big Data engineer and Machine Learning enthusiast living in Spain.</p>
-            <p>I’ve a BSc in Telecommunication Technologies Engineering and a MSc in progress.</p>
+            <p>I'm a Big Data engineer and Machine Learning enthusiast living in Spain.</p>
+            <p>I've a BSc in Telecommunication Technologies Engineering and a MSc in progress.</p>
             <p>I consider myself a full-time learner constantly seeking out new opportunities to learn and grow.</p>
-        </div>
-        <div class="sites-list">
+        </section>
+        <nav class="sites-list">
             <ul>
                 {% for social in site.social %}
                 <li class="{{ social.title }}">
@@ -19,7 +19,7 @@ layout: default
                 </li>
                 {% endfor %}
             </ul>
-        </div>
+        </nav>
         <aside class="recent-blog-posts">
             <h2>Recent blog posts</h2>
             {% for post in site.posts limit:4 %}
@@ -35,7 +35,7 @@ layout: default
         </aside>
     </div>
     <div class="right-column">
-        <div class="projects-column">
+        <section class="projects-column">
             <h2>Stuff I've done</h2>
             <a id="GeekMag" href="https://web.archive.org/web/20180828031811/https://www.geekmag.es/" class="project">
                 <div class="project-borders">
@@ -47,6 +47,6 @@ layout: default
                     <b>GeekMag</b> was an online publication focused on technology, science, movies and videogames.
                 </div>
             </a>
-        </div>
+        </section>
     </div>
 </div>
