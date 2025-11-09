@@ -2,7 +2,7 @@
 layout: post
 title: "Spark Memory Fundamentals: How Executors Really Allocate Memory"
 description: "Ever wondered why your Spark jobs run out of memory? Learn how Spark divides executor memory, manages dynamic borrowing between storage and execution, and why some tasks spill to disk while others fly through."
-last_modified_at: 2025-11-08 16:00 +0100
+last_modified_at: 2025-11-09 12:32 +0100
 image: "/assets/images/blog/spark-memory-fundamentals-executor-allocation.webp"
 categories: "Big Data"
 tags: [Big Data, Spark, Apache, Memory Management, Performance]
@@ -407,11 +407,11 @@ In Part 2, we'll dive into advanced topics including Project Tungsten's memory o
 
 ## References
 
-[1] Apache Software Foundation, ["Apache Spark Configuration,"](https://spark.apache.org/docs/3.5.0/configuration.html) 2024.
+[1] Apache Software Foundation, ["Apache Spark Configuration,"](https://spark.apache.org/docs/3.5.7/configuration.html) 2025.
 
-[2] Apache Software Foundation, ["Tuning Spark - Memory Management,"](https://spark.apache.org/docs/3.5.0/tuning.html#memory-management-overview) 2024.
+[2] Apache Software Foundation, ["Tuning Spark - Memory Management,"](https://spark.apache.org/docs/3.5.7/tuning.html#memory-management-overview) 2025.
 
-[3] Apache Software Foundation, ["Spark Memory Management Source Code,"](https://github.com/apache/spark/tree/master/core/src/main/scala/org/apache/spark/memory) 2024.
+[3] Apache Software Foundation, ["Spark Memory Management Source Code,"](https://github.com/apache/spark/tree/branch-3.5/core/src/main/scala/org/apache/spark/memory) 2024.
 
 [4] M. Zaharia et al., ["Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing,"](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf) in *Proc. 9th USENIX Symp. Networked Syst. Design and Implementation (NSDI)*, San Jose, CA, USA, 2012, pp. 15-28.
 
