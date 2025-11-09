@@ -14,7 +14,7 @@
 
 .project {
     text-decoration: none !important;
-    color: #333 !important
+    color: var(--color-text) !important
 }
 
 .project img {
@@ -60,14 +60,14 @@
 
 .project .project-borders:hover::before {
     transition: width .15s ease-in 0s,height .15s ease-out .15s;
-    border-top-color: #c8463e;
-    border-right-color: #c8463e
+    border-top-color: var(--color-primary);
+    border-right-color: var(--color-primary)
 }
 
 .project .project-borders:hover::after {
     transition: height .15s ease-in 0s,width .15s ease-out .15s;
-    border-left-color: #c8463e;
-    border-bottom-color: #c8463e
+    border-left-color: var(--color-primary);
+    border-bottom-color: var(--color-primary)
 }
 
 .projects-column h2 {
@@ -92,7 +92,7 @@
     display: inline;
     transition: color .3s;
     margin-bottom: 2px;
-    color: #c8463e
+    color: var(--color-primary)
 }
 
 .recent-blog-posts h4:hover {
@@ -145,8 +145,8 @@
 }
 
 .recent-blog-posts .recent-post>a:hover::before {
-    border-top-color: #c8463e;
-    border-right-color: #c8463e
+    border-top-color: var(--color-primary);
+    border-right-color: var(--color-primary)
 }
 
 @media(prefers-reduced-motion:no-preference) {
@@ -156,8 +156,8 @@
 }
 
 .recent-blog-posts .recent-post>a:hover::after {
-    border-left-color: #c8463e;
-    border-bottom-color: #c8463e
+    border-left-color: var(--color-primary);
+    border-bottom-color: var(--color-primary)
 }
 
 @media(prefers-reduced-motion:no-preference) {
@@ -168,18 +168,18 @@
 
 .recent-blog-posts p {
     margin-top: 0;
-    color: #606060
+    color: var(--color-text-light)
 }
 
 .recent-blog-posts .all-post {
     display: block;
     transition: color .3s;
-    color: #333 !important;
+    color: var(--color-text) !important;
     font-weight: 700
 }
 
 .recent-blog-posts .all-post:hover {
-    color: #606060 !important
+    color: var(--color-text-light) !important
 }
 
 .recent-blog-posts .go-forward {
@@ -189,7 +189,7 @@
 
 .sites-list a {
     text-decoration: none;
-    color: #333 !important
+    color: var(--color-text) !important
 }
 
 .sites-list a:hover {
