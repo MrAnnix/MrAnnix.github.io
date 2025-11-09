@@ -4,6 +4,7 @@
     <title>{% if page.title == 'Home' %}{{ site.SEOtitle }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 110 }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta name="author" content="{{ site.author }}">
+    <link rel="canonical" href="{{ page.url | absolute_url }}">
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ site.favicon | prepend: site.baseurl }}">
