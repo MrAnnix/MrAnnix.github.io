@@ -8,12 +8,25 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ site.favicon | prepend: site.baseurl }}">
     
+    <!-- Preconnect to external domains for better performance -->
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    
     <!-- Open Graph -->
     <meta property="og:title" content="{% if page.title == 'Home' %}{{ site.SEOtitle }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}">
     <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 110 }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta property="og:image" content="{{ site.url }}{{ site.logo }}">
-    <meta property="og:url" content="{{ site.url }}">
+    <meta property="og:image:alt" content="{{ site.title }} logo">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{% if page.title == 'Home' %}{{ site.SEOtitle }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}">
+    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 110 }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:image" content="{{ site.url }}{{ site.logo }}">
+    <meta name="twitter:image:alt" content="{{ site.title }} logo">
 
     <!-- Feeds -->
     <link rel="alternate" title="{{ site.title }} (ATOM feed)" type="application/atom+xml" href="{{ "/feed.xml" | absolute_url }}">
@@ -38,11 +51,12 @@
     {% else %}
     <link rel="stylesheet" href="{{ "/assets/css/styles.css" | prepend: site.baseurl }}">
     {% endif %}
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="theme-color" content="#c8463e">
 
     <!-- Icons -->
-    <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css" media="print" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" onload="this.media='all'">
+    <link rel="preload" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css" as="style" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"></noscript>
 
     <!-- Fonts -->
     <link rel="preload" crossorigin="anonymous" href="{{ "/assets/fonts/moniker/light.woff2" | prepend: site.baseurl }}" as="font" type="font/woff2">

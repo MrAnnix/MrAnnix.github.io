@@ -15,6 +15,11 @@ function loadImage(id, targetId) {
         img.onload = function () {
             targetEl.classList.add('is-loaded');
         };
+        img.onerror = function () {
+            console.error('Failed to load image: ' + imageToLoad);
+            // Still add the class to prevent layout issues
+            targetEl.classList.add('is-loaded');
+        };
     }
 }
 

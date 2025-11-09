@@ -14,19 +14,39 @@
   }
 }
 
-.hi>h1,
-.hi>p,
-.recent-blog-posts>.recent-post,
-.recent-blog-posts>h2,
-.recent-blog-posts>.recent-post,
-.recent-blog-posts>.go-forward,
-.sites-list>ul>li,
-.projects-column>h2,
-.projects-column>.project.is-loaded,
-.footer {
-  animation-duration: 1s;
-  animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
-  animation-fill-mode: both;
+/* Apply animations only if user hasn't requested reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  .hi>h1,
+  .hi>p,
+  .recent-blog-posts>.recent-post,
+  .recent-blog-posts>h2,
+  .recent-blog-posts>.recent-post,
+  .recent-blog-posts>.go-forward,
+  .sites-list>ul>li,
+  .projects-column>h2,
+  .projects-column>.project.is-loaded,
+  .footer {
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+    animation-fill-mode: both;
+    will-change: opacity, transform;
+  }
+}
+
+/* For users who prefer reduced motion, just fade in without movement */
+@media (prefers-reduced-motion: reduce) {
+  .hi>h1,
+  .hi>p,
+  .recent-blog-posts>.recent-post,
+  .recent-blog-posts>h2,
+  .recent-blog-posts>.go-forward,
+  .sites-list>ul>li,
+  .projects-column>h2,
+  .projects-column>.project.is-loaded,
+  .footer {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 @keyframes slideDown {
@@ -73,77 +93,79 @@
   }
 }
 
-.hi>h1 {
-  animation-name: slideDown;
-}
+@media (prefers-reduced-motion: no-preference) {
+  .hi>h1 {
+    animation-name: slideDown;
+  }
 
-.hi>p {
-  animation-name: slideUp;
-  animation-delay: 100ms;
-}
+  .hi>p {
+    animation-name: slideUp;
+    animation-delay: 100ms;
+  }
 
-.sites-list>ul>li {
-  animation-duration: 500ms;
-  animation-name: slideLeft;
-  animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5)
-}
+  .sites-list>ul>li {
+    animation-duration: 500ms;
+    animation-name: slideLeft;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1.5)
+  }
 
-.sites-list>ul>li:nth-child(1) {
-  animation-delay: 500ms;
-}
+  .sites-list>ul>li:nth-child(1) {
+    animation-delay: 500ms;
+  }
 
-.sites-list>ul>li:nth-child(2) {
-  animation-delay: 600ms;
-}
+  .sites-list>ul>li:nth-child(2) {
+    animation-delay: 600ms;
+  }
 
-.sites-list>ul>li:nth-child(3) {
-  animation-delay: 700ms;
-}
+  .sites-list>ul>li:nth-child(3) {
+    animation-delay: 700ms;
+  }
 
-.sites-list>ul>li:nth-child(4) {
-  animation-delay: 800ms;
-}
+  .sites-list>ul>li:nth-child(4) {
+    animation-delay: 800ms;
+  }
 
-.sites-list>ul>li:nth-child(5) {
-  animation-delay: 900ms;
-}
+  .sites-list>ul>li:nth-child(5) {
+    animation-delay: 900ms;
+  }
 
-.recent-blog-posts>h2,
-.recent-blog-posts>.recent-post,
-.recent-blog-posts>.go-forward {
-  animation-name: slideRight
-}
+  .recent-blog-posts>h2,
+  .recent-blog-posts>.recent-post,
+  .recent-blog-posts>.go-forward {
+    animation-name: slideRight
+  }
 
-.recent-blog-posts>#recent-post-1 {
-  animation-delay: 100ms
-}
+  .recent-blog-posts>#recent-post-1 {
+    animation-delay: 100ms
+  }
 
-.recent-blog-posts>#recent-post-2 {
-  animation-delay: 200ms
-}
+  .recent-blog-posts>#recent-post-2 {
+    animation-delay: 200ms
+  }
 
-.recent-blog-posts>#recent-post-3 {
-  animation-delay: 300ms
-}
+  .recent-blog-posts>#recent-post-3 {
+    animation-delay: 300ms
+  }
 
-.recent-blog-posts>#recent-post-4 {
-    animation-delay: 400ms
-}
+  .recent-blog-posts>#recent-post-4 {
+      animation-delay: 400ms
+  }
 
-.recent-blog-posts>.go-forward {
-  animation-delay: 500ms
-}
+  .recent-blog-posts>.go-forward {
+    animation-delay: 500ms
+  }
 
-.projects-column>h2,
-.projects-column>.project.is-loaded {
-  animation-name: slideLeft
-}
+  .projects-column>h2,
+  .projects-column>.project.is-loaded {
+    animation-name: slideLeft
+  }
 
-.projects-column>.project.is-loaded {
-  animation-delay: 100ms
-}
+  .projects-column>.project.is-loaded {
+    animation-delay: 100ms
+  }
 
-.footer {
-  animation-name: slideUp;
-  animation-delay: 1s
+  .footer {
+    animation-name: slideUp;
+    animation-delay: 1s
+  }
 }
