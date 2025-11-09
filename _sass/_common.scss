@@ -8,6 +8,25 @@
     box-sizing: border-box;
 }
 
+/* CSS Custom Properties for consistent theming */
+:root {
+    --color-primary: #c8463e;
+    --color-primary-light: #bf8e82;
+    --color-primary-dark: #af3d36;
+    --color-text: #333;
+    --color-text-light: #606060;
+    --color-text-lighter: #999;
+    --color-code: #646894;
+    --color-link: #2671b3;
+    --color-link-hover: #747e86;
+    --color-tag: #cf5d56;
+    --color-heart: #c04848;
+    --color-background: #fff;
+    --color-background-light: #f9f9f9;
+    --color-background-hover: #fdf6f4;
+    --color-border: #eee;
+}
+
 .blog-date {
     margin-left: 2px;
     text-transform: uppercase;
@@ -348,7 +367,7 @@ code,pre,tt {
 }
 
 .container {
-    margin-bottom: 4rem!important;
+    margin-bottom: 4rem !important;
     padding-left: 6px;
     padding-right: 6px;
     min-height: calc(100vh - 200px)
@@ -488,12 +507,12 @@ code,pre,tt {
     padding: 0 10px 0 10px;
     text-decoration: none;
     margin-bottom: 8px;
-    color: #fff!important
+    color: #fff !important
 }
 
 .blog-tags .tags-cloud a:hover {
     background-color: #af3d36;
-    color: #fff!important
+    color: #fff !important
 }
 
 .blog-tags .tags-list {
@@ -804,7 +823,7 @@ code,pre,tt {
 
 .post .post-tags .tags-list a:hover {
     background-color: #af3d36;
-    color: #fff!important
+    color: #fff !important
 }
 
 .post .ui-click {
@@ -821,8 +840,8 @@ code,pre,tt {
 }
 
 .post .blog-navigation {
-    margin: 2rem 0 0!important;
-    padding: 0!important
+    margin: 2rem 0 0 !important;
+    padding: 0 !important
 }
 
 .post .next-post{
@@ -830,19 +849,19 @@ code,pre,tt {
 }
 
 .post .blog-return {
-    margin: .3rem 0 0!important;
-    padding: 0!important
+    margin: .3rem 0 0 !important;
+    padding: 0 !important
 }
 
 .post .back-to-blog, .post .previous-post, .post .next-post {
     transition: color .3s;
     text-decoration: none;
-    color: #606060!important;
+    color: #606060 !important;
     font-weight: 700
 }
 
 .post .back-to-blog:hover, .post .previous-post:hover, .post .next-post:hover {
-    color: #333!important
+    color: #333 !important
 }
 
 .post-heading>.date {
@@ -859,11 +878,11 @@ code,pre,tt {
 .post-heading>a {
     transition: color .3s;
     text-decoration: none;
-    color: #333!important
+    color: #333 !important
 }
 
 .post-heading>a:hover {
-    color: #606060!important
+    color: #606060 !important
 }
 
 .post-heading>a>.title {
