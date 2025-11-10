@@ -18,7 +18,7 @@ Support vector machines are found within machine learning in a field called supe
 
 They are maximum margin classifiers using the **kernel trick** to project the training data samples into a higher-dimensional space, making them linearly separable (or nearly separable).
 
-Let's borrow a [great explanation of SVMs](https://www.reddit.com/r/MachineLearning/comments/15zrpp/comment/c7rkwce/?utm_source=share&utm_medium=web2x&context=3) for dummies:
+Let’s borrow a [great explanation of SVMs](https://www.reddit.com/r/MachineLearning/comments/15zrpp/comment/c7rkwce/?utm_source=share&utm_medium=web2x&context=3) for dummies:
 
 We have balls of two colors (red and blue) on a table that we want to separate or classify.
 
