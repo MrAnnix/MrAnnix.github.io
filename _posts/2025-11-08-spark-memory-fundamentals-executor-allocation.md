@@ -33,7 +33,7 @@ One of the key reasons Spark revolutionized big data processing is its ability t
   <figcaption>Data access speeds: RAM provides orders of magnitude better performance than disk or network storage.</figcaption>
 </figure>
 
-This massive performance advantage makes memory management not just an optimization concern, but a fundamental aspect of Spark application design. Get it wrong, and your job will crawl; get it right, and you'll wonder why anyone still uses MapReduce.
+This massive performance advantage makes memory management not just an optimization concern, but a fundamental aspect of Spark application design. Get it wrong and your job will crawl; get it right and you'll wonder why anyone still uses MapReduce.
 
 ## The memory management hierarchy
 
@@ -78,7 +78,7 @@ $$
 \text{Memory Overhead} = \max(\text{Executor Memory} \times 0.1, 384\text{ MB})
 $$
 
-So basically, 10% of your executor memory, but at least 384 MB. Let's see some examples:
+So it’s basically 10% of your executor memory, with a minimum of 384 MB. Let's see some examples:
 - If executor memory is **5 GB**: overhead = max(5120 MB × 0.1, 384 MB) = **512 MB**
 - If executor memory is **1 GB**: overhead = max(1024 MB × 0.1, 384 MB) = **384 MB**
 - If executor memory is **10 GB**: overhead = max(10240 MB × 0.1, 384 MB) = **1024 MB**
@@ -105,7 +105,7 @@ graph TB
 
 ### On-heap vs off-heap memory
 
-Spark supports two types of memory allocation, and choosing between them can be important depending on your workload:
+Spark supports two types of memory allocation; choosing between them can be important depending on your workload:
 
 **On-heap memory** (the default):
 - Managed by the Java Virtual Machine (JVM)
@@ -137,7 +137,7 @@ The **UnifiedMemoryManager** fixes these issues through dynamic memory sharing. 
 
 ### How memory is actually divided
 
-After accounting for memory overhead, the executor memory is divided into several regions. Let's see how:
+Within the executor memory (JVM heap), Spark divides the space into several regions. Let's see how:
 
 <pre class="mermaid">
 graph TB
@@ -158,7 +158,7 @@ graph TB
 
 #### 1. Reserved memory (300 MB)
 
-A **fixed 300 MB** is reserved for Spark's internal objects and system operations. This value is hardcoded in the Spark source code as `RESERVED_SYSTEM_MEMORY_BYTES`. Think of it as Spark's safety net—it ensures that Spark has enough space to function even when things get tight.
+A fixed 300 MB is reserved for Spark internals and system operations. This value is hardcoded in the Spark source code as `RESERVED_SYSTEM_MEMORY_BYTES`. Think of it as Spark's safety net—it ensures that Spark has enough space to function even when things get tight.
 
 **Important**: If the executor memory is less than **1.5 times the reserved memory** (i.e., less than 450 MB), Spark will fail with a "please use larger heap size" error. Don't try to run Spark with tiny executors!
 
@@ -170,7 +170,7 @@ $$
 
 #### 2. User memory
 
-Controlled by the `spark.memory.fraction` parameter (default: **0.6**), user memory accounts for the remaining fraction after the unified memory region. With the default setting, **40%** of usable memory goes to user memory:
+User memory occupies the remaining fraction of usable memory (1 - `spark.memory.fraction`). With the default setting (**spark.memory.fraction=0.6**), **40%** of usable memory goes to user memory:
 
 $$
 \text{User Memory} = \text{Usable Memory} \times (1 - \text{spark.memory.fraction})
@@ -183,7 +183,7 @@ Here's the catch: user memory is **completely unmanaged** by Spark. It's the wil
 - **UDFs (User-Defined Functions)**: Memory used by custom functions
 - **Internal Spark metadata**: Information for tracking RDD lineage
 
-**Critical**: Spark makes no accounting of what you store here or whether you respect the boundary. If you exceed this memory, you'll get `OutOfMemoryError` exceptions and Spark won't be able to help you. It's entirely on you to manage this space wisely.
+**Critical**: Spark does not track what you store here or enforce its boundary. If you exceed this memory, you'll get `OutOfMemoryError` exceptions and Spark won't be able to help you. It's entirely on you to manage this space wisely.
 
 #### 3. Unified memory region
 
@@ -203,7 +203,7 @@ This is where Spark's dynamic memory management really shines. The region is ini
 - **Broadcast variables**: Shared read-only data distributed to all executors
 - **Unroll memory**: Temporary space to deserialize serialized blocks into memory
 
-When storage memory needs to free up space, Spark uses a **Least Recently Used (LRU)** algorithm to kick out cached blocks. How painful this eviction is depends on the storage level you chose:
+When storage memory needs to free up space, Spark uses a **Least Recently Used (LRU)** algorithm to kick out cached blocks. How painful eviction is depends on the storage level you choose:
 
 | Storage Level | Eviction Cost | Reason |
 |:-------------|:--------------|:-------:|
@@ -312,7 +312,7 @@ Total Container Memory:
 12,288 (executor) + 1,229 (overhead) = 13,517 MB ≈ 13.2 GB
 ```
 
-So when you request a 12 GB executor, you're actually asking for about 13.2 GB from your cluster manager. Keep that in mind when planning your resource allocation!
+So with these defaults, requesting a 12 GB executor results in about 13.2 GB total container memory. Keep that in mind when planning your resource allocation!
 
 ## Configuration parameters you should know
 
@@ -353,7 +353,7 @@ While the MemoryManager handles executor-level memory allocation, individual tas
 
 ### Memory per task
 
-Tasks within an executor run as threads sharing the same JVM. The memory available to each task is managed dynamically through **TaskMemoryManager** (see [3] for source code) and allocated on-demand from the execution memory pool. This ensures fair distribution of execution memory among concurrent tasks.
+Tasks within an executor run as threads that share the same JVM. The memory available to each task is managed dynamically through **TaskMemoryManager** (see [3] for source code) and allocated on-demand from the execution memory pool. This ensures fair distribution of execution memory among concurrent tasks.
 
 With multiple concurrent tasks, memory is allocated dynamically. Each task can acquire memory from the execution memory pool based on availability. When execution memory becomes constrained:
 
@@ -368,7 +368,7 @@ With multiple concurrent tasks, memory is allocated dynamically. Each task can a
 | 4 tasks | Shared on-demand | Higher contention, possible disk spilling |
 | 8+ tasks | Shared on-demand | Significant contention, likely disk spilling |
 
-**The takeaway**: More concurrent tasks = less memory per task. This is controlled by `spark.executor.cores`—fewer cores per executor means fewer concurrent tasks and more memory for each task to work with.
+**Takeaway**: More concurrent tasks mean less memory per task. This is controlled by `spark.executor.cores`—fewer cores per executor means fewer concurrent tasks and more memory for each task to work with.
 
 ## Best practices
 
