@@ -10,9 +10,9 @@ mathjax: true
 mermaid: true
 ---
 
-If you've ever wondered why your Spark jobs run out of memory or why some tasks spill to disk while others fly through, you're in the right place. Today we're diving into one of the most important aspects of Apache Spark: how it actually manages memory across executors.
+If you’ve ever wondered why your Spark jobs run out of memory or why some tasks spill to disk while others fly through, you’re in the right place. Today we’re diving into one of the most important aspects of Apache Spark: how it actually manages memory across executors.
 
-This is the first part of a two-part series on Spark memory management. Here we'll cover the core architecture and fundamental concepts. In Part 2, we'll explore advanced optimizations, Project Tungsten, and troubleshooting strategies.
+This is the first part of a two-part series on Spark memory management. Here we’ll cover the core architecture and fundamental concepts. In Part 2, we’ll explore advanced optimizations, Project Tungsten, and troubleshooting strategies.
 
 ## Why should I care about memory management?
 
@@ -37,22 +37,22 @@ This massive performance advantage makes memory management not just an optimizat
 
 ## The memory management hierarchy
 
-Memory management in Spark isn't just one thing—it operates at multiple levels:
+Memory management in Spark isn’t just one thing—it operates at multiple levels:
 
 1. **Operating System level**: Physical RAM management and virtual memory
 2. **Cluster Manager level** (YARN/Kubernetes/Mesos): Container resource allocation
 3. **JVM level**: Heap management and garbage collection
 4. **Spark level**: Unified memory management within executors
 
-When you configure Spark memory settings, you're primarily working at the Spark and JVM levels, but these decisions ripple through the entire stack. Understanding this hierarchy helps explain why memory issues can show up in weird ways.
+When you configure Spark memory settings, you’re primarily working at the Spark and JVM levels, but these decisions ripple through the entire stack. Understanding this hierarchy helps explain why memory issues can show up in weird ways.
 
 ## How executor memory actually works
 
-In Apache Spark, each executor's memory is divided into several regions, each with a specific job. When Spark runs on cluster managers like YARN or Kubernetes, it requests containers to execute work. Each executor runs as a separate **JVM process** within these containers.
+In Apache Spark, each executor’s memory is divided into several regions, each with a specific job. When Spark runs on cluster managers like YARN or Kubernetes, it requests containers to execute work. Each executor runs as a separate **JVM process** within these containers.
 
 ### Total container memory
 
-The total memory requested from the cluster manager isn't just the executor memory—there's more to it:
+The total memory requested from the cluster manager isn’t just the executor memory—there’s more to it:
 
 $$
 \text{Total Container Memory} = \text{Executor Memory} + \text{Memory Overhead} + \text{Off-Heap Memory (if enabled)} + \text{PySpark Memory (if configured)}
@@ -60,7 +60,7 @@ $$
 
 **Note:** All these components are additive. If any are not configured, they default to 0 and don't consume additional memory.
 
-Let's break this down piece by piece.
+Let’s break this down piece by piece.
 
 ### Memory overhead
 
@@ -122,7 +122,7 @@ Spark supports two types of memory allocation; choosing between them can be impo
 
 ## The unified memory manager
 
-Since Spark 1.6, the platform uses **Unified Memory Management**, which replaced the older Static Memory Management model. This is a pretty big deal, so let's talk about why it matters.
+Since Spark 1.6, the platform uses **Unified Memory Management**, which replaced the older Static Memory Management model. This is a pretty big deal, so let’s talk about why it matters.
 
 ### The old way: Static Memory Manager
 
@@ -133,11 +133,11 @@ Before Spark 1.6, memory management was handled by **StaticMemoryManager**, and 
 - Often led to **inefficient memory utilization** (one region starving while another had plenty of free space)
 - Required **manual tuning** of separate parameters for different workloads
 
-The **UnifiedMemoryManager** fixes these issues through dynamic memory sharing. While you can still enable the legacy mode with `spark.memory.useLegacyMode=true`, this is **strongly discouraged**. It only exists for backward compatibility and you really shouldn't use it.
+The **UnifiedMemoryManager** fixes these issues through dynamic memory sharing. While you can still enable the legacy mode with `spark.memory.useLegacyMode=true`, this is **strongly discouraged**. It only exists for backward compatibility and you really shouldn’t use it.
 
 ### How memory is actually divided
 
-Within the executor memory (JVM heap), Spark divides the space into several regions. Let's see how:
+Within the executor memory (JVM heap), Spark divides the space into several regions. Let’s see how:
 
 <pre class="mermaid">
 graph TB
@@ -160,7 +160,7 @@ graph TB
 
 A fixed 300 MB is reserved for Spark internals and system operations. This value is hardcoded in the Spark source code as `RESERVED_SYSTEM_MEMORY_BYTES`. Think of it as Spark's safety net—it ensures that Spark has enough space to function even when things get tight.
 
-**Important**: If the executor memory is less than **1.5 times the reserved memory** (i.e., less than 450 MB), Spark will fail with a "please use larger heap size" error. Don't try to run Spark with tiny executors!
+**Important**: If the executor memory is less than **1.5 times the reserved memory** (i.e., less than 450 MB), Spark will fail with a "please use larger heap size" error. Don’t try to run Spark with tiny executors!
 
 The remaining memory after this reservation is called **usable memory**:
 
@@ -176,7 +176,7 @@ $$
 \text{User Memory} = \text{Usable Memory} \times (1 - \text{spark.memory.fraction})
 $$
 
-Here's the catch: user memory is **completely unmanaged** by Spark. It's the wild west. It stores:
+Here’s the catch: user memory is **completely unmanaged** by Spark. It’s the wild west. It stores:
 
 - **RDD transformation metadata**: Information about dependencies and lineage
 - **User-defined data structures**: Custom objects created in your code
@@ -187,13 +187,13 @@ Here's the catch: user memory is **completely unmanaged** by Spark. It's the wil
 
 #### 3. Unified memory region
 
-The unified memory region accounts for **60%** of usable memory by default and is where the magic happens—it's **shared dynamically** between storage and execution:
+The unified memory region accounts for **60%** of usable memory by default and is where the magic happens—it’s **shared dynamically** between storage and execution:
 
 $$
 \text{Unified Memory} = \text{Usable Memory} \times \text{spark.memory.fraction}
 $$
 
-This is where Spark's dynamic memory management really shines. The region is initially split equally between storage and execution (controlled by `spark.memory.storageFraction`, which defaults to **0.5**).
+This is where Spark’s dynamic memory management really shines. The region is initially split equally between storage and execution (controlled by `spark.memory.storageFraction`, which defaults to **0.5**).
 
 ### Storage memory
 
@@ -222,7 +222,7 @@ When storage memory needs to free up space, Spark uses a **Least Recently Used (
 
 This memory pool supports **spilling to disk** when insufficient memory is available. However, unlike storage memory, blocks from execution memory **cannot be forcefully evicted** by other tasks. If execution memory is exhausted and can't borrow from storage, Spark will spill data to disk to keep processing.
 
-**Here's the thing**: Most performance issues in Spark stem from insufficient execution memory leading to excessive disk spilling. If you see your jobs crawling, this is often why.
+**Here’s the thing**: Most performance issues in Spark stem from insufficient execution memory leading to excessive disk spilling. If you see your jobs crawling, this is often why.
 
 ### Dynamic memory borrowing (the cool part)
 
@@ -281,7 +281,7 @@ Execution wins over storage because a task crash is worse than evicting cached d
 
 ## A practical example
 
-Let's walk through a real example with a 12 GB executor to see how all this plays out in practice:
+Let’s walk through a real example with a 12 GB executor to see how all this plays out in practice:
 
 ```text
 Executor Memory: 12 GB (12,288 MB)
@@ -341,11 +341,11 @@ spark.executor.cores=4
 
 ## Task-level memory management
 
-While the MemoryManager handles executor-level memory allocation, individual tasks need their fair share too. You don't want the first task consuming all the memory, right?
+While the MemoryManager handles executor-level memory allocation, individual tasks need their fair share too. You don’t want the first task consuming all the memory, right?
 
 ### TaskMemoryManager
 
-**TaskMemoryManager** sits between tasks and the MemoryManager. It's like a middleman that:
+**TaskMemoryManager** sits between tasks and the MemoryManager. It’s like a middleman that:
 
 - **Memory acquisition**: Requesting memory from MemoryManager on behalf of tasks
 - **Memory release**: Returning memory when tasks complete
@@ -394,7 +394,7 @@ Here are some tips to keep your Spark jobs running smoothly:
 
 ## Wrapping up
 
-Understanding Spark's memory architecture is key to building efficient applications. Let's recap what we've covered:
+Understanding Spark’s memory architecture is key to building efficient applications. Let’s recap what we’ve covered:
 
 - **Hierarchical management**: Memory is managed at multiple levels (OS, cluster manager, JVM, Spark)
 - **Unified memory model**: Dynamic sharing between storage and execution since Spark 1.6
@@ -403,7 +403,7 @@ Understanding Spark's memory architecture is key to building efficient applicati
 - **Task-level fairness**: TaskMemoryManager ensures concurrent tasks share memory fairly
 - **Configuration matters**: Proper sizing prevents bottlenecks and OOM errors
 
-In Part 2, we'll dive into advanced topics including Project Tungsten's memory optimizations, BlockManager internals, whole-stage code generation, and troubleshooting strategies. Stay tuned!
+In Part 2, we’ll dive into advanced topics including Project Tungsten’s memory optimizations, BlockManager internals, whole-stage code generation, and troubleshooting strategies. Stay tuned!
 
 ## References
 

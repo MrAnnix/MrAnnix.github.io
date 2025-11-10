@@ -23,7 +23,7 @@ In addition to the driver and executors, the Spark runtime architecture also inc
 
 ### Driver
 
-The driver is the central component of the Apache Spark runtime architecture. It is responsible for running the user's main function and creating the **SparkContext**, which is the main entry point for interacting with Spark. The driver also communicates with the cluster manager to acquire resources on the cluster and to schedule the execution of tasks on the worker nodes. It monitors the progress of tasks and provides status updates to the user, and it handles the flow of data between the various components of the application. In short, the driver coordinates the execution of a Spark application and is essential to its functioning.
+The driver is the central component of the Apache Spark runtime architecture. It is responsible for running the user’s main function and creating the **SparkContext**, which is the main entry point for interacting with Spark. The driver also communicates with the cluster manager to acquire resources on the cluster and to schedule the execution of tasks on the worker nodes. It monitors the progress of tasks and provides status updates to the user, and it handles the flow of data between the various components of the application. In short, the driver coordinates the execution of a Spark application and is essential to its functioning.
 
 ### Executors
 

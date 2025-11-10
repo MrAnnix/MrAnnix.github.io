@@ -34,7 +34,7 @@ For this reason the modes of operations appears.
 
 ### ECB mode of operation
 
-[Electronic Code Book](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_Codebook_(ECB)) (ECB) is the simplest one. In fact, we have already explained it. Each message's block is encrypted separately and that provokes the problem above mentioned.
+[Electronic Code Book](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_Codebook_(ECB)) (ECB) is the simplest one. In fact, we have already explained it. Each message’s block is encrypted separately and that provokes the problem above mentioned.
 
 If \\( E(\cdot) \\) is the cipher function for encrypt, \\( D(\cdot) \\) is the cipher function for decrypt, \\( P_i \\) and \\( C_i \\) are the i-th block of the plaintext and ciphertext respectively, and \\( k \\) is the key.
 
