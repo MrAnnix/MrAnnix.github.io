@@ -2,7 +2,7 @@
 layout: post
 title: "Spark Memory Fundamentals: How Executors Really Allocate Memory"
 description: "Ever wondered why your Spark jobs run out of memory? Learn how Spark divides executor memory, manages dynamic borrowing between storage and execution, and why some tasks spill to disk while others fly through."
-last_modified_at: 2025-11-09 12:32 +0100
+last_modified_at: 2025-11-10 14:22 +0100
 image: "/assets/images/blog/spark-memory-fundamentals-executor-allocation.webp"
 categories: "Big Data"
 tags: [Big Data, Spark, Apache, Memory Management, Performance]
