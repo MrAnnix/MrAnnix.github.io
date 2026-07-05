@@ -2,7 +2,7 @@
 layout: post
 title: "La tormenta perfecta de 2026: burbuja de IA, deuda soberana y calendario financiero"
 description: "Un repaso, con fuentes contrastadas, a los factores que podrían converger entre agosto y diciembre de 2026: la burbuja de inversión en IA, la mecánica fiscal de septiembre, el supercycle de OPVs y la fragilidad de la deuda soberana."
-last_modified_at: 2026-07-05 10:43 +0200
+last_modified_at: 2026-07-05 11:02 +0200
 image: "/assets/images/blog/spark-memory-fundamentals-executor-allocation.webp"
 categories: "Economics"
 tags: [inteligencia-artificial, burbuja, bis, fmi, deuda, opv, mercados-financieros]
@@ -16,7 +16,7 @@ Aunque es muy tentador pensar que la preocupación por una burbuja de IA es un f
 
 El 28 de junio de 2026, el Banco de Pagos Internacionales (BIS), apodado como "el banco central de los bancos centrales", publicó su Informe Económico Anual con la advertencia más severa emitida hasta ahora por una institución de este calibre [1][2]. El BIS constató que la inversión corporativa en IA en Estados Unidos se ha multiplicado por 4,5 veces en solo tres años, un ritmo que supera a cualquier otro boom de inversión registrado históricamente, incluyendo la fiebre de los ferrocarriles del siglo XIX, la electrificación de los años veinte o la burbuja puntocom de los noventa [3].
 
-Michael Burry (famoso por predecir la crisis hipotecaria de 2008 y cuya historia inspiró la película *The Big Short*) ya había alertado en noviembre de 2025 sobre la sobrevaloración de las acciones de las grandes tecnológicas, como Nvidia y Palantir, y había apostado contra ellas mediante la compra de opciones de venta (*put options*), anticipando que sus precios caerían. En su boletín de Substack, Burry explicó que estas empresas inflaban los beneficios reportados arificialmente sin que realmente se correspondieran con mejoras reales [6][7].
+Michael Burry (famoso por predecir la crisis hipotecaria de 2008 y cuya historia inspiró la película *The Big Short*) ya había alertado en noviembre de 2025 sobre la sobrevaloración de las acciones de las grandes tecnológicas, como Nvidia y Palantir, y había apostado contra ellas mediante la compra de opciones de venta (*put options*), anticipando que sus precios caerían [4][5]. En su boletín de Substack, Burry explicó que estas empresas inflaban los beneficios reportados artificialmente sin que realmente se correspondieran con mejoras reales [6][7].
 
 Casi en paralelo, Jamie Dimon, CEO de JPMorgan, advirtió sobre la posibilidad de una corrección bursátil significativa en los próximos meses, comparando la situación con episodios históricos de burbujas tecnológicas (como la burbuja puntocom de los noventa) y señalando que la mayoría de los inversores que participaron en ellas no obtuvieron buenos resultados [9][10].
 
@@ -32,7 +32,7 @@ Aquí es donde todo confluye. Cuando una empresa compra un servidor, no contabil
 
 A esto hay que añadir un factor de riesgo adicional: estos últimos años, la gran demanda de hardware provocada por la IA ha tensionado tanto la cadena de suministros que ha provocado escasez, aumento de precios y, sobre todo, retrasos en la entrega de pedidos. A causa de esto, muchas empresas han optado por duplicar pedidos a distintos proveedores con la intención de quedarse con la primera entrega disponible para asegurarse de recibir el hardware a tiempo y cancelar el resto, una práctica ya documentada en el sector de semiconductores durante episodios previos de escasez [20]. Esta práctica ha creado un colchón de pedidos que hoy sostiene la cotización de fabricantes de hardware, pero que podría desinflarse a medida que la producción global se normalice y generar un efecto negativo en la valoración de estas empresas.
 
-## [SUBTÍTULO POTENTE]
+## Será en octubre?
 
 Más allá de la IA, hay que considerar una segunda capa de riesgo que no depende de ninguna tecnología concreta, sino del funcionamiento interno del mercado financiero. Muchos fondos mutuos estadounidenses cierran su año fiscal el 31 de octubre, lo que fuerza a los gestores de los mismos a realizar en septiembre operaciones de "maquillaje de cartera": venden posiciones con ganancias acumuladas o riesgo elevado para mostrar un balance más conservador ante sus inversores. Además, trimestralmente, los fondos de pensiones y los fondos indexados realizan rebalanceos automáticos de sus carteras, lo que puede generar ventas masivas de activos en un solo día, independientemente de la opinión del mercado sobre esos activos.
 
@@ -52,7 +52,7 @@ Da la casualidad de que todos estos factores de riesgo, o "tormentas", coinciden
 
 Si los bancos centrales deciden mantener los tipos de interés altos para tratar de controlar la inflación, o incluso subirlos ante un repunte inesperado, el poder financiar la construcción de los centros de datos necesarios para la IA se vuelve más que complicado. El BIS lo advierte en su informe: una política monetaria más restrictiva podría desencadenar "una eventual reversión de la inversión que provoque recesiones en el conjunto de la economía" [3].
 
-La fuerza de esta hipótesis no reside en ninguno de los factores por separado, sino en su posible coincidencia temporal en una ventana muy pequeña a finales de este 2026 y sobre un telón de fondo de advertencias que se vienen acumulando desde hace tiempo: El agotamiento de la financiación de startups de IA, las cancelaciones masivas de pedidos de hardware para IA, las ventas mecánicas de septiembre y el vencimiento del "lock-up" de SpaceX. Este cóctel de factores de riesgo podría generar una de las mayores crisis financieras de la historia reciente, una "tormenta perfecta".
+La fuerza de esta hipótesis no reside en ninguno de los factores por separado, sino en su posible coincidencia temporal en una ventana muy pequeña a finales de este 2026 y sobre un telón de fondo de advertencias que se vienen acumulando desde hace tiempo: el agotamiento de la financiación de startups de IA, las cancelaciones masivas de pedidos de hardware para IA, las ventas mecánicas de septiembre y el vencimiento del "lock-up" de SpaceX. El propio BIS advierte que las vulnerabilidades financieras existentes podrían amplificar cualquier shock [2], por lo que este cóctel de factores de riesgo podría generar una de las mayores crisis financieras de la historia reciente, una "tormenta perfecta".
 
 ---
 
@@ -88,4 +88,4 @@ La fuerza de esta hipótesis no reside en ninguno de los factores por separado, 
 28. US News & World Report — "BIS Says Debt, AI Boom and Fragilities Raise Global Risks" (28 jun. 2026). https://money.usnews.com/investing/news/articles/2026-06-28/bis-says-debt-ai-boom-and-fragilities-raise-global-risks
 29. Reuters — "BIS dares to blaspheme as AI bubble fears wane" (30 jun. 2026). https://www.reuters.com/commentary/reuters-open-interest/bis-dares-blaspheme-ai-bubble-fears-wane-2026-06-30/
 
-*Nota editorial: este artículo combina hechos verificados (informes del BIS, declaraciones públicas de inversores, datos de OPVs) con una hipótesis de colapso encadenado que sigue siendo objeto de debate entre analistas serios. Ninguna de las instituciones citadas confirma un colapso como escenario base; se limitan a señalar acumulación de riesgos.*
+*Nota editorial: este artículo combina hechos verificados (informes del BIS, declaraciones públicas de inversores, datos de OPVs) con una hipótesis de colapso encadenado que sigue siendo objeto de debate entre analistas serios. Ninguna de las instituciones citadas confirma un colapso como escenario base; simplemente, se limitan a señalar acumulación de riesgos, por lo que este artículo no debe interpretarse como un consejo de inversión ni como una predicción definitiva, sino como un análisis de riesgos y tendencias que podrían converger en el segundo semestre de 2026.*
