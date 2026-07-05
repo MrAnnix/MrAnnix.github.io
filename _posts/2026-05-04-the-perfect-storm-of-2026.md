@@ -3,7 +3,7 @@ layout: post
 title: "The Perfect Storm of 2026: AI Bubble, Sovereign Debt and the Financial Calendar"
 description: "A source-backed look at the factors that could converge between August and December 2026: the AI investment bubble, September's fiscal mechanics, the IPO supercycle and sovereign debt fragility."
 last_modified_at: 2026-07-05 11:33 +0200
-image: "/assets/images/blog/spark-memory-fundamentals-executor-allocation.webp"
+image: "/assets/images/blog/the-perfect-storm-of-2026.webp"
 categories: "Economics"
 tags: [AI, Economics, Finance, Investment, Markets]
 ---
