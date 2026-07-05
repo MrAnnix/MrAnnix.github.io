@@ -33,7 +33,7 @@ The underlying problem, according to the framework popularized by Sequoia Capita
 This is where everything converges. When a company buys a server, it doesn't book the expense all at once. Instead, it *spreads it out*, or depreciates it, over however many years it estimates the machine will remain useful. If a 1,000-dollar machine depreciates over four years, the annual expense reported is 250 dollars; if that same company decides the machine now lasts six years, the annual expense drops to 166 dollars, even though nothing has actually changed except the timeline the company itself set. **Microsoft**, **Google** and **Meta** revised these useful-life estimates (presumably on purpose) to flatter the net income figures they report, without any real operational improvement behind the change. While technically legal, Burry singled this out as one of the reasons he believes these companies' valuations are inflated, warning too that the risk of hardware becoming obsolete sooner than expected is real, and will likely hit well before hardware makers *"want"* it to [[7]](#ref-7).
 
 <figure class="align-right">
-  <img src="{{ '/assets/images/blog/the-perfect-storm-of-2026/aws-datacenter.webp' | absolute_url }}" alt="Interior of an AWS data center">
+  <img src="{{ '/assets/images/blog/the-perfect-storm-of-2026/descarga.webp' | absolute_url }}" alt="Interior of an AWS data center">
   <figcaption>Interior of an AWS data center. Image credit: <a href="https://www.aboutamazon.mx/noticias/aws/asi-es-el-interior-de-un-centro-de-datos-de-aws" target="_blank" rel="noopener">Amazon</a>.</figcaption>
 </figure>
 
