@@ -32,6 +32,11 @@ The underlying problem, according to the framework popularized by Sequoia Capita
 
 This is where everything converges. When a company buys a server, it doesn't book the expense all at once. Instead, it *spreads it out*, or depreciates it, over however many years it estimates the machine will remain useful. If a 1,000-dollar machine depreciates over four years, the annual expense reported is 250 dollars; if that same company decides the machine now lasts six years, the annual expense drops to 166 dollars, even though nothing has actually changed except the timeline the company itself set. **Microsoft**, **Google** and **Meta** revised these useful-life estimates (presumably on purpose) to flatter the net income figures they report, without any real operational improvement behind the change. While technically legal, Burry singled this out as one of the reasons he believes these companies' valuations are inflated, warning too that the risk of hardware becoming obsolete sooner than expected is real, and will likely hit well before hardware makers *"want"* it to [[7]](#ref-7).
 
+<figure class="align-right">
+  <img src="{{ '/assets/images/blog/the-perfect-storm-of-2026/aws-datacenter.webp' | absolute_url }}" alt="Interior of an AWS data center">
+  <figcaption>Interior of an AWS data center. Image credit: <a href="https://www.aboutamazon.mx/noticias/aws/asi-es-el-interior-de-un-centro-de-datos-de-aws" target="_blank" rel="noopener">Amazon</a>.</figcaption>
+</figure>
+
 There's an additional risk factor worth adding to the mix: in recent years, the sheer demand for hardware driven by AI has strained supply chains so much that it has caused shortages, price hikes and, above all, delivery delays. As a result, many companies have taken to placing duplicate orders with different suppliers, intending to keep whichever shipment arrives first and cancel the rest to make sure they get the hardware on time, a practice already well documented in the semiconductor industry during previous shortage episodes [[20]](#ref-20). This has created a cushion of orders that is currently propping up hardware makers' valuations, but which could deflate as global production normalizes, dragging those valuations down with it.
 
 ## Will It Happen in October?
@@ -41,6 +46,11 @@ Beyond AI, there's a second layer of risk to consider, one that has nothing to d
 This pressure coincides with September's **"triple witching"**: the simultaneous expiration of stock options, index options and index futures, which falls on the third Friday of that month. Historically, this expiration date has acted as a catalyst for volatility and market drops, especially when it coincides with other risk factors. Add to that the fact that September tends to be a *"bad"* month for markets, and you get yet another storm brewing on the horizon.
 
 ## The IPO Queue
+
+<figure class="align-left">
+  <img src="{{ '/assets/images/blog/the-perfect-storm-of-2026/nyse.webp' | absolute_url }}" alt="New York Stock Exchange building facade">
+  <figcaption>The New York Stock Exchange, where the IPO supercycle is set to play out.</figcaption>
+</figure>
 
 The next storm set to converge with the others is the pile-up of AI company stock listings, which has been dubbed an IPO **"supercycle."** **SpaceX** kicked off the cycle with its listing in June 2026, which became the largest IPO in US history [[21]](#ref-21)[[22]](#ref-22); still pending are **Anthropic** and **OpenAI**, whose listings could coincide in the fall of 2026.
 
