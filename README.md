@@ -8,7 +8,7 @@
 
 | Environment | Status | URL |
 |:-----------|:-------|:----|
-| 🚀 Production | [![pages-build-deployment](https://github.com/MrAnnix/MrAnnix.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/MrAnnix/MrAnnix.github.io/actions/workflows/pages/pages-build-deployment) [![Deploy Production Site](https://github.com/MrAnnix/MrAnnix.github.io/actions/workflows/deploy-prod.yml/badge.svg)](https://github.com/MrAnnix/MrAnnix.github.io/actions/workflows/deploy-prod.yml) | [raulsanmartin.me](https://raulsanmartin.me/) |
+| 🚀 Production | [![Deploy Production Site](https://github.com/MrAnnix/MrAnnix.github.io/actions/workflows/deploy-prod.yml/badge.svg)](https://github.com/MrAnnix/MrAnnix.github.io/actions/workflows/deploy-prod.yml) | [raulsanmartin.me](https://raulsanmartin.me/) |
 | 🔧 Development | [![Netlify Status](https://api.netlify.com/api/v1/badges/29c1e0d9-efaa-48f9-8a11-712ec6df7cd3/deploy-status)](https://app.netlify.com/sites/dev-raulsanmartin-me/deploys) | [dev.raulsanmartin.me](https://dev.raulsanmartin.me/) |
 
 ![Theme Snapshot](https://raulsanmartin.me/assets/images/snapshot.png "Snapshot")
@@ -41,7 +41,7 @@ Technical articles covering **Big Data**, **Machine Learning**, **Computer Scien
 ## 🚀 Tech Stack
 
 ### Core Technologies
-- **Static Site Generator:** [Jekyll](https://jekyllrb.com/) 4.x
+- **Static Site Generator:** [Jekyll](https://jekyllrb.com/) 3.10 (pinned by the `github-pages` gem)
 - **Language:** Ruby
 - **Markup:** Markdown, HTML5, Liquid templating
 - **Styling:** SASS/SCSS with custom architecture
@@ -122,7 +122,7 @@ MrAnnix.github.io/
 ### Prerequisites
 
 Ensure you have the following installed:
-- **Ruby** (version 2.5.0 or higher)
+- **Ruby** 3.3 (the version in [`.ruby-version`](.ruby-version), also used by CI and Netlify)
 - **Bundler** (`gem install bundler`)
 - **Git**
 
@@ -204,9 +204,11 @@ bundle exec jekyll serve --drafts
 
 ### Automatic Deployment
 
-The site uses **Netlify** for continuous deployment:
-- **Production**: Automatically deploys from `master` branch → [raulsanmartin.me](https://raulsanmartin.me)
-- **Development**: Automatically deploys from development branch → [dev.raulsanmartin.me](https://dev.raulsanmartin.me)
+- **Production**: every push to `master` runs the [Deploy Production Site](.github/workflows/deploy-prod.yml) workflow, which builds the site, checks it with HTMLProofer and publishes it to **GitHub Pages** → [raulsanmartin.me](https://raulsanmartin.me)
+- **Pull requests**: the [Validate Pull Request](.github/workflows/validate-pr.yml) workflow runs the same build and checks without deploying, and **Netlify** publishes a deploy preview
+- **Development**: **Netlify** deploys the development branch → [dev.raulsanmartin.me](https://dev.raulsanmartin.me)
+
+Both domains are proxied through Cloudflare. Netlify environment settings live in [`netlify.toml`](netlify.toml); dependency updates are configured in [`.github/dependabot.yml`](.github/dependabot.yml).
 
 ### Manual Deployment
 
