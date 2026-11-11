@@ -1,0 +1,12 @@
+# Netlify settings shared by every Netlify site linked to this repo (production previews and dev).
+# Build command and publish directory stay in the Netlify UI; only the environment is set here.
+# Reference: https://docs.netlify.com/build/configure-builds/file-based-configuration/
+
+[build.environment]
+  # Netlify installs Ruby with mise, which by default downloads a precompiled Ruby from jdx/ruby.
+  # Those builds link OpenSSL statically (no-shared) into openssl.so, while the system
+  # libcrypto.so.3 also gets loaded, so htmlproofer segfaults on `require "openssl"`.
+  # Compiling Ruby from source links it against the system OpenSSL only.
+  # https://mise.jdx.dev/lang/ruby.html (ruby.compile / MISE_RUBY_COMPILE)
+  # https://github.com/jdx/ruby/blob/main/libexec/package.rb (build_openssl: "no-shared")
+  MISE_RUBY_COMPILE = "true"

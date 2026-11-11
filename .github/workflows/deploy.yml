@@ -35,7 +35,8 @@ permissions:
 
 # Allow only one concurrent deployment per environment
 concurrency:
-  group: "pages-${{ inputs.environment }}"
+  # Only real deployments share a group; PR validations get one per ref so they don't cancel each other
+  group: "pages-${{ inputs.environment }}-${{ inputs.deploy && 'deploy' || github.ref }}"
   cancel-in-progress: false
 
 jobs:
@@ -44,14 +45,14 @@ jobs:
     
     steps:
       - name: Checkout ${{ inputs.branch }} branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ inputs.branch }}
 
       - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@b3aaceaef7e0ee231b499e7b5f49c03fc1d32199 # v1.338.0
         with:
-          ruby-version: '3.3'
+          ruby-version: '.ruby-version'
           bundler-cache: true
 
       - name: Verify platform compatibility
@@ -62,7 +63,7 @@ jobs:
           fi
 
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
 
       - name: Build with Jekyll
         run: bundle exec jekyll build --config ${{ inputs.config_files }}
@@ -89,9 +90,16 @@ jobs:
           echo "**Environment:** ${{ inputs.environment }}" >> $GITHUB_STEP_SUMMARY
           echo "**Config:** ${{ inputs.config_files }}" >> $GITHUB_STEP_SUMMARY
 
+      # _config.yml publishes .well-known/ (include: [".well-known"]); fail if it goes missing
+      - name: Verify .well-known is in the build
+        run: test -d _site/.well-known && ls -la _site/.well-known
+
       - name: Upload artifact
         if: inputs.deploy
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          # Since v4 dotfiles are excluded by default; .well-known/ must be published
+          include-hidden-files: true
 
   deploy:
     if: inputs.deploy
@@ -104,4 +112,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
