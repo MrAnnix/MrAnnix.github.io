@@ -35,7 +35,8 @@ permissions:
 
 # Allow only one concurrent deployment per environment
 concurrency:
-  group: "pages-${{ inputs.environment }}"
+  # Only real deployments share a group; PR validations get one per ref so they don't cancel each other
+  group: "pages-${{ inputs.environment }}-${{ inputs.deploy && 'deploy' || github.ref }}"
   cancel-in-progress: false
 
 jobs:
@@ -51,7 +52,7 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3'
+          ruby-version: '.ruby-version'
           bundler-cache: true
 
       - name: Verify platform compatibility
