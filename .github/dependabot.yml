@@ -1,0 +1,24 @@
+# Dependabot version updates. Security updates are enabled separately in the repo settings.
+# Reference: https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference
+version: 2
+updates:
+  # Keeps the SHA-pinned actions in .github/workflows up to date
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+
+  # Gemfile.lock: one grouped PR for minor/patch updates; major updates stay separate for review
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      bundler-minor-patch:
+        update-types:
+          - "minor"
+          - "patch"
