@@ -21,8 +21,6 @@ jobs:
     with:
       environment: production
       config_files: '_config.yml'
-      # Always master, even when the workflow is run manually from another branch
-      ref: master
       upload_artifact: true
 
   deploy:
@@ -32,8 +30,9 @@ jobs:
     permissions:
       pages: write
       id-token: write
+    # Its branch rule only accepts master
     environment:
-      name: production
+      name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:

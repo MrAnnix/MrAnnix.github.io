@@ -62,7 +62,7 @@ HTMLProofer also checks external links, so it needs network access.
    ```
 
 3. Put the post's images in `assets/images/blog/<slug>/`, preferably as WebP.
-4. To publish, move the file to `_posts/YYYY-MM-DD-<slug>.md`.
+4. To publish, move the file to `_posts/YYYY-MM-DD-<slug>.md`. Production skips posts dated in the future: such a post goes live with the first deploy after its date.
 
 The URL is `/:categories/:title/` (see [`_config.yml`](_config.yml)), so `categories` becomes part of the path. A string with spaces is split into several categories (`"Big Data"` gives `/big/data/<slug>/`); use a hyphen or a YAML list (`[Big Data]`) for a single multi-word category. Changing a published post's category changes its URL.
 

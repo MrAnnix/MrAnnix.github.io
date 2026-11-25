@@ -11,9 +11,9 @@
   # https://github.com/jdx/ruby/blob/main/libexec/package.rb (build_openssl: "no-shared")
   MISE_RUBY_COMPILE = "true"
 
-# Production is served by GitHub Pages, so everything Netlify serves is a copy of it.
-# Netlify adds this header to Deploy Previews only; the dev site's production deploy needs it too,
-# or search engines index it as a duplicate of raulsanmartin.me.
+# Every Netlify site copies production (GitHub Pages), but Netlify only adds noindex to
+# Deploy Previews and older branch deploys.
+# https://docs.netlify.com/deploy/deploy-types/branch-deploys/
 # https://docs.netlify.com/manage/routing/headers/
 [[headers]]
   for = "/*"
