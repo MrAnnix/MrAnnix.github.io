@@ -1,38 +1,28 @@
-function loadImage(id, targetId) {
-    var el = document.getElementById(id);
-    if (!el) {
-        console.warn('loadImage: element not found for id "' + id + '"');
+// Adds `is-loaded` to the target element once the image has loaded (or failed), which starts
+// its entry animation in _sass/_animations.scss. Listens to the <img> itself instead of
+// preloading a copy, so `loading="lazy"` keeps working: a lazy image has no currentSrc yet
+// when the DOM is ready.
+function animateWhenLoaded(imageId, targetId) {
+    var img = document.getElementById(imageId);
+    var targetEl = document.getElementById(targetId);
+    if (!img || !targetEl) {
+        console.warn('animateWhenLoaded: element not found for id "' + (img ? targetId : imageId) + '"');
         return;
     }
 
-    var targetEl = targetId ? document.getElementById(targetId) : el;
-    if (targetId && !targetEl) {
-        console.warn('loadImage: target element not found for id "' + targetId + '"');
-        return;
+    function markLoaded() {
+        targetEl.classList.add('is-loaded');
     }
 
-    var imageToLoad;
-    if (el.dataset.image) {
-        imageToLoad = el.dataset.image;
-    } else if (typeof el.currentSrc === 'undefined') {
-        imageToLoad = el.src;
+    if (img.complete) {
+        markLoaded();
     } else {
-        imageToLoad = el.currentSrc;
-    }
-    if (imageToLoad) {
-        var img = new Image();
-        img.src = imageToLoad;
-        img.onload = function () {
-            targetEl.classList.add('is-loaded');
-        };
-        img.onerror = function () {
-            console.error('Failed to load image: ' + imageToLoad);
-            // Still add the class to prevent layout issues
-            targetEl.classList.add('is-loaded');
-        };
+        img.addEventListener('load', markLoaded, { once: true });
+        // Still animate if the image fails, so the card does not stay unanimated
+        img.addEventListener('error', markLoaded, { once: true });
     }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    loadImage('GeekMagScreenshot', 'GeekMag');
+    animateWhenLoaded('GeekMagScreenshot', 'GeekMag');
 });
