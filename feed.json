@@ -6,7 +6,7 @@ layout: null
     "title": "{{ site.title | xml_escape }} - Articles",
     "home_page_url": "{{ site.baseurl | prepend: site.url }}",
     "feed_url": "{{ "/feed.json" | absolute_url }}",
-    "description": "Latest entries in Blog {{ site.author }}’s Blog",
+    "description": "Latest entries in {{ site.author }}’s blog",
     "icon": "{{ site.logo | absolute_url }}",
     "favicon": "{{ site.favicon | absolute_url }}",
     "expired": false,
