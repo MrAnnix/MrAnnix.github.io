@@ -44,7 +44,7 @@ HTMLProofer also checks external links, so it needs network access.
 
 ## Writing a post
 
-1. Copy [`_drafts/1978-01-01-template.md`](_drafts/1978-01-01-template.md) to `_drafts/<slug>.md` and preview it with `--drafts`.
+1. Copy [`_templates/post.md`](_templates/post.md) to `_drafts/<slug>.md` and preview it with `--drafts`. The development site also renders `_drafts/`, so a draft there is public at dev.raulsanmartin.me.
 2. Fill in the front matter:
 
    ```yaml
@@ -74,6 +74,7 @@ The URL is `/:categories/:title/` (see [`_config.yml`](_config.yml)), so `catego
 | `_config_dev.yaml` | Overrides for the development site |
 | `_layouts/`, `_includes/` | Page templates; `head.html` picks each page's stylesheet |
 | `_posts/`, `_drafts/` | Published and draft posts |
+| `_templates/` | Post template; Jekyll skips folders that start with `_`, so it is never rendered |
 | `_sass/`, `assets/css/` | SCSS partials and the per-page stylesheets that import them |
 | `assets/` | Images, fonts and JavaScript |
 | `static/` | Images referenced from the author's e-mail signature; keep their URLs stable |
