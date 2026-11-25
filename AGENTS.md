@@ -23,7 +23,8 @@ Jekyll source of https://raulsanmartin.me. Human-facing docs are in [README.md](
 - Permalinks are `/:categories/:title/`, where `:title` is the file's slug. A `categories` string with spaces splits into several categories and path segments (`"Big Data"` gives `/big/data/`). Renaming a published post's file or changing its categories changes its URL.
 - `_includes/head.html` picks each page's stylesheet by `page.title` (`Home`, `Contact`, `Blog`) or `layout: post`; any other page gets `assets/css/styles.css`. Renaming one of those titles changes the page's CSS.
 - MathJax and Mermaid load only for posts with `mathjax: true` or `mermaid: true` in their front matter.
-- `.well-known/` must reach the deployed site: it needs `include` in `_config.yml` and `include-hidden-files` in `.github/workflows/deploy.yml`.
+- `.well-known/` must reach the deployed site: it needs `include` in `_config.yml` and `include-hidden-files` in `.github/workflows/build.yml`.
+- Workflows run with least privilege: `build.yml` gets `contents: read`, and only the `deploy` job in `deploy-prod.yml` gets `pages: write` and `id-token: write`.
 - Images in `static/` are referenced from an e-mail signature outside this repo; keep their names and paths.
 - The e-mail address is written as `hello@[this domain]` deliberately; do not replace it with the real address.
 

@@ -1,0 +1,82 @@
+name: Build Jekyll Site
+
+# Reusable workflow: builds the site and checks it with HTMLProofer.
+# It only needs read access; deploy-prod.yml deploys the uploaded artifact in a separate job.
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+        description: 'Value of JEKYLL_ENV'
+      config_files:
+        required: false
+        type: string
+        default: '_config.yml'
+        description: 'Comma-separated list of config files'
+      ref:
+        required: false
+        type: string
+        default: ''
+        description: 'Ref to build; empty builds the commit that triggered the workflow'
+      upload_artifact:
+        required: false
+        type: boolean
+        default: false
+        description: 'Whether to upload _site as the GitHub Pages artifact'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.ref }}
+          persist-credentials: false
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@b3aaceaef7e0ee231b499e7b5f49c03fc1d32199 # v1.338.0
+        with:
+          ruby-version: '.ruby-version'
+          bundler-cache: true
+
+      - name: Build with Jekyll
+        run: bundle exec jekyll build --config "$CONFIG_FILES"
+        env:
+          CONFIG_FILES: ${{ inputs.config_files }}
+          JEKYLL_ENV: ${{ inputs.environment }}
+
+      - name: Test site with HTMLProofer
+        run: bundle exec htmlproofer ./_site --only-4xx --ignore-status-codes "403,429" --checks Images,Scripts,Links,Favicon,OpenGraph
+
+      # _config.yml publishes .well-known/ (include: [".well-known"]); fail if it goes missing
+      - name: Verify .well-known is in the build
+        run: test -d _site/.well-known && ls -la _site/.well-known
+
+      - name: Write build summary
+        run: |
+          {
+            echo "### Build summary"
+            echo ""
+            echo "- **Site size:** $(du -sh _site | cut -f1)"
+            echo "- **Files:** $(find _site -type f | wc -l)"
+            echo "- **Environment:** $JEKYLL_ENV"
+            echo "- **Config:** $CONFIG_FILES"
+          } >> "$GITHUB_STEP_SUMMARY"
+        env:
+          CONFIG_FILES: ${{ inputs.config_files }}
+          JEKYLL_ENV: ${{ inputs.environment }}
+
+      - name: Upload artifact
+        if: inputs.upload_artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          # Since v4 dotfiles are excluded by default; .well-known/ must be published
+          include-hidden-files: true

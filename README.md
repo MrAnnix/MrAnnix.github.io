@@ -83,8 +83,8 @@ The URL is `/:categories/:title/` (see [`_config.yml`](_config.yml)), so `catego
 
 ## Deployment
 
-- **Production**: every push to `master` runs [Deploy Production Site](.github/workflows/deploy-prod.yml), which builds the site, checks it with HTMLProofer and publishes it to GitHub Pages.
-- **Pull requests**: [Validate Pull Request](.github/workflows/validate-pr.yml) runs the same build and checks without deploying, and Netlify publishes a deploy preview.
+- **Production**: every push to `master` runs [Deploy Production Site](.github/workflows/deploy-prod.yml), which builds the site with [`build.yml`](.github/workflows/build.yml), checks it with HTMLProofer and publishes it to GitHub Pages.
+- **Pull requests**: [Validate Pull Request](.github/workflows/validate-pr.yml) runs the same build and checks with read-only permissions, and Netlify publishes a deploy preview.
 - **Development**: Netlify builds the `develop` branch with `_config_dev.yaml` and publishes it to the development site.
 
 Both domains are proxied through Cloudflare. Dependency updates are configured in [`.github/dependabot.yml`](.github/dependabot.yml).

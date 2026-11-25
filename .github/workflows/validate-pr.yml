@@ -5,17 +5,18 @@ on:
     branches:
       - master
 
+permissions: {}
+
+# A new push to the pull request supersedes the previous validation
+concurrency:
+  group: validate-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   validate:
-    uses: ./.github/workflows/deploy.yml
+    uses: ./.github/workflows/build.yml
     permissions:
       contents: read
-      pages: write
-      id-token: write
     with:
       environment: production
-      branch: ${{ github.head_ref }}
       config_files: '_config.yml'
-      fail_on_html_errors: true
-      deploy: false
-
