@@ -18,7 +18,7 @@ Jekyll source of https://raulsanmartin.me. Human-facing docs are in [README.md](
 ## Gotchas
 
 - Jekyll is 3.10, pinned by the `github-pages` gem, so Jekyll 4 features (such as `:slugified_categories`) are unavailable.
-- The `github-pages` gem applies GitHub Pages defaults and overrides on every build, local ones included: safe mode with a plugin whitelist and kramdown with GFM input. Its `future: true` default does not apply: production skips future-dated posts.
+- The `github-pages` gem applies GitHub Pages defaults and overrides on every build, local ones included: safe mode with a plugin whitelist and kramdown with GFM input. Its `future: true` default loses to Jekyll's own `future: false`, so production skips future-dated posts until the first deploy after their date.
 - `liquid.error_mode: strict`: invalid Liquid fails the build.
 - Permalinks are `/:categories/:title/`, where `:title` is the file's slug. A `categories` string with spaces splits into several categories and path segments (`"Big Data"` gives `/big/data/`). Renaming a published post's file or changing its categories changes its URL.
 - `_includes/head.html` picks each page's stylesheet by `page.title` (`Home`, `Contact`, `Blog`) or `layout: post`; any other page gets `assets/css/styles.css`. Renaming one of those titles changes the page's CSS.
