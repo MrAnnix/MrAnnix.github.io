@@ -10,3 +10,12 @@
   # https://mise.jdx.dev/lang/ruby.html (ruby.compile / MISE_RUBY_COMPILE)
   # https://github.com/jdx/ruby/blob/main/libexec/package.rb (build_openssl: "no-shared")
   MISE_RUBY_COMPILE = "true"
+
+# Production is served by GitHub Pages, so everything Netlify serves is a copy of it.
+# Netlify adds this header to Deploy Previews only; the dev site's production deploy needs it too,
+# or search engines index it as a duplicate of raulsanmartin.me.
+# https://docs.netlify.com/manage/routing/headers/
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"

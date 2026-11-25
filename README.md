@@ -87,6 +87,8 @@ The URL is `/:categories/:title/` (see [`_config.yml`](_config.yml)), so `catego
 - **Pull requests**: [Validate Pull Request](.github/workflows/validate-pr.yml) runs the same build and checks with read-only permissions, and Netlify publishes a deploy preview.
 - **Development**: Netlify builds the `develop` branch with `_config_dev.yaml` and publishes it to the development site.
 
+[`netlify.toml`](netlify.toml) sends `X-Robots-Tag: noindex` on every Netlify site, so only production is indexed.
+
 Both domains are proxied through Cloudflare. Dependency updates are configured in [`.github/dependabot.yml`](.github/dependabot.yml).
 
 ## License
