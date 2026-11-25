@@ -7,15 +7,7 @@ layout: default
 <article class="body post">
     <div class="post-heading">
         <span class="blog-date read-time">
-        {{ page.date | date: '%A,' }}
-        {% assign d = page.date | date: "%-d"  %}
-        {% case d %}
-        {% when '1' or '21' or '31' %}{{ d }}st
-        {% when '2' or '22' %}{{ d }}nd
-        {% when '3' or '23' %}{{ d }}rd
-        {% else %}{{ d }}th
-        {% endcase %}
-        {{ page.date | date: '%B, %Y' }}
+        {% include long-date.html date=page.date %}
         &sdot;
         {% if words < 360 %}1 min{% else %}{{ words | divided_by:180 }} mins{% endif %} read
         </span>
@@ -23,7 +15,7 @@ layout: default
     </div>
     <div class="main text">
         {% if page.image %}
-        <p><img src="{{ page.image }}" alt="{{ page.description }}" title="{{ page.title }}"></p>
+        <p><img src="{{ page.image | relative_url }}" alt="{{ page.description | escape }}" title="{{ page.title | escape }}"></p>
         {% endif %}
         {{ content }}
     </div>
