@@ -44,17 +44,12 @@ kramdown:
 # Plugins
 plugins:
   - jekyll-sitemap
-  - jekyll-paginate
 
 # Sass
 sass:
   sass_dir: _sass
   style: compressed
   add_charset: true
-
-# Paginate blog
-paginate: 10
-paginate_path: "/blog/page:num"
 
 # Categories and tags pages
 tag_page: '/tags/'

@@ -44,7 +44,7 @@ HTMLProofer also checks external links, so it needs network access.
 
 ## Writing a post
 
-1. Copy [`_drafts/1978-01-01-template.md`](_drafts/1978-01-01-template.md) to `_drafts/<slug>.md` and preview it with `--drafts`.
+1. Copy [`_templates/post.md`](_templates/post.md) to `_drafts/<slug>.md` and preview it with `--drafts`. The development site also renders `_drafts/`, so a draft there is public at dev.raulsanmartin.me.
 2. Fill in the front matter:
 
    ```yaml
@@ -62,7 +62,7 @@ HTMLProofer also checks external links, so it needs network access.
    ```
 
 3. Put the post's images in `assets/images/blog/<slug>/`, preferably as WebP.
-4. To publish, move the file to `_posts/YYYY-MM-DD-<slug>.md`.
+4. To publish, move the file to `_posts/YYYY-MM-DD-<slug>.md`. Production skips posts dated in the future: such a post goes live with the first deploy after its date.
 
 The URL is `/:categories/:title/` (see [`_config.yml`](_config.yml)), so `categories` becomes part of the path. A string with spaces is split into several categories (`"Big Data"` gives `/big/data/<slug>/`); use a hyphen or a YAML list (`[Big Data]`) for a single multi-word category. Changing a published post's category changes its URL.
 
@@ -74,6 +74,7 @@ The URL is `/:categories/:title/` (see [`_config.yml`](_config.yml)), so `catego
 | `_config_dev.yaml` | Overrides for the development site |
 | `_layouts/`, `_includes/` | Page templates; `head.html` picks each page's stylesheet |
 | `_posts/`, `_drafts/` | Published and draft posts |
+| `_templates/` | Post template; Jekyll skips folders that start with `_`, so it is never rendered |
 | `_sass/`, `assets/css/` | SCSS partials and the per-page stylesheets that import them |
 | `assets/` | Images, fonts and JavaScript |
 | `static/` | Images referenced from the author's e-mail signature; keep their URLs stable |
@@ -83,9 +84,11 @@ The URL is `/:categories/:title/` (see [`_config.yml`](_config.yml)), so `catego
 
 ## Deployment
 
-- **Production**: every push to `master` runs [Deploy Production Site](.github/workflows/deploy-prod.yml), which builds the site, checks it with HTMLProofer and publishes it to GitHub Pages.
-- **Pull requests**: [Validate Pull Request](.github/workflows/validate-pr.yml) runs the same build and checks without deploying, and Netlify publishes a deploy preview.
+- **Production**: every push to `master` runs [Deploy Production Site](.github/workflows/deploy-prod.yml), which builds the site with [`build.yml`](.github/workflows/build.yml), checks it with HTMLProofer and publishes it to GitHub Pages.
+- **Pull requests**: [Validate Pull Request](.github/workflows/validate-pr.yml) runs the same build and checks with read-only permissions, and Netlify publishes a deploy preview.
 - **Development**: Netlify builds the `develop` branch with `_config_dev.yaml` and publishes it to the development site.
+
+[`netlify.toml`](netlify.toml) sends `X-Robots-Tag: noindex` on every Netlify site, so only production is indexed.
 
 Both domains are proxied through Cloudflare. Dependency updates are configured in [`.github/dependabot.yml`](.github/dependabot.yml).
 

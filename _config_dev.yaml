@@ -13,5 +13,6 @@ show_drafts: true
 future: true
 unpublished: false
 
-# Google Search Console verification belongs to production only
-google-site-verification: ""
+# Google Search Console verification belongs to production only.
+# false, not "" or null: "" is truthy in Liquid and null does not override _config.yml
+google-site-verification: false

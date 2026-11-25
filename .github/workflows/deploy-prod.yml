@@ -6,16 +6,36 @@ on:
       - master
   workflow_dispatch:
 
+permissions: {}
+
+# One production deployment at a time; a queued one waits instead of cancelling a deploy in progress
+concurrency:
+  group: pages-production
+  cancel-in-progress: false
+
 jobs:
-  deploy:
-    uses: ./.github/workflows/deploy.yml
+  build:
+    uses: ./.github/workflows/build.yml
     permissions:
       contents: read
-      pages: write
-      id-token: write
     with:
       environment: production
-      branch: master
       config_files: '_config.yml'
-      fail_on_html_errors: true
+      upload_artifact: true
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    # Minimum permissions for actions/deploy-pages
+    permissions:
+      pages: write
+      id-token: write
+    # Its branch rule only accepts master
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

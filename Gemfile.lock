@@ -324,11 +324,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  github-pages
-  html-proofer
-  jekyll
-  jekyll-paginate
-  jekyll-sitemap
+  github-pages (~> 233)
+  html-proofer (~> 5.2)
   tzinfo-data
 
 BUNDLED WITH

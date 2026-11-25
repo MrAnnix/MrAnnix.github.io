@@ -10,3 +10,12 @@
   # https://mise.jdx.dev/lang/ruby.html (ruby.compile / MISE_RUBY_COMPILE)
   # https://github.com/jdx/ruby/blob/main/libexec/package.rb (build_openssl: "no-shared")
   MISE_RUBY_COMPILE = "true"
+
+# Every Netlify site copies production (GitHub Pages), but Netlify only adds noindex to
+# Deploy Previews and older branch deploys.
+# https://docs.netlify.com/deploy/deploy-types/branch-deploys/
+# https://docs.netlify.com/manage/routing/headers/
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
