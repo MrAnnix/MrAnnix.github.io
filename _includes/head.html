@@ -1,58 +1,71 @@
 <head>
     <!-- Basic page needs -->
     <meta charset="utf-8">
-    <title>{% if page.title == 'Home' %}{{ site.SEOtitle }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}</title>
-    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 110 }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    {%- if page.title == 'Home' -%}
+        {%- assign seo_title = site.SEOtitle -%}
+    {%- else -%}
+        {%- assign seo_title = page.title | append: ' · ' | append: site.title -%}
+    {%- endif -%}
+    {%- if page.description -%}
+        {%- assign seo_description = page.description -%}
+    {%- elsif page.excerpt -%}
+        {%- assign seo_description = page.excerpt | strip_html | normalize_whitespace | truncate: 160 -%}
+    {%- else -%}
+        {%- assign seo_description = site.description -%}
+    {%- endif %}
+    <title>{{ seo_title | escape }}</title>
+    <meta name="description" content="{{ seo_description | escape }}">
     <meta name="author" content="{{ site.author }}">
     <link rel="canonical" href="{{ page.url | absolute_url }}">
-    
+
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ site.favicon | prepend: site.baseurl }}">
-    
-    <!-- Preconnect to external domains for better performance -->
+    <link rel="icon" href="{{ site.favicon | relative_url }}">
+
+    <!-- Preconnect to the CDNs this page uses -->
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    {%- if page.mathjax == true or page.mermaid == true %}
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    
+    {%- endif %}
+
     <!-- Open Graph -->
-    <meta property="og:title" content="{% if page.title == 'Home' %}{{ site.SEOtitle }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}">
-    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 110 }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:title" content="{{ seo_title | escape }}">
+    <meta property="og:description" content="{{ seo_description | escape }}">
     <meta property="og:image" content="{{ page.image | default: site.logo | absolute_url }}">
-    <meta property="og:image:alt" content="{{ page.image_alt | default: site.title }}">
+    <meta property="og:image:alt" content="{{ page.image_alt | default: site.title | escape }}">
     <meta property="og:url" content="{{ page.url | absolute_url }}">
     <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
     <meta property="og:site_name" content="{{ site.title }}">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{% if page.title == 'Home' %}{{ site.SEOtitle }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}">
-    <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 110 }}{% elsif page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="twitter:title" content="{{ seo_title | escape }}">
+    <meta name="twitter:description" content="{{ seo_description | escape }}">
     <meta name="twitter:image" content="{{ page.image | default: site.logo | absolute_url }}">
-    <meta name="twitter:image:alt" content="{{ page.image_alt | default: site.title }}">
+    <meta name="twitter:image:alt" content="{{ page.image_alt | default: site.title | escape }}">
 
     <!-- Feeds -->
-    <link rel="alternate" title="{{ site.title }} (Atom feed)" type="application/atom+xml" href="{{ "/feed.xml" | absolute_url }}">
-    <link rel="alternate" title="{{ site.title }} (JSON feed)" type="application/json" href="{{ "/feed.json" | absolute_url }}">
+    <link rel="alternate" title="{{ site.title }} (Atom feed)" type="application/atom+xml" href="{{ '/feed.xml' | absolute_url }}">
+    <link rel="alternate" title="{{ site.title }} (JSON feed)" type="application/feed+json" href="{{ '/feed.json' | absolute_url }}">
 
     {% if page.title == 'Home' and site.google-site-verification %}
     <!-- Google Site Verification -->
-    <meta name="google-site-verification" content="{{ site.google-site-verification }}">  
+    <meta name="google-site-verification" content="{{ site.google-site-verification }}">
     {% endif %}
 
     <!-- Styles -->
     {% if page.title == 'Home' %}
-    <link rel="stylesheet" href="{{ "/assets/css/index.css" | prepend: site.baseurl }}">
-    <script defer type="text/javascript" src="{{ "/assets/js/animations.js" | prepend: site.baseurl }}"></script>
-    <noscript><style type="text/css">.projects-column>.project{animation-name:slideLeft;}</style></noscript>
+    <link rel="stylesheet" href="{{ '/assets/css/index.css' | relative_url }}">
+    <script defer src="{{ '/assets/js/animations.js' | relative_url }}"></script>
     {% elsif page.title == 'Contact' %}
-    <link rel="stylesheet" href="{{ "/assets/css/contact.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ '/assets/css/contact.css' | relative_url }}">
     {% elsif page.title == 'Blog' %}
-    <link rel="stylesheet" href="{{ "/assets/css/blog-index.css" | prepend: site.baseurl }}">
-    {% elsif page.layout == "post" %}
-    <link rel="stylesheet" href="{{ "/assets/css/post.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ '/assets/css/blog-index.css' | relative_url }}">
+    {% elsif page.layout == 'post' %}
+    <link rel="stylesheet" href="{{ '/assets/css/post.css' | relative_url }}">
     {% else %}
-    <link rel="stylesheet" href="{{ "/assets/css/styles.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
     {% endif %}
-    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="theme-color" content="#c8463e">
 
     <!-- Icons -->
@@ -60,6 +73,6 @@
     <noscript><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"></noscript>
 
     <!-- Fonts -->
-    <link rel="preload" crossorigin="anonymous" href="{{ "/assets/fonts/moniker/light.woff2" | prepend: site.baseurl }}" as="font" type="font/woff2">
-	<link rel="preload" crossorigin="anonymous" href="{{ "/assets/fonts/moniker/medium.woff2" | prepend: site.baseurl }}" as="font" type="font/woff2">
+    <link rel="preload" crossorigin="anonymous" href="{{ '/assets/fonts/moniker/light.woff2' | relative_url }}" as="font" type="font/woff2">
+    <link rel="preload" crossorigin="anonymous" href="{{ '/assets/fonts/moniker/medium.woff2' | relative_url }}" as="font" type="font/woff2">
 </head>
