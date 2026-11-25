@@ -22,6 +22,7 @@ Jekyll source of https://raulsanmartin.me. Human-facing docs are in [README.md](
 - `liquid.error_mode: strict`: invalid Liquid fails the build.
 - Permalinks are `/:categories/:title/`, where `:title` is the file's slug. A `categories` string with spaces splits into several categories and path segments (`"Big Data"` gives `/big/data/`). Renaming a published post's file or changing its categories changes its URL.
 - `_includes/head.html` picks each page's stylesheet by `page.title` (`Home`, `Contact`, `Blog`) or `layout: post`; any other page gets `assets/css/styles.css`. Renaming one of those titles changes the page's CSS.
+- The development site renders `_drafts/` and future-dated posts publicly (`_config_dev.yaml`), so keep anything that must not be published out of `_drafts/`; the post template lives in `_templates/`, which Jekyll skips.
 - MathJax and Mermaid load only for posts with `mathjax: true` or `mermaid: true` in their front matter.
 - `.well-known/` must reach the deployed site: it needs `include` in `_config.yml` and `include-hidden-files` in `.github/workflows/build.yml`.
 - Third-party scripts in `_includes/scripts.html` are pinned to exact versions, most with an SRI hash; when bumping a version, update its `integrity` hash in the same change, or browsers block the script.
