@@ -13,5 +13,5 @@ group :jekyll_test do
   gem 'html-proofer'
 end
 
-# Platform note: This Gemfile.lock supports both Windows (x64-mingw-ucrt) and Linux (x86_64-linux)
-# If you get platform errors, run: bundle lock --add-platform x86_64-linux
+# Gemfile.lock lists the x64-mingw-ucrt (Windows) and x86_64-linux platforms.
+# On any other platform, add yours first: bundle lock --add-platform <platform> (e.g. arm64-darwin)
