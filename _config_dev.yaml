@@ -1,19 +1,18 @@
-# Development environment overrides
-# This file is used in conjunction with _config.yml for the dev deployment
+# Overrides for the development site (dev.raulsanmartin.me), layered on top of _config.yml:
+#   bundle exec jekyll build --config _config.yml,_config_dev.yaml
 
-# Update URL for development site
-# You can set this to your dev subdomain or leave as-is
-url: "https://dev.raulsanmartin.me"  # Update this to your actual dev URL
+url: "https://dev.raulsanmartin.me"
 
-# Optional: Add a visual indicator that this is dev
+# Mark every page as the development site
 title: "Raul San Martin [DEV]"
-SEOtitle: "Raul San Martin · Student/Developer [DEV]"
-description: "I'm a Big Data engineer and Machine Learning enthusiast living in Spain. [Development Site]"
+SEOtitle: "Raul San Martin · Data Engineer [DEV]"
+description: "I’m a Data Engineer and Machine Learning enthusiast living in Spain. [Development Site]"
 
-# Enable additional debugging/development features
+# Render drafts and future-dated posts
 show_drafts: true
 future: true
 unpublished: false
 
-# Disable analytics on dev
-google-site-verification: ""
+# Google Search Console verification belongs to production only.
+# false, not "" or null: "" is truthy in Liquid and null does not override _config.yml
+google-site-verification: false

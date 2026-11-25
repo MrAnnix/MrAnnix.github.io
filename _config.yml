@@ -1,7 +1,7 @@
 # Site settings
 title: "Raul San Martin"
-SEOtitle: "Raul San Martin · Student/Developer"
-description: "I’m a Big Data engineer and Machine Learning enthusiast living in Spain."
+SEOtitle: "Raul San Martin · Data Engineer"
+description: "I’m a Data Engineer and Machine Learning enthusiast living in Spain."
 url: "https://raulsanmartin.me"
 baseurl: ""
 lang: en
@@ -10,9 +10,23 @@ logo: "/assets/images/logo.png"
 name_img: "/assets/images/RaulSanMartin.png"
 author: "Raúl San Martín Aniceto"
 permalink: /:categories/:title/
-theme: null # https://github.com/jekyll/jekyll/issues/7478#issuecomment-454346783
+theme: null # Stops the github-pages gem from falling back to jekyll-theme-primer
 timezone: Europe/Madrid
-include: [".well-known"] # dat:// protocol support
+include: [".well-known"] # Jekyll skips dot-folders; this one serves dat:// discovery and OpenPGP WKD
+# Repo-only files. A custom list replaces the defaults of Jekyll 3 and the github-pages gem,
+# so the entries from Gemfile to CNAME repeat them
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - CNAME
+  - AGENTS.md
+  - README.md
+  - netlify.toml
 
 # Top bar
 topbar: "<b>Raul San Martin</b> / MrAnnix"
@@ -30,17 +44,12 @@ kramdown:
 # Plugins
 plugins:
   - jekyll-sitemap
-  - jekyll-paginate
 
 # Sass
 sass:
   sass_dir: _sass
   style: compressed
   add_charset: true
-
-# Paginate blog
-paginate: 10
-paginate_path: "/blog/page:num"
 
 # Categories and tags pages
 tag_page: '/tags/'
@@ -49,9 +58,10 @@ category_page: '/categories/'
 # Addons
 google-site-verification: "4KpPIPbUzRNI1DJR-OrOS5tNYrNvTIMj2Xh9bIybdPE"
 
-# Social settings (you can use Font Awesome icons [fa fa-icon] or Iconmonstr ones [im im-icon])
+# Shown on the contact page; obfuscated on purpose
 email: hello@[this domain]
 
+# Home page links. `title` picks the icon: it must match a `.sites-list li.<title>` rule in _sass/_index.scss
 social:
   - title: e-mail
     description: '<span class="email-address">hello@[this domain]</span> for e-mail'

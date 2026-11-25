@@ -2,28 +2,34 @@
 layout: null
 ---
 {
-    "version": "https://jsonfeed.org/version/1",
-    "title": "{{ site.title | xml_escape }} - Articles",
-    "home_page_url": "{{ site.baseurl | prepend: site.url }}",
-    "feed_url": "{{ "/feed.json" | absolute_url }}",
-    "description": "Latest entries in Blog {{ site.author }}’s Blog",
-    "icon": "{{ site.logo | absolute_url }}",
-    "favicon": "{{ site.favicon | absolute_url }}",
+    "version": "https://jsonfeed.org/version/1.1",
+    "title": {{ site.title | append: " - Articles" | jsonify }},
+    "home_page_url": {{ "/" | absolute_url | jsonify }},
+    "feed_url": {{ "/feed.json" | absolute_url | jsonify }},
+    "description": {{ "Latest entries in " | append: site.author | append: "’s blog" | jsonify }},
+    "icon": {{ site.logo | absolute_url | jsonify }},
+    "favicon": {{ site.favicon | absolute_url | jsonify }},
     "expired": false,
+    "language": {{ site.lang | jsonify }},
+    "authors": [
+        {
+            "name": {{ site.author | jsonify }}
+        }
+    ],
     "author": {
-        "name": "{{ site.author }}"
+        "name": {{ site.author | jsonify }}
     },
     "items": [{% for post in site.posts limit:10 %}
         {
-            "id": "{{ post.url | absolute_url }}",
+            "id": {{ post.url | absolute_url | jsonify }},
             "title": {{ post.title | jsonify }},
             "summary": {{ post.description | jsonify }},
-            "url": "{{ post.url | absolute_url }}",
-            "image": "{{ post.image | absolute_url }}",
-            "tags": {{ post.categories | jsonify }},
-            "date_published": "{{ post.date | date_to_xmlschema }}",
-            "date_modified": "{{ post.last_modified_at | default: post.date | date_to_xmlschema }}",
-            "content_html": {{ post.content | strip_newlines | jsonify }}
+            "url": {{ post.url | absolute_url | jsonify }},
+            "image": {{ post.image | absolute_url | jsonify }},
+            "tags": {{ post.categories | concat: post.tags | uniq | jsonify }},
+            "date_published": {{ post.date | date_to_xmlschema | jsonify }},
+            "date_modified": {{ post.last_modified_at | default: post.date | date_to_xmlschema | jsonify }},
+            "content_html": {{ post.content | jsonify }}
         }{% if forloop.last == false %},{% endif %}{% endfor %}
     ]
 }

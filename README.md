@@ -1,263 +1,96 @@
 # MrAnnix.github.io
 
-> Personal website and tech blog built with Jekyll
+Source of [raulsanmartin.me](https://raulsanmartin.me/), the personal website and tech blog of Raúl San Martín Aniceto ([@MrAnnix](https://github.com/MrAnnix)), built with [Jekyll](https://jekyllrb.com/).
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![Jekyll](https://img.shields.io/badge/Jekyll-CC0000?style=flat&logo=jekyll&logoColor=white)
-![Ruby](https://img.shields.io/badge/Ruby-3.3-CC342D?style=flat&logo=ruby&logoColor=white)
+| Environment | Branch | Status | URL |
+|:--|:--|:--|:--|
+| Production | `master` | [![Deploy Production Site](https://github.com/MrAnnix/MrAnnix.github.io/actions/workflows/deploy-prod.yml/badge.svg)](https://github.com/MrAnnix/MrAnnix.github.io/actions/workflows/deploy-prod.yml) | [raulsanmartin.me](https://raulsanmartin.me/) |
+| Development | `develop` | [![Netlify Status](https://api.netlify.com/api/v1/badges/29c1e0d9-efaa-48f9-8a11-712ec6df7cd3/deploy-status)](https://app.netlify.com/sites/dev-raulsanmartin-me/deploys) | [dev.raulsanmartin.me](https://dev.raulsanmartin.me/) |
 
-| Environment | Status | URL |
-|:-----------|:-------|:----|
-| 🚀 Production | [![Deploy Production Site](https://github.com/MrAnnix/MrAnnix.github.io/actions/workflows/deploy-prod.yml/badge.svg)](https://github.com/MrAnnix/MrAnnix.github.io/actions/workflows/deploy-prod.yml) | [raulsanmartin.me](https://raulsanmartin.me/) |
-| 🔧 Development | [![Netlify Status](https://api.netlify.com/api/v1/badges/29c1e0d9-efaa-48f9-8a11-712ec6df7cd3/deploy-status)](https://app.netlify.com/sites/dev-raulsanmartin-me/deploys) | [dev.raulsanmartin.me](https://dev.raulsanmartin.me/) |
+![Home page of raulsanmartin.me](assets/images/snapshot.png)
 
-![Theme Snapshot](https://raulsanmartin.me/assets/images/snapshot.png "Snapshot")
+## Features
 
----
+- Blog with category and tag index pages
+- Atom (`/feed.xml`) and JSON (`/feed.json`) feeds, and an XML sitemap (`jekyll-sitemap`)
+- Code highlighting with Rouge, plus opt-in MathJax and Mermaid per post
+- Post comments through [CommentBox](https://commentbox.io/)
+- Contact page with e-mail address and PGP key
+- `.well-known/` with `dat://` discovery and an OpenPGP Web Key Directory
+- Self-hosted fonts (Moniker, Bryant Condensed, Iosevka Term) and Font Awesome 4.7 icons from unpkg
 
-## 📖 Table of Contents
+## Local development
 
-- [About](#-about)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-- [Creating Content](#-creating-content)
-- [Deployment](#-deployment)
-- [License](#-license)
-- [Contact](#-contact)
+Requires Ruby 3.3, the version in [`.ruby-version`](.ruby-version) (also used by CI and Netlify), and Bundler. Jekyll is 3.10, pinned by the `github-pages` gem.
 
----
-
-## 📝 About
-
-Personal website of **Raúl San Martín Aniceto** ([@MrAnnix](https://github.com/MrAnnix)), a Big Data engineer and Machine Learning enthusiast based in Spain. This site serves as both a technical blog and portfolio.
-
-### 📚 Blog Topics
-
-Technical articles covering **Big Data**, **Machine Learning**, **Computer Science**, and **Web Technologies**.
-
----
-
-## 🚀 Tech Stack
-
-### Core Technologies
-- **Static Site Generator:** [Jekyll](https://jekyllrb.com/) 3.10 (pinned by the `github-pages` gem)
-- **Language:** Ruby
-- **Markup:** Markdown, HTML5, Liquid templating
-- **Styling:** SASS/SCSS with custom architecture
-- **Deployment:** GitHub Pages
-
-### Jekyll Plugins
-- `jekyll-sitemap` — XML sitemap generation
-- `jekyll-paginate` — Blog pagination (10 posts/page)
-- `github-pages` — GitHub Pages compatibility
-
-### Key Features
-✅ Responsive design  
-✅ Blog with pagination, categories & tags  
-✅ Contact form  
-✅ RSS & JSON feeds  
-✅ Syntax highlighting for code blocks  
-✅ MathJax support for mathematical equations  
-✅ Custom web fonts (Bryant Condensed, Iosevka Term, Moniker)  
-✅ Font Awesome icons  
-✅ Google Site Verification  
-✅ SEO optimized
-
----
-
-## 📁 Project Structure
-
-```plaintext
-MrAnnix.github.io/
-│
-├── 📄 _config.yml              # Jekyll configuration & site settings
-├── 📄 index.html               # Homepage
-├── 📄 blog.html                # Blog listing page
-├── 📄 categories.html          # Categories overview
-├── 📄 tags.html                # Tags overview
-├── 📄 contact.html             # Contact page
-├── 📄 404.html                 # Custom 404 error page
-│
-├── 📂 _layouts/                # Page templates
-│   ├── default.html            # Base layout
-│   └── post.html               # Blog post layout
-│
-├── 📂 _includes/               # Reusable components
-│   ├── header.html             # Site header
-│   ├── footer.html             # Site footer
-│   ├── head.html               # <head> section
-│   └── scripts.html            # JavaScript includes
-│
-├── 📂 _posts/                  # Published blog posts (Markdown)
-├── 📂 _drafts/                 # Draft posts (not published)
-│
-├── 📂 _sass/                   # SCSS partials
-│   ├── _animations.scss
-│   ├── _blog-index.scss
-│   ├── _common.scss
-│   ├── _contact.scss
-│   ├── _index.scss
-│   ├── _mathjax.scss
-│   └── _syntax-highlighting.scss
-│
-├── 📂 assets/                  # Static assets
-│   ├── css/                    # Compiled stylesheets
-│   ├── js/                     # JavaScript files
-│   ├── images/                 # Images & graphics
-│   └── fonts/                  # Custom web fonts
-│
-├── 📂 static/                  # Additional static files
-├── 📄 feed.xml                 # RSS feed
-├── 📄 feed.json                # JSON feed
-├── 📄 robots.txt               # Search engine crawling rules
-├── 📄 CNAME                    # Custom domain configuration
-└── 📄 Gemfile                  # Ruby dependencies
+```bash
+bundle install
+bundle exec jekyll serve --livereload    # http://localhost:4000
 ```
 
----
+Useful flags:
 
-## 🛠️ Getting Started
+- `--drafts` also renders the posts in `_drafts/`.
+- `--config _config.yml,_config_dev.yaml` applies the overrides the development site uses.
 
-### Prerequisites
+Before opening a pull request, run the same checks as CI:
 
-Ensure you have the following installed:
-- **Ruby** 3.3 (the version in [`.ruby-version`](.ruby-version), also used by CI and Netlify)
-- **Bundler** (`gem install bundler`)
-- **Git**
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/MrAnnix/MrAnnix.github.io.git
-   cd MrAnnix.github.io
-   ```
-
-2. **Install dependencies**
-   ```bash
-   bundle install
-   ```
-
-3. **Run the development server**
-   ```bash
-   bundle exec jekyll serve
-   ```
-   Or with live reload:
-   ```bash
-   bundle exec jekyll serve --livereload
-   ```
-
-4. **View the site**
-   
-   Open your browser and navigate to `http://localhost:4000`
-
-### Building for Production
-
-Generate the static site:
 ```bash
 bundle exec jekyll build
+bundle exec htmlproofer ./_site --only-4xx --ignore-status-codes "403,429" --checks Images,Scripts,Links,Favicon,OpenGraph
 ```
 
-The optimized site will be created in the `_site/` directory.
+HTMLProofer also checks external links, so it needs network access.
 
----
+## Writing a post
 
-## ✍️ Creating Content
+1. Copy [`_drafts/1978-01-01-template.md`](_drafts/1978-01-01-template.md) to `_drafts/<slug>.md` and preview it with `--drafts`.
+2. Fill in the front matter:
 
-### Writing a New Blog Post
-
-1. **Create a new Markdown file** in `_posts/` following the naming convention:
-   ```
-   YYYY-MM-DD-title-with-hyphens.md
-   ```
-
-2. **Add front matter** at the top of the file:
    ```yaml
    ---
    layout: post
    title: "Your Post Title"
-   description: "Brief description for SEO and previews"
+   description: "One or two sentences for the post list, feeds and link previews."
    last_modified_at: 2025-11-08 12:00 +0100
-   image: "/assets/images/blog/your-post-image.webp"
-   categories: "Category Name"
-   tags: [Tag1, Tag2, Tag3]
+   image: "/assets/images/blog/<slug>.webp"
+   categories: "Machine-Learning"
+   tags: [AI, Machine Learning]
+   mathjax: true    # optional: loads MathJax
+   mermaid: true    # optional: loads Mermaid
    ---
    ```
 
-3. **Write your content** using Markdown syntax
+3. Put the post's images in `assets/images/blog/<slug>/`, preferably as WebP.
+4. To publish, move the file to `_posts/YYYY-MM-DD-<slug>.md`.
 
-4. **Add images** to `assets/images/blog/your-post-name/`
+The URL is `/:categories/:title/` (see [`_config.yml`](_config.yml)), so `categories` becomes part of the path. A string with spaces is split into several categories (`"Big Data"` gives `/big/data/<slug>/`); use a hyphen or a YAML list (`[Big Data]`) for a single multi-word category. Changing a published post's category changes its URL.
 
-5. **Preview locally** before publishing
+## Project structure
 
-### Draft Posts
+| Path | Purpose |
+|:--|:--|
+| `_config.yml` | Site settings for production |
+| `_config_dev.yaml` | Overrides for the development site |
+| `_layouts/`, `_includes/` | Page templates; `head.html` picks each page's stylesheet |
+| `_posts/`, `_drafts/` | Published and draft posts |
+| `_sass/`, `assets/css/` | SCSS partials and the per-page stylesheets that import them |
+| `assets/` | Images, fonts and JavaScript |
+| `static/` | Images referenced from the author's e-mail signature; keep their URLs stable |
+| `.well-known/` | `dat://` discovery and the OpenPGP Web Key Directory |
+| `.github/` | CI workflows and Dependabot configuration |
+| `netlify.toml` | Netlify build environment |
 
-Store work-in-progress posts in `_drafts/` (without dates in filename). View drafts locally:
-```bash
-bundle exec jekyll serve --drafts
-```
+## Deployment
 
----
+- **Production**: every push to `master` runs [Deploy Production Site](.github/workflows/deploy-prod.yml), which builds the site with [`build.yml`](.github/workflows/build.yml), checks it with HTMLProofer and publishes it to GitHub Pages.
+- **Pull requests**: [Validate Pull Request](.github/workflows/validate-pr.yml) runs the same build and checks with read-only permissions, and Netlify publishes a deploy preview.
+- **Development**: Netlify builds the `develop` branch with `_config_dev.yaml` and publishes it to the development site.
 
-## 🚢 Deployment
+[`netlify.toml`](netlify.toml) sends `X-Robots-Tag: noindex` on every Netlify site, so only production is indexed.
 
-### Automatic Deployment
+Both domains are proxied through Cloudflare. Dependency updates are configured in [`.github/dependabot.yml`](.github/dependabot.yml).
 
-- **Production**: every push to `master` runs the [Deploy Production Site](.github/workflows/deploy-prod.yml) workflow, which builds the site, checks it with HTMLProofer and publishes it to **GitHub Pages** → [raulsanmartin.me](https://raulsanmartin.me)
-- **Pull requests**: the [Validate Pull Request](.github/workflows/validate-pr.yml) workflow runs the same build and checks without deploying, and **Netlify** publishes a deploy preview
-- **Development**: **Netlify** deploys the development branch → [dev.raulsanmartin.me](https://dev.raulsanmartin.me)
+## License
 
-Both domains are proxied through Cloudflare. Netlify environment settings live in [`netlify.toml`](netlify.toml); dependency updates are configured in [`.github/dependabot.yml`](.github/dependabot.yml).
-
-### Manual Deployment
-
-If deploying elsewhere, build the site and upload the `_site/` directory:
-```bash
-bundle exec jekyll build
-```
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**.
-
-```
-MIT License
-
-Copyright (c) 2019 Raúl San Martín Aniceto
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-```
-
-See the [LICENSE](LICENSE) file for full details.
-
----
-
-## 🔗 Contact
-
-**Raúl San Martín Aniceto** (MrAnnix)
-
-- 🌐 Website: [raulsanmartin.me](https://raulsanmartin.me)
-- 💼 LinkedIn: [raul-san-martin-aniceto](https://www.linkedin.com/in/raul-san-martin-aniceto)
-- 🐙 GitHub: [@MrAnnix](https://github.com/MrAnnix)
-- 📧 Email: hello@[domain] (see website for contact form)
-
----
-
-<div align="center">
-  
-**Built with ❤️ using Jekyll**
-
-⭐ Star this repo if you find it useful!
-
-</div>
+[MIT](LICENSE). Contact details are on the [contact page](https://raulsanmartin.me/contact/).

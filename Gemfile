@@ -1,17 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'jekyll'
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-group :jekyll_plugins do
-  gem 'github-pages'
-  gem 'jekyll-sitemap'
-  gem 'jekyll-paginate'
-end
+# github-pages pins Jekyll and every plugin GitHub Pages allows, jekyll-sitemap included.
+# Versions: https://pages.github.com/versions/
+gem 'github-pages', '~> 233', group: :jekyll_plugins
+gem 'tzinfo-data', platforms: [:windows, :jruby]
 
 group :jekyll_test do
-  gem 'html-proofer'
+  # Pinned to the major version: CLI options change between majors and CI depends on them
+  gem 'html-proofer', '~> 5.2'
 end
 
-# Platform note: This Gemfile.lock supports both Windows (x64-mingw-ucrt) and Linux (x86_64-linux)
-# If you get platform errors, run: bundle lock --add-platform x86_64-linux
+# Gemfile.lock lists the x64-mingw-ucrt (Windows) and x86_64-linux platforms.
+# On any other platform, add yours first: bundle lock --add-platform <platform> (e.g. arm64-darwin)
