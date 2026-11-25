@@ -27,7 +27,7 @@ Jekyll source of https://raulsanmartin.me. Human-facing docs are in [README.md](
 - Third-party scripts in `_includes/scripts.html` are pinned to exact versions, most with an SRI hash; when bumping a version, update its `integrity` hash in the same change, or browsers block the script.
 - Workflows run with least privilege: `build.yml` gets `contents: read`, and only the `deploy` job in `deploy-prod.yml` gets `pages: write` and `id-token: write`.
 - Images in `static/` are referenced from an e-mail signature outside this repo; keep their names and paths.
-- The e-mail address is written as `hello@[this domain]` deliberately; do not replace it with the real address.
+- Keep the e-mail address written as `hello@[this domain]`: it is obfuscated on purpose.
 
 ## Conventions
 
