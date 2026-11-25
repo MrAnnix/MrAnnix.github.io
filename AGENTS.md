@@ -24,6 +24,7 @@ Jekyll source of https://raulsanmartin.me. Human-facing docs are in [README.md](
 - `_includes/head.html` picks each page's stylesheet by `page.title` (`Home`, `Contact`, `Blog`) or `layout: post`; any other page gets `assets/css/styles.css`. Renaming one of those titles changes the page's CSS.
 - MathJax and Mermaid load only for posts with `mathjax: true` or `mermaid: true` in their front matter.
 - `.well-known/` must reach the deployed site: it needs `include` in `_config.yml` and `include-hidden-files` in `.github/workflows/build.yml`.
+- Third-party scripts in `_includes/scripts.html` are pinned to exact versions, most with an SRI hash; when bumping a version, update its `integrity` hash in the same change, or browsers block the script.
 - Workflows run with least privilege: `build.yml` gets `contents: read`, and only the `deploy` job in `deploy-prod.yml` gets `pages: write` and `id-token: write`.
 - Images in `static/` are referenced from an e-mail signature outside this repo; keep their names and paths.
 - The e-mail address is written as `hello@[this domain]` deliberately; do not replace it with the real address.
